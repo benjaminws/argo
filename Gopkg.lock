@@ -303,20 +303,6 @@
   version = "v1.3.2"
 
 [[projects]]
-  digest = "1:9fcb267c272bc5054564b392e3ff7e65e35400fd9914afb1d169f92b95e7dbc9"
-  name = "github.com/google/go-cmp"
-  packages = [
-    "cmp",
-    "cmp/internal/diff",
-    "cmp/internal/flags",
-    "cmp/internal/function",
-    "cmp/internal/value",
-  ]
-  pruneopts = ""
-  revision = "2d0692c2e9617365a95b295612ac0d4415ba4627"
-  version = "v0.3.1"
-
-[[projects]]
   digest = "1:8d4a577a9643f713c25a32151c0f26af7228b4b97a219b5ddb7fd38d16f6e673"
   name = "github.com/google/gofuzz"
   packages = ["."]
@@ -1099,8 +1085,8 @@
   version = "v2.2.2"
 
 [[projects]]
-  branch = "release-1.15"
-  digest = "1:10eebafc84e46eb29e19559c00670eb175f8be8db767cfaa720761bfd3b356af"
+  branch = "release-1.14"
+  digest = "1:e21d759b988f1788cf6f70b6f6de1fb451171abbef2fbcfa9a836e7ae743db48"
   name = "k8s.io/api"
   packages = [
     "admissionregistration/v1beta1",
@@ -1141,11 +1127,11 @@
     "storage/v1beta1",
   ]
   pruneopts = ""
-  revision = "e14a4b1f5f840029e170c0d892f7a12f19afd558"
+  revision = "159aefb8556bb8ed4be7631461d1558546d304db"
 
 [[projects]]
-  branch = "release-1.15"
-  digest = "1:e457f74a4e0730c15e109514f0a31d0a377db2ae902f96e56b9aebdcf9a64cda"
+  branch = "release-1.14"
+  digest = "1:7dee013bc9e0fba315f9168bffeef25a1685eaa5e6e0b6d95b1aad9fd32e0356"
   name = "k8s.io/apimachinery"
   packages = [
     "pkg/api/errors",
@@ -1196,7 +1182,7 @@
     "third_party/forked/golang/reflect",
   ]
   pruneopts = ""
-  revision = "f2f3a405f61d6c2cdc0d00687c1b5d90de91e9f0"
+  revision = "c5d2f014d689246b84637774317fa0288dd3129b"
 
 [[projects]]
   branch = "release-11.0"
@@ -1321,8 +1307,8 @@
   revision = "6d55c1b1f1ca8ad83d572bbc3ca55ba5526d9d71"
 
 [[projects]]
-  branch = "release-1.15"
-  digest = "1:559e29865df733d697a8b075b9904a870400a28ddaccccc2afa35d72da6435f6"
+  branch = "release-1.14"
+  digest = "1:0ca40cba3558ea765d0e7fa91ebd32d661909d5c331c49c2a271af66f0b5604d"
   name = "k8s.io/code-generator"
   packages = [
     "cmd/client-gen",
@@ -1345,7 +1331,7 @@
     "pkg/util",
   ]
   pruneopts = ""
-  revision = "18da4a14b22b17d2fa761e50037fabfbacec225b"
+  revision = "6c2a4329ac290d921e8616cad41635c87dbb1518"
 
 [[projects]]
   branch = "master"
