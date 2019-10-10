@@ -648,7 +648,7 @@ type WorkflowStatus struct {
 	Nodes map[string]NodeStatus `json:"nodes,omitempty" protobuf:"bytes,6,rep,name=nodes"`
 
 	// StoredTemplates is a mapping between a template ref and the node's status.
-	StoredTemplates map[string]Template `json:"storedTemplates,omitempty"`
+	StoredTemplates map[string]Template `json:"storedTemplates,omitempty" protobuf:"bytes,9,rep,name=storedTemplates"`
 
 	// PersistentVolumeClaims tracks all PVCs that were created as part of the workflow.
 	// The contents of this list are drained at the end of the workflow.
@@ -688,10 +688,10 @@ type NodeStatus struct {
 	TemplateRef *TemplateRef `json:"templateRef,omitempty" protobuf:"bytes,6,opt,name=templateRef"`
 
 	// StoredTemplateID is the ID of stored template.
-	StoredTemplateID string `json:"storedTemplateID,omitempty"`
+	StoredTemplateID string `json:"storedTemplateID,omitempty" protobuf:"bytes,18,opt,name=storedTemplateID"`
 
 	// WorkflowTemplateName is the WorkflowTemplate resource name on which the resolved template of this node is retrieved.
-	WorkflowTemplateName string `json:"workflowTemplateName,omitempty"`
+	WorkflowTemplateName string `json:"workflowTemplateName,omitempty" protobuf:"bytes,19,opt,name=workflowTemplateName"`
 
 	// Phase a simple, high-level summary of where the node is in its lifecycle.
 	// Can be used as a state machine.
