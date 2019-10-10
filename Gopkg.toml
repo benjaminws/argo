@@ -45,6 +45,10 @@ required = [
   name = "github.com/prometheus/client_golang"
   version = "0.8.0"
 
+[[override]]
+  name = "github.com/gogo/protobuf"
+  revision = "ba06b47c162d49f2af050fb4c75bcbc86a159d5c"
+
 # azure.go:252:4: cannot use json.Number(expiresIn) (type json.Number) as type string in field value
 [[override]]
   name = "github.com/Azure/go-autorest"

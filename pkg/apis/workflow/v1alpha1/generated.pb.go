@@ -15,7 +15,6 @@ import (
 	v1 "k8s.io/api/core/v1"
 
 	math "math"
-	math_bits "math/bits"
 	reflect "reflect"
 	strings "strings"
 )
@@ -29,7 +28,7 @@ var _ = math.Inf
 // is compatible with the proto package it is being compiled against.
 // A compilation error at this line likely means your copy of the
 // proto package needs to be updated.
-const _ = proto.GoGoProtoPackageIsVersion3 // please upgrade the proto package
+const _ = proto.GoGoProtoPackageIsVersion2 // please upgrade the proto package
 
 func (m *ArchiveStrategy) Reset()      { *m = ArchiveStrategy{} }
 func (*ArchiveStrategy) ProtoMessage() {}
@@ -41,7 +40,7 @@ func (m *ArchiveStrategy) XXX_Unmarshal(b []byte) error {
 }
 func (m *ArchiveStrategy) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	b = b[:cap(b)]
-	n, err := m.MarshalToSizedBuffer(b)
+	n, err := m.MarshalTo(b)
 	if err != nil {
 		return nil, err
 	}
@@ -69,7 +68,7 @@ func (m *Arguments) XXX_Unmarshal(b []byte) error {
 }
 func (m *Arguments) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	b = b[:cap(b)]
-	n, err := m.MarshalToSizedBuffer(b)
+	n, err := m.MarshalTo(b)
 	if err != nil {
 		return nil, err
 	}
@@ -97,7 +96,7 @@ func (m *Artifact) XXX_Unmarshal(b []byte) error {
 }
 func (m *Artifact) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	b = b[:cap(b)]
-	n, err := m.MarshalToSizedBuffer(b)
+	n, err := m.MarshalTo(b)
 	if err != nil {
 		return nil, err
 	}
@@ -125,7 +124,7 @@ func (m *ArtifactLocation) XXX_Unmarshal(b []byte) error {
 }
 func (m *ArtifactLocation) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	b = b[:cap(b)]
-	n, err := m.MarshalToSizedBuffer(b)
+	n, err := m.MarshalTo(b)
 	if err != nil {
 		return nil, err
 	}
@@ -153,7 +152,7 @@ func (m *ArtifactRepositoryRef) XXX_Unmarshal(b []byte) error {
 }
 func (m *ArtifactRepositoryRef) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	b = b[:cap(b)]
-	n, err := m.MarshalToSizedBuffer(b)
+	n, err := m.MarshalTo(b)
 	if err != nil {
 		return nil, err
 	}
@@ -181,7 +180,7 @@ func (m *ArtifactoryArtifact) XXX_Unmarshal(b []byte) error {
 }
 func (m *ArtifactoryArtifact) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	b = b[:cap(b)]
-	n, err := m.MarshalToSizedBuffer(b)
+	n, err := m.MarshalTo(b)
 	if err != nil {
 		return nil, err
 	}
@@ -209,7 +208,7 @@ func (m *ArtifactoryAuth) XXX_Unmarshal(b []byte) error {
 }
 func (m *ArtifactoryAuth) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	b = b[:cap(b)]
-	n, err := m.MarshalToSizedBuffer(b)
+	n, err := m.MarshalTo(b)
 	if err != nil {
 		return nil, err
 	}
@@ -237,7 +236,7 @@ func (m *ContinueOn) XXX_Unmarshal(b []byte) error {
 }
 func (m *ContinueOn) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	b = b[:cap(b)]
-	n, err := m.MarshalToSizedBuffer(b)
+	n, err := m.MarshalTo(b)
 	if err != nil {
 		return nil, err
 	}
@@ -265,7 +264,7 @@ func (m *DAGTask) XXX_Unmarshal(b []byte) error {
 }
 func (m *DAGTask) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	b = b[:cap(b)]
-	n, err := m.MarshalToSizedBuffer(b)
+	n, err := m.MarshalTo(b)
 	if err != nil {
 		return nil, err
 	}
@@ -293,7 +292,7 @@ func (m *DAGTemplate) XXX_Unmarshal(b []byte) error {
 }
 func (m *DAGTemplate) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	b = b[:cap(b)]
-	n, err := m.MarshalToSizedBuffer(b)
+	n, err := m.MarshalTo(b)
 	if err != nil {
 		return nil, err
 	}
@@ -321,7 +320,7 @@ func (m *ExecutorConfig) XXX_Unmarshal(b []byte) error {
 }
 func (m *ExecutorConfig) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	b = b[:cap(b)]
-	n, err := m.MarshalToSizedBuffer(b)
+	n, err := m.MarshalTo(b)
 	if err != nil {
 		return nil, err
 	}
@@ -349,7 +348,7 @@ func (m *GitArtifact) XXX_Unmarshal(b []byte) error {
 }
 func (m *GitArtifact) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	b = b[:cap(b)]
-	n, err := m.MarshalToSizedBuffer(b)
+	n, err := m.MarshalTo(b)
 	if err != nil {
 		return nil, err
 	}
@@ -377,7 +376,7 @@ func (m *HDFSArtifact) XXX_Unmarshal(b []byte) error {
 }
 func (m *HDFSArtifact) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	b = b[:cap(b)]
-	n, err := m.MarshalToSizedBuffer(b)
+	n, err := m.MarshalTo(b)
 	if err != nil {
 		return nil, err
 	}
@@ -405,7 +404,7 @@ func (m *HDFSConfig) XXX_Unmarshal(b []byte) error {
 }
 func (m *HDFSConfig) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	b = b[:cap(b)]
-	n, err := m.MarshalToSizedBuffer(b)
+	n, err := m.MarshalTo(b)
 	if err != nil {
 		return nil, err
 	}
@@ -433,7 +432,7 @@ func (m *HDFSKrbConfig) XXX_Unmarshal(b []byte) error {
 }
 func (m *HDFSKrbConfig) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	b = b[:cap(b)]
-	n, err := m.MarshalToSizedBuffer(b)
+	n, err := m.MarshalTo(b)
 	if err != nil {
 		return nil, err
 	}
@@ -461,7 +460,7 @@ func (m *HTTPArtifact) XXX_Unmarshal(b []byte) error {
 }
 func (m *HTTPArtifact) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	b = b[:cap(b)]
-	n, err := m.MarshalToSizedBuffer(b)
+	n, err := m.MarshalTo(b)
 	if err != nil {
 		return nil, err
 	}
@@ -489,7 +488,7 @@ func (m *Inputs) XXX_Unmarshal(b []byte) error {
 }
 func (m *Inputs) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	b = b[:cap(b)]
-	n, err := m.MarshalToSizedBuffer(b)
+	n, err := m.MarshalTo(b)
 	if err != nil {
 		return nil, err
 	}
@@ -517,7 +516,7 @@ func (m *Item) XXX_Unmarshal(b []byte) error {
 }
 func (m *Item) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	b = b[:cap(b)]
-	n, err := m.MarshalToSizedBuffer(b)
+	n, err := m.MarshalTo(b)
 	if err != nil {
 		return nil, err
 	}
@@ -545,7 +544,7 @@ func (m *ItemValue) XXX_Unmarshal(b []byte) error {
 }
 func (m *ItemValue) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	b = b[:cap(b)]
-	n, err := m.MarshalToSizedBuffer(b)
+	n, err := m.MarshalTo(b)
 	if err != nil {
 		return nil, err
 	}
@@ -573,7 +572,7 @@ func (m *Metadata) XXX_Unmarshal(b []byte) error {
 }
 func (m *Metadata) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	b = b[:cap(b)]
-	n, err := m.MarshalToSizedBuffer(b)
+	n, err := m.MarshalTo(b)
 	if err != nil {
 		return nil, err
 	}
@@ -601,7 +600,7 @@ func (m *NodeStatus) XXX_Unmarshal(b []byte) error {
 }
 func (m *NodeStatus) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	b = b[:cap(b)]
-	n, err := m.MarshalToSizedBuffer(b)
+	n, err := m.MarshalTo(b)
 	if err != nil {
 		return nil, err
 	}
@@ -629,7 +628,7 @@ func (m *NoneStrategy) XXX_Unmarshal(b []byte) error {
 }
 func (m *NoneStrategy) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	b = b[:cap(b)]
-	n, err := m.MarshalToSizedBuffer(b)
+	n, err := m.MarshalTo(b)
 	if err != nil {
 		return nil, err
 	}
@@ -657,7 +656,7 @@ func (m *Outputs) XXX_Unmarshal(b []byte) error {
 }
 func (m *Outputs) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	b = b[:cap(b)]
-	n, err := m.MarshalToSizedBuffer(b)
+	n, err := m.MarshalTo(b)
 	if err != nil {
 		return nil, err
 	}
@@ -685,7 +684,7 @@ func (m *Parameter) XXX_Unmarshal(b []byte) error {
 }
 func (m *Parameter) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	b = b[:cap(b)]
-	n, err := m.MarshalToSizedBuffer(b)
+	n, err := m.MarshalTo(b)
 	if err != nil {
 		return nil, err
 	}
@@ -713,7 +712,7 @@ func (m *PodGC) XXX_Unmarshal(b []byte) error {
 }
 func (m *PodGC) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	b = b[:cap(b)]
-	n, err := m.MarshalToSizedBuffer(b)
+	n, err := m.MarshalTo(b)
 	if err != nil {
 		return nil, err
 	}
@@ -741,7 +740,7 @@ func (m *RawArtifact) XXX_Unmarshal(b []byte) error {
 }
 func (m *RawArtifact) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	b = b[:cap(b)]
-	n, err := m.MarshalToSizedBuffer(b)
+	n, err := m.MarshalTo(b)
 	if err != nil {
 		return nil, err
 	}
@@ -769,7 +768,7 @@ func (m *ResourceTemplate) XXX_Unmarshal(b []byte) error {
 }
 func (m *ResourceTemplate) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	b = b[:cap(b)]
-	n, err := m.MarshalToSizedBuffer(b)
+	n, err := m.MarshalTo(b)
 	if err != nil {
 		return nil, err
 	}
@@ -797,7 +796,7 @@ func (m *RetryStrategy) XXX_Unmarshal(b []byte) error {
 }
 func (m *RetryStrategy) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	b = b[:cap(b)]
-	n, err := m.MarshalToSizedBuffer(b)
+	n, err := m.MarshalTo(b)
 	if err != nil {
 		return nil, err
 	}
@@ -825,7 +824,7 @@ func (m *S3Artifact) XXX_Unmarshal(b []byte) error {
 }
 func (m *S3Artifact) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	b = b[:cap(b)]
-	n, err := m.MarshalToSizedBuffer(b)
+	n, err := m.MarshalTo(b)
 	if err != nil {
 		return nil, err
 	}
@@ -853,7 +852,7 @@ func (m *S3Bucket) XXX_Unmarshal(b []byte) error {
 }
 func (m *S3Bucket) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	b = b[:cap(b)]
-	n, err := m.MarshalToSizedBuffer(b)
+	n, err := m.MarshalTo(b)
 	if err != nil {
 		return nil, err
 	}
@@ -881,7 +880,7 @@ func (m *ScriptTemplate) XXX_Unmarshal(b []byte) error {
 }
 func (m *ScriptTemplate) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	b = b[:cap(b)]
-	n, err := m.MarshalToSizedBuffer(b)
+	n, err := m.MarshalTo(b)
 	if err != nil {
 		return nil, err
 	}
@@ -909,7 +908,7 @@ func (m *Sequence) XXX_Unmarshal(b []byte) error {
 }
 func (m *Sequence) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	b = b[:cap(b)]
-	n, err := m.MarshalToSizedBuffer(b)
+	n, err := m.MarshalTo(b)
 	if err != nil {
 		return nil, err
 	}
@@ -937,7 +936,7 @@ func (m *SuspendTemplate) XXX_Unmarshal(b []byte) error {
 }
 func (m *SuspendTemplate) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	b = b[:cap(b)]
-	n, err := m.MarshalToSizedBuffer(b)
+	n, err := m.MarshalTo(b)
 	if err != nil {
 		return nil, err
 	}
@@ -965,7 +964,7 @@ func (m *TarStrategy) XXX_Unmarshal(b []byte) error {
 }
 func (m *TarStrategy) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	b = b[:cap(b)]
-	n, err := m.MarshalToSizedBuffer(b)
+	n, err := m.MarshalTo(b)
 	if err != nil {
 		return nil, err
 	}
@@ -993,7 +992,7 @@ func (m *Template) XXX_Unmarshal(b []byte) error {
 }
 func (m *Template) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	b = b[:cap(b)]
-	n, err := m.MarshalToSizedBuffer(b)
+	n, err := m.MarshalTo(b)
 	if err != nil {
 		return nil, err
 	}
@@ -1021,7 +1020,7 @@ func (m *TemplateRef) XXX_Unmarshal(b []byte) error {
 }
 func (m *TemplateRef) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	b = b[:cap(b)]
-	n, err := m.MarshalToSizedBuffer(b)
+	n, err := m.MarshalTo(b)
 	if err != nil {
 		return nil, err
 	}
@@ -1049,7 +1048,7 @@ func (m *UserContainer) XXX_Unmarshal(b []byte) error {
 }
 func (m *UserContainer) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	b = b[:cap(b)]
-	n, err := m.MarshalToSizedBuffer(b)
+	n, err := m.MarshalTo(b)
 	if err != nil {
 		return nil, err
 	}
@@ -1077,7 +1076,7 @@ func (m *ValueFrom) XXX_Unmarshal(b []byte) error {
 }
 func (m *ValueFrom) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	b = b[:cap(b)]
-	n, err := m.MarshalToSizedBuffer(b)
+	n, err := m.MarshalTo(b)
 	if err != nil {
 		return nil, err
 	}
@@ -1105,7 +1104,7 @@ func (m *Workflow) XXX_Unmarshal(b []byte) error {
 }
 func (m *Workflow) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	b = b[:cap(b)]
-	n, err := m.MarshalToSizedBuffer(b)
+	n, err := m.MarshalTo(b)
 	if err != nil {
 		return nil, err
 	}
@@ -1133,7 +1132,7 @@ func (m *WorkflowList) XXX_Unmarshal(b []byte) error {
 }
 func (m *WorkflowList) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	b = b[:cap(b)]
-	n, err := m.MarshalToSizedBuffer(b)
+	n, err := m.MarshalTo(b)
 	if err != nil {
 		return nil, err
 	}
@@ -1161,7 +1160,7 @@ func (m *WorkflowSpec) XXX_Unmarshal(b []byte) error {
 }
 func (m *WorkflowSpec) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	b = b[:cap(b)]
-	n, err := m.MarshalToSizedBuffer(b)
+	n, err := m.MarshalTo(b)
 	if err != nil {
 		return nil, err
 	}
@@ -1189,7 +1188,7 @@ func (m *WorkflowStatus) XXX_Unmarshal(b []byte) error {
 }
 func (m *WorkflowStatus) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	b = b[:cap(b)]
-	n, err := m.MarshalToSizedBuffer(b)
+	n, err := m.MarshalTo(b)
 	if err != nil {
 		return nil, err
 	}
@@ -1217,7 +1216,7 @@ func (m *WorkflowStep) XXX_Unmarshal(b []byte) error {
 }
 func (m *WorkflowStep) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	b = b[:cap(b)]
-	n, err := m.MarshalToSizedBuffer(b)
+	n, err := m.MarshalTo(b)
 	if err != nil {
 		return nil, err
 	}
@@ -1245,7 +1244,7 @@ func (m *WorkflowSteps) XXX_Unmarshal(b []byte) error {
 }
 func (m *WorkflowSteps) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	b = b[:cap(b)]
-	n, err := m.MarshalToSizedBuffer(b)
+	n, err := m.MarshalTo(b)
 	if err != nil {
 		return nil, err
 	}
@@ -1273,7 +1272,7 @@ func (m *WorkflowTemplate) XXX_Unmarshal(b []byte) error {
 }
 func (m *WorkflowTemplate) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	b = b[:cap(b)]
-	n, err := m.MarshalToSizedBuffer(b)
+	n, err := m.MarshalTo(b)
 	if err != nil {
 		return nil, err
 	}
@@ -1301,7 +1300,7 @@ func (m *WorkflowTemplateList) XXX_Unmarshal(b []byte) error {
 }
 func (m *WorkflowTemplateList) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	b = b[:cap(b)]
-	n, err := m.MarshalToSizedBuffer(b)
+	n, err := m.MarshalTo(b)
 	if err != nil {
 		return nil, err
 	}
@@ -1329,7 +1328,7 @@ func (m *WorkflowTemplateSpec) XXX_Unmarshal(b []byte) error {
 }
 func (m *WorkflowTemplateSpec) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	b = b[:cap(b)]
-	n, err := m.MarshalToSizedBuffer(b)
+	n, err := m.MarshalTo(b)
 	if err != nil {
 		return nil, err
 	}
@@ -1701,7 +1700,7 @@ var fileDescriptor_c23edafa7e7ea072 = []byte{
 func (m *ArchiveStrategy) Marshal() (dAtA []byte, err error) {
 	size := m.Size()
 	dAtA = make([]byte, size)
-	n, err := m.MarshalToSizedBuffer(dAtA[:size])
+	n, err := m.MarshalTo(dAtA)
 	if err != nil {
 		return nil, err
 	}
@@ -1709,46 +1708,37 @@ func (m *ArchiveStrategy) Marshal() (dAtA []byte, err error) {
 }
 
 func (m *ArchiveStrategy) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
-}
-
-func (m *ArchiveStrategy) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
+	var i int
 	_ = i
 	var l int
 	_ = l
-	if m.None != nil {
-		{
-			size, err := m.None.MarshalToSizedBuffer(dAtA[:i])
-			if err != nil {
-				return 0, err
-			}
-			i -= size
-			i = encodeVarintGenerated(dAtA, i, uint64(size))
-		}
-		i--
-		dAtA[i] = 0x12
-	}
 	if m.Tar != nil {
-		{
-			size, err := m.Tar.MarshalToSizedBuffer(dAtA[:i])
-			if err != nil {
-				return 0, err
-			}
-			i -= size
-			i = encodeVarintGenerated(dAtA, i, uint64(size))
-		}
-		i--
 		dAtA[i] = 0xa
+		i++
+		i = encodeVarintGenerated(dAtA, i, uint64(m.Tar.Size()))
+		n1, err := m.Tar.MarshalTo(dAtA[i:])
+		if err != nil {
+			return 0, err
+		}
+		i += n1
 	}
-	return len(dAtA) - i, nil
+	if m.None != nil {
+		dAtA[i] = 0x12
+		i++
+		i = encodeVarintGenerated(dAtA, i, uint64(m.None.Size()))
+		n2, err := m.None.MarshalTo(dAtA[i:])
+		if err != nil {
+			return 0, err
+		}
+		i += n2
+	}
+	return i, nil
 }
 
 func (m *Arguments) Marshal() (dAtA []byte, err error) {
 	size := m.Size()
 	dAtA = make([]byte, size)
-	n, err := m.MarshalToSizedBuffer(dAtA[:size])
+	n, err := m.MarshalTo(dAtA)
 	if err != nil {
 		return nil, err
 	}
@@ -1756,50 +1746,41 @@ func (m *Arguments) Marshal() (dAtA []byte, err error) {
 }
 
 func (m *Arguments) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
-}
-
-func (m *Arguments) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
+	var i int
 	_ = i
 	var l int
 	_ = l
-	if len(m.Artifacts) > 0 {
-		for iNdEx := len(m.Artifacts) - 1; iNdEx >= 0; iNdEx-- {
-			{
-				size, err := m.Artifacts[iNdEx].MarshalToSizedBuffer(dAtA[:i])
-				if err != nil {
-					return 0, err
-				}
-				i -= size
-				i = encodeVarintGenerated(dAtA, i, uint64(size))
-			}
-			i--
-			dAtA[i] = 0x12
-		}
-	}
 	if len(m.Parameters) > 0 {
-		for iNdEx := len(m.Parameters) - 1; iNdEx >= 0; iNdEx-- {
-			{
-				size, err := m.Parameters[iNdEx].MarshalToSizedBuffer(dAtA[:i])
-				if err != nil {
-					return 0, err
-				}
-				i -= size
-				i = encodeVarintGenerated(dAtA, i, uint64(size))
-			}
-			i--
+		for _, msg := range m.Parameters {
 			dAtA[i] = 0xa
+			i++
+			i = encodeVarintGenerated(dAtA, i, uint64(msg.Size()))
+			n, err := msg.MarshalTo(dAtA[i:])
+			if err != nil {
+				return 0, err
+			}
+			i += n
 		}
 	}
-	return len(dAtA) - i, nil
+	if len(m.Artifacts) > 0 {
+		for _, msg := range m.Artifacts {
+			dAtA[i] = 0x12
+			i++
+			i = encodeVarintGenerated(dAtA, i, uint64(msg.Size()))
+			n, err := msg.MarshalTo(dAtA[i:])
+			if err != nil {
+				return 0, err
+			}
+			i += n
+		}
+	}
+	return i, nil
 }
 
 func (m *Artifact) Marshal() (dAtA []byte, err error) {
 	size := m.Size()
 	dAtA = make([]byte, size)
-	n, err := m.MarshalToSizedBuffer(dAtA[:size])
+	n, err := m.MarshalTo(dAtA)
 	if err != nil {
 		return nil, err
 	}
@@ -1807,77 +1788,64 @@ func (m *Artifact) Marshal() (dAtA []byte, err error) {
 }
 
 func (m *Artifact) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
-}
-
-func (m *Artifact) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
+	var i int
 	_ = i
 	var l int
 	_ = l
-	i--
+	dAtA[i] = 0xa
+	i++
+	i = encodeVarintGenerated(dAtA, i, uint64(len(m.Name)))
+	i += copy(dAtA[i:], m.Name)
+	dAtA[i] = 0x12
+	i++
+	i = encodeVarintGenerated(dAtA, i, uint64(len(m.Path)))
+	i += copy(dAtA[i:], m.Path)
+	if m.Mode != nil {
+		dAtA[i] = 0x18
+		i++
+		i = encodeVarintGenerated(dAtA, i, uint64(*m.Mode))
+	}
+	dAtA[i] = 0x22
+	i++
+	i = encodeVarintGenerated(dAtA, i, uint64(len(m.From)))
+	i += copy(dAtA[i:], m.From)
+	dAtA[i] = 0x2a
+	i++
+	i = encodeVarintGenerated(dAtA, i, uint64(m.ArtifactLocation.Size()))
+	n3, err := m.ArtifactLocation.MarshalTo(dAtA[i:])
+	if err != nil {
+		return 0, err
+	}
+	i += n3
+	dAtA[i] = 0x32
+	i++
+	i = encodeVarintGenerated(dAtA, i, uint64(len(m.GlobalName)))
+	i += copy(dAtA[i:], m.GlobalName)
+	if m.Archive != nil {
+		dAtA[i] = 0x3a
+		i++
+		i = encodeVarintGenerated(dAtA, i, uint64(m.Archive.Size()))
+		n4, err := m.Archive.MarshalTo(dAtA[i:])
+		if err != nil {
+			return 0, err
+		}
+		i += n4
+	}
+	dAtA[i] = 0x40
+	i++
 	if m.Optional {
 		dAtA[i] = 1
 	} else {
 		dAtA[i] = 0
 	}
-	i--
-	dAtA[i] = 0x40
-	if m.Archive != nil {
-		{
-			size, err := m.Archive.MarshalToSizedBuffer(dAtA[:i])
-			if err != nil {
-				return 0, err
-			}
-			i -= size
-			i = encodeVarintGenerated(dAtA, i, uint64(size))
-		}
-		i--
-		dAtA[i] = 0x3a
-	}
-	i -= len(m.GlobalName)
-	copy(dAtA[i:], m.GlobalName)
-	i = encodeVarintGenerated(dAtA, i, uint64(len(m.GlobalName)))
-	i--
-	dAtA[i] = 0x32
-	{
-		size, err := m.ArtifactLocation.MarshalToSizedBuffer(dAtA[:i])
-		if err != nil {
-			return 0, err
-		}
-		i -= size
-		i = encodeVarintGenerated(dAtA, i, uint64(size))
-	}
-	i--
-	dAtA[i] = 0x2a
-	i -= len(m.From)
-	copy(dAtA[i:], m.From)
-	i = encodeVarintGenerated(dAtA, i, uint64(len(m.From)))
-	i--
-	dAtA[i] = 0x22
-	if m.Mode != nil {
-		i = encodeVarintGenerated(dAtA, i, uint64(*m.Mode))
-		i--
-		dAtA[i] = 0x18
-	}
-	i -= len(m.Path)
-	copy(dAtA[i:], m.Path)
-	i = encodeVarintGenerated(dAtA, i, uint64(len(m.Path)))
-	i--
-	dAtA[i] = 0x12
-	i -= len(m.Name)
-	copy(dAtA[i:], m.Name)
-	i = encodeVarintGenerated(dAtA, i, uint64(len(m.Name)))
-	i--
-	dAtA[i] = 0xa
-	return len(dAtA) - i, nil
+	i++
+	return i, nil
 }
 
 func (m *ArtifactLocation) Marshal() (dAtA []byte, err error) {
 	size := m.Size()
 	dAtA = make([]byte, size)
-	n, err := m.MarshalToSizedBuffer(dAtA[:size])
+	n, err := m.MarshalTo(dAtA)
 	if err != nil {
 		return nil, err
 	}
@@ -1885,104 +1853,87 @@ func (m *ArtifactLocation) Marshal() (dAtA []byte, err error) {
 }
 
 func (m *ArtifactLocation) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
-}
-
-func (m *ArtifactLocation) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
+	var i int
 	_ = i
 	var l int
 	_ = l
-	if m.Raw != nil {
-		{
-			size, err := m.Raw.MarshalToSizedBuffer(dAtA[:i])
-			if err != nil {
-				return 0, err
-			}
-			i -= size
-			i = encodeVarintGenerated(dAtA, i, uint64(size))
-		}
-		i--
-		dAtA[i] = 0x3a
-	}
-	if m.HDFS != nil {
-		{
-			size, err := m.HDFS.MarshalToSizedBuffer(dAtA[:i])
-			if err != nil {
-				return 0, err
-			}
-			i -= size
-			i = encodeVarintGenerated(dAtA, i, uint64(size))
-		}
-		i--
-		dAtA[i] = 0x32
-	}
-	if m.Artifactory != nil {
-		{
-			size, err := m.Artifactory.MarshalToSizedBuffer(dAtA[:i])
-			if err != nil {
-				return 0, err
-			}
-			i -= size
-			i = encodeVarintGenerated(dAtA, i, uint64(size))
-		}
-		i--
-		dAtA[i] = 0x2a
-	}
-	if m.HTTP != nil {
-		{
-			size, err := m.HTTP.MarshalToSizedBuffer(dAtA[:i])
-			if err != nil {
-				return 0, err
-			}
-			i -= size
-			i = encodeVarintGenerated(dAtA, i, uint64(size))
-		}
-		i--
-		dAtA[i] = 0x22
-	}
-	if m.Git != nil {
-		{
-			size, err := m.Git.MarshalToSizedBuffer(dAtA[:i])
-			if err != nil {
-				return 0, err
-			}
-			i -= size
-			i = encodeVarintGenerated(dAtA, i, uint64(size))
-		}
-		i--
-		dAtA[i] = 0x1a
-	}
-	if m.S3 != nil {
-		{
-			size, err := m.S3.MarshalToSizedBuffer(dAtA[:i])
-			if err != nil {
-				return 0, err
-			}
-			i -= size
-			i = encodeVarintGenerated(dAtA, i, uint64(size))
-		}
-		i--
-		dAtA[i] = 0x12
-	}
 	if m.ArchiveLogs != nil {
-		i--
+		dAtA[i] = 0x8
+		i++
 		if *m.ArchiveLogs {
 			dAtA[i] = 1
 		} else {
 			dAtA[i] = 0
 		}
-		i--
-		dAtA[i] = 0x8
+		i++
 	}
-	return len(dAtA) - i, nil
+	if m.S3 != nil {
+		dAtA[i] = 0x12
+		i++
+		i = encodeVarintGenerated(dAtA, i, uint64(m.S3.Size()))
+		n5, err := m.S3.MarshalTo(dAtA[i:])
+		if err != nil {
+			return 0, err
+		}
+		i += n5
+	}
+	if m.Git != nil {
+		dAtA[i] = 0x1a
+		i++
+		i = encodeVarintGenerated(dAtA, i, uint64(m.Git.Size()))
+		n6, err := m.Git.MarshalTo(dAtA[i:])
+		if err != nil {
+			return 0, err
+		}
+		i += n6
+	}
+	if m.HTTP != nil {
+		dAtA[i] = 0x22
+		i++
+		i = encodeVarintGenerated(dAtA, i, uint64(m.HTTP.Size()))
+		n7, err := m.HTTP.MarshalTo(dAtA[i:])
+		if err != nil {
+			return 0, err
+		}
+		i += n7
+	}
+	if m.Artifactory != nil {
+		dAtA[i] = 0x2a
+		i++
+		i = encodeVarintGenerated(dAtA, i, uint64(m.Artifactory.Size()))
+		n8, err := m.Artifactory.MarshalTo(dAtA[i:])
+		if err != nil {
+			return 0, err
+		}
+		i += n8
+	}
+	if m.HDFS != nil {
+		dAtA[i] = 0x32
+		i++
+		i = encodeVarintGenerated(dAtA, i, uint64(m.HDFS.Size()))
+		n9, err := m.HDFS.MarshalTo(dAtA[i:])
+		if err != nil {
+			return 0, err
+		}
+		i += n9
+	}
+	if m.Raw != nil {
+		dAtA[i] = 0x3a
+		i++
+		i = encodeVarintGenerated(dAtA, i, uint64(m.Raw.Size()))
+		n10, err := m.Raw.MarshalTo(dAtA[i:])
+		if err != nil {
+			return 0, err
+		}
+		i += n10
+	}
+	return i, nil
 }
 
 func (m *ArtifactRepositoryRef) Marshal() (dAtA []byte, err error) {
 	size := m.Size()
 	dAtA = make([]byte, size)
-	n, err := m.MarshalToSizedBuffer(dAtA[:size])
+	n, err := m.MarshalTo(dAtA)
 	if err != nil {
 		return nil, err
 	}
@@ -1990,32 +1941,25 @@ func (m *ArtifactRepositoryRef) Marshal() (dAtA []byte, err error) {
 }
 
 func (m *ArtifactRepositoryRef) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
-}
-
-func (m *ArtifactRepositoryRef) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
+	var i int
 	_ = i
 	var l int
 	_ = l
-	i -= len(m.Key)
-	copy(dAtA[i:], m.Key)
-	i = encodeVarintGenerated(dAtA, i, uint64(len(m.Key)))
-	i--
-	dAtA[i] = 0x12
-	i -= len(m.ConfigMap)
-	copy(dAtA[i:], m.ConfigMap)
-	i = encodeVarintGenerated(dAtA, i, uint64(len(m.ConfigMap)))
-	i--
 	dAtA[i] = 0xa
-	return len(dAtA) - i, nil
+	i++
+	i = encodeVarintGenerated(dAtA, i, uint64(len(m.ConfigMap)))
+	i += copy(dAtA[i:], m.ConfigMap)
+	dAtA[i] = 0x12
+	i++
+	i = encodeVarintGenerated(dAtA, i, uint64(len(m.Key)))
+	i += copy(dAtA[i:], m.Key)
+	return i, nil
 }
 
 func (m *ArtifactoryArtifact) Marshal() (dAtA []byte, err error) {
 	size := m.Size()
 	dAtA = make([]byte, size)
-	n, err := m.MarshalToSizedBuffer(dAtA[:size])
+	n, err := m.MarshalTo(dAtA)
 	if err != nil {
 		return nil, err
 	}
@@ -2023,37 +1967,29 @@ func (m *ArtifactoryArtifact) Marshal() (dAtA []byte, err error) {
 }
 
 func (m *ArtifactoryArtifact) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
-}
-
-func (m *ArtifactoryArtifact) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
+	var i int
 	_ = i
 	var l int
 	_ = l
-	{
-		size, err := m.ArtifactoryAuth.MarshalToSizedBuffer(dAtA[:i])
-		if err != nil {
-			return 0, err
-		}
-		i -= size
-		i = encodeVarintGenerated(dAtA, i, uint64(size))
-	}
-	i--
-	dAtA[i] = 0x12
-	i -= len(m.URL)
-	copy(dAtA[i:], m.URL)
-	i = encodeVarintGenerated(dAtA, i, uint64(len(m.URL)))
-	i--
 	dAtA[i] = 0xa
-	return len(dAtA) - i, nil
+	i++
+	i = encodeVarintGenerated(dAtA, i, uint64(len(m.URL)))
+	i += copy(dAtA[i:], m.URL)
+	dAtA[i] = 0x12
+	i++
+	i = encodeVarintGenerated(dAtA, i, uint64(m.ArtifactoryAuth.Size()))
+	n11, err := m.ArtifactoryAuth.MarshalTo(dAtA[i:])
+	if err != nil {
+		return 0, err
+	}
+	i += n11
+	return i, nil
 }
 
 func (m *ArtifactoryAuth) Marshal() (dAtA []byte, err error) {
 	size := m.Size()
 	dAtA = make([]byte, size)
-	n, err := m.MarshalToSizedBuffer(dAtA[:size])
+	n, err := m.MarshalTo(dAtA)
 	if err != nil {
 		return nil, err
 	}
@@ -2061,46 +1997,37 @@ func (m *ArtifactoryAuth) Marshal() (dAtA []byte, err error) {
 }
 
 func (m *ArtifactoryAuth) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
-}
-
-func (m *ArtifactoryAuth) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
+	var i int
 	_ = i
 	var l int
 	_ = l
-	if m.PasswordSecret != nil {
-		{
-			size, err := m.PasswordSecret.MarshalToSizedBuffer(dAtA[:i])
-			if err != nil {
-				return 0, err
-			}
-			i -= size
-			i = encodeVarintGenerated(dAtA, i, uint64(size))
-		}
-		i--
-		dAtA[i] = 0x12
-	}
 	if m.UsernameSecret != nil {
-		{
-			size, err := m.UsernameSecret.MarshalToSizedBuffer(dAtA[:i])
-			if err != nil {
-				return 0, err
-			}
-			i -= size
-			i = encodeVarintGenerated(dAtA, i, uint64(size))
-		}
-		i--
 		dAtA[i] = 0xa
+		i++
+		i = encodeVarintGenerated(dAtA, i, uint64(m.UsernameSecret.Size()))
+		n12, err := m.UsernameSecret.MarshalTo(dAtA[i:])
+		if err != nil {
+			return 0, err
+		}
+		i += n12
 	}
-	return len(dAtA) - i, nil
+	if m.PasswordSecret != nil {
+		dAtA[i] = 0x12
+		i++
+		i = encodeVarintGenerated(dAtA, i, uint64(m.PasswordSecret.Size()))
+		n13, err := m.PasswordSecret.MarshalTo(dAtA[i:])
+		if err != nil {
+			return 0, err
+		}
+		i += n13
+	}
+	return i, nil
 }
 
 func (m *ContinueOn) Marshal() (dAtA []byte, err error) {
 	size := m.Size()
 	dAtA = make([]byte, size)
-	n, err := m.MarshalToSizedBuffer(dAtA[:size])
+	n, err := m.MarshalTo(dAtA)
 	if err != nil {
 		return nil, err
 	}
@@ -2108,38 +2035,33 @@ func (m *ContinueOn) Marshal() (dAtA []byte, err error) {
 }
 
 func (m *ContinueOn) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
-}
-
-func (m *ContinueOn) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
+	var i int
 	_ = i
 	var l int
 	_ = l
-	i--
-	if m.Failed {
-		dAtA[i] = 1
-	} else {
-		dAtA[i] = 0
-	}
-	i--
-	dAtA[i] = 0x10
-	i--
+	dAtA[i] = 0x8
+	i++
 	if m.Error {
 		dAtA[i] = 1
 	} else {
 		dAtA[i] = 0
 	}
-	i--
-	dAtA[i] = 0x8
-	return len(dAtA) - i, nil
+	i++
+	dAtA[i] = 0x10
+	i++
+	if m.Failed {
+		dAtA[i] = 1
+	} else {
+		dAtA[i] = 0
+	}
+	i++
+	return i, nil
 }
 
 func (m *DAGTask) Marshal() (dAtA []byte, err error) {
 	size := m.Size()
 	dAtA = make([]byte, size)
-	n, err := m.MarshalToSizedBuffer(dAtA[:size])
+	n, err := m.MarshalTo(dAtA)
 	if err != nil {
 		return nil, err
 	}
@@ -2147,111 +2069,98 @@ func (m *DAGTask) Marshal() (dAtA []byte, err error) {
 }
 
 func (m *DAGTask) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
-}
-
-func (m *DAGTask) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
+	var i int
 	_ = i
 	var l int
 	_ = l
-	if m.ContinueOn != nil {
-		{
-			size, err := m.ContinueOn.MarshalToSizedBuffer(dAtA[:i])
-			if err != nil {
-				return 0, err
-			}
-			i -= size
-			i = encodeVarintGenerated(dAtA, i, uint64(size))
-		}
-		i--
-		dAtA[i] = 0x52
+	dAtA[i] = 0xa
+	i++
+	i = encodeVarintGenerated(dAtA, i, uint64(len(m.Name)))
+	i += copy(dAtA[i:], m.Name)
+	dAtA[i] = 0x12
+	i++
+	i = encodeVarintGenerated(dAtA, i, uint64(len(m.Template)))
+	i += copy(dAtA[i:], m.Template)
+	dAtA[i] = 0x1a
+	i++
+	i = encodeVarintGenerated(dAtA, i, uint64(m.Arguments.Size()))
+	n14, err := m.Arguments.MarshalTo(dAtA[i:])
+	if err != nil {
+		return 0, err
 	}
-	i -= len(m.When)
-	copy(dAtA[i:], m.When)
-	i = encodeVarintGenerated(dAtA, i, uint64(len(m.When)))
-	i--
-	dAtA[i] = 0x4a
-	if m.WithSequence != nil {
-		{
-			size, err := m.WithSequence.MarshalToSizedBuffer(dAtA[:i])
-			if err != nil {
-				return 0, err
-			}
-			i -= size
-			i = encodeVarintGenerated(dAtA, i, uint64(size))
-		}
-		i--
-		dAtA[i] = 0x42
-	}
-	i -= len(m.WithParam)
-	copy(dAtA[i:], m.WithParam)
-	i = encodeVarintGenerated(dAtA, i, uint64(len(m.WithParam)))
-	i--
-	dAtA[i] = 0x3a
-	if len(m.WithItems) > 0 {
-		for iNdEx := len(m.WithItems) - 1; iNdEx >= 0; iNdEx-- {
-			{
-				size, err := m.WithItems[iNdEx].MarshalToSizedBuffer(dAtA[:i])
-				if err != nil {
-					return 0, err
-				}
-				i -= size
-				i = encodeVarintGenerated(dAtA, i, uint64(size))
-			}
-			i--
-			dAtA[i] = 0x32
-		}
-	}
-	if len(m.Dependencies) > 0 {
-		for iNdEx := len(m.Dependencies) - 1; iNdEx >= 0; iNdEx-- {
-			i -= len(m.Dependencies[iNdEx])
-			copy(dAtA[i:], m.Dependencies[iNdEx])
-			i = encodeVarintGenerated(dAtA, i, uint64(len(m.Dependencies[iNdEx])))
-			i--
-			dAtA[i] = 0x2a
-		}
-	}
+	i += n14
 	if m.TemplateRef != nil {
-		{
-			size, err := m.TemplateRef.MarshalToSizedBuffer(dAtA[:i])
-			if err != nil {
-				return 0, err
-			}
-			i -= size
-			i = encodeVarintGenerated(dAtA, i, uint64(size))
-		}
-		i--
 		dAtA[i] = 0x22
-	}
-	{
-		size, err := m.Arguments.MarshalToSizedBuffer(dAtA[:i])
+		i++
+		i = encodeVarintGenerated(dAtA, i, uint64(m.TemplateRef.Size()))
+		n15, err := m.TemplateRef.MarshalTo(dAtA[i:])
 		if err != nil {
 			return 0, err
 		}
-		i -= size
-		i = encodeVarintGenerated(dAtA, i, uint64(size))
+		i += n15
 	}
-	i--
-	dAtA[i] = 0x1a
-	i -= len(m.Template)
-	copy(dAtA[i:], m.Template)
-	i = encodeVarintGenerated(dAtA, i, uint64(len(m.Template)))
-	i--
-	dAtA[i] = 0x12
-	i -= len(m.Name)
-	copy(dAtA[i:], m.Name)
-	i = encodeVarintGenerated(dAtA, i, uint64(len(m.Name)))
-	i--
-	dAtA[i] = 0xa
-	return len(dAtA) - i, nil
+	if len(m.Dependencies) > 0 {
+		for _, s := range m.Dependencies {
+			dAtA[i] = 0x2a
+			i++
+			l = len(s)
+			for l >= 1<<7 {
+				dAtA[i] = uint8(uint64(l)&0x7f | 0x80)
+				l >>= 7
+				i++
+			}
+			dAtA[i] = uint8(l)
+			i++
+			i += copy(dAtA[i:], s)
+		}
+	}
+	if len(m.WithItems) > 0 {
+		for _, msg := range m.WithItems {
+			dAtA[i] = 0x32
+			i++
+			i = encodeVarintGenerated(dAtA, i, uint64(msg.Size()))
+			n, err := msg.MarshalTo(dAtA[i:])
+			if err != nil {
+				return 0, err
+			}
+			i += n
+		}
+	}
+	dAtA[i] = 0x3a
+	i++
+	i = encodeVarintGenerated(dAtA, i, uint64(len(m.WithParam)))
+	i += copy(dAtA[i:], m.WithParam)
+	if m.WithSequence != nil {
+		dAtA[i] = 0x42
+		i++
+		i = encodeVarintGenerated(dAtA, i, uint64(m.WithSequence.Size()))
+		n16, err := m.WithSequence.MarshalTo(dAtA[i:])
+		if err != nil {
+			return 0, err
+		}
+		i += n16
+	}
+	dAtA[i] = 0x4a
+	i++
+	i = encodeVarintGenerated(dAtA, i, uint64(len(m.When)))
+	i += copy(dAtA[i:], m.When)
+	if m.ContinueOn != nil {
+		dAtA[i] = 0x52
+		i++
+		i = encodeVarintGenerated(dAtA, i, uint64(m.ContinueOn.Size()))
+		n17, err := m.ContinueOn.MarshalTo(dAtA[i:])
+		if err != nil {
+			return 0, err
+		}
+		i += n17
+	}
+	return i, nil
 }
 
 func (m *DAGTemplate) Marshal() (dAtA []byte, err error) {
 	size := m.Size()
 	dAtA = make([]byte, size)
-	n, err := m.MarshalToSizedBuffer(dAtA[:size])
+	n, err := m.MarshalTo(dAtA)
 	if err != nil {
 		return nil, err
 	}
@@ -2259,51 +2168,43 @@ func (m *DAGTemplate) Marshal() (dAtA []byte, err error) {
 }
 
 func (m *DAGTemplate) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
-}
-
-func (m *DAGTemplate) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
+	var i int
 	_ = i
 	var l int
 	_ = l
+	dAtA[i] = 0xa
+	i++
+	i = encodeVarintGenerated(dAtA, i, uint64(len(m.Target)))
+	i += copy(dAtA[i:], m.Target)
+	if len(m.Tasks) > 0 {
+		for _, msg := range m.Tasks {
+			dAtA[i] = 0x12
+			i++
+			i = encodeVarintGenerated(dAtA, i, uint64(msg.Size()))
+			n, err := msg.MarshalTo(dAtA[i:])
+			if err != nil {
+				return 0, err
+			}
+			i += n
+		}
+	}
 	if m.FailFast != nil {
-		i--
+		dAtA[i] = 0x18
+		i++
 		if *m.FailFast {
 			dAtA[i] = 1
 		} else {
 			dAtA[i] = 0
 		}
-		i--
-		dAtA[i] = 0x18
+		i++
 	}
-	if len(m.Tasks) > 0 {
-		for iNdEx := len(m.Tasks) - 1; iNdEx >= 0; iNdEx-- {
-			{
-				size, err := m.Tasks[iNdEx].MarshalToSizedBuffer(dAtA[:i])
-				if err != nil {
-					return 0, err
-				}
-				i -= size
-				i = encodeVarintGenerated(dAtA, i, uint64(size))
-			}
-			i--
-			dAtA[i] = 0x12
-		}
-	}
-	i -= len(m.Target)
-	copy(dAtA[i:], m.Target)
-	i = encodeVarintGenerated(dAtA, i, uint64(len(m.Target)))
-	i--
-	dAtA[i] = 0xa
-	return len(dAtA) - i, nil
+	return i, nil
 }
 
 func (m *ExecutorConfig) Marshal() (dAtA []byte, err error) {
 	size := m.Size()
 	dAtA = make([]byte, size)
-	n, err := m.MarshalToSizedBuffer(dAtA[:size])
+	n, err := m.MarshalTo(dAtA)
 	if err != nil {
 		return nil, err
 	}
@@ -2311,27 +2212,21 @@ func (m *ExecutorConfig) Marshal() (dAtA []byte, err error) {
 }
 
 func (m *ExecutorConfig) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
-}
-
-func (m *ExecutorConfig) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
+	var i int
 	_ = i
 	var l int
 	_ = l
-	i -= len(m.ServiceAccountName)
-	copy(dAtA[i:], m.ServiceAccountName)
-	i = encodeVarintGenerated(dAtA, i, uint64(len(m.ServiceAccountName)))
-	i--
 	dAtA[i] = 0xa
-	return len(dAtA) - i, nil
+	i++
+	i = encodeVarintGenerated(dAtA, i, uint64(len(m.ServiceAccountName)))
+	i += copy(dAtA[i:], m.ServiceAccountName)
+	return i, nil
 }
 
 func (m *GitArtifact) Marshal() (dAtA []byte, err error) {
 	size := m.Size()
 	dAtA = make([]byte, size)
-	n, err := m.MarshalToSizedBuffer(dAtA[:size])
+	n, err := m.MarshalTo(dAtA)
 	if err != nil {
 		return nil, err
 	}
@@ -2339,90 +2234,83 @@ func (m *GitArtifact) Marshal() (dAtA []byte, err error) {
 }
 
 func (m *GitArtifact) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
-}
-
-func (m *GitArtifact) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
+	var i int
 	_ = i
 	var l int
 	_ = l
-	i--
+	dAtA[i] = 0xa
+	i++
+	i = encodeVarintGenerated(dAtA, i, uint64(len(m.Repo)))
+	i += copy(dAtA[i:], m.Repo)
+	dAtA[i] = 0x12
+	i++
+	i = encodeVarintGenerated(dAtA, i, uint64(len(m.Revision)))
+	i += copy(dAtA[i:], m.Revision)
+	if m.Depth != nil {
+		dAtA[i] = 0x18
+		i++
+		i = encodeVarintGenerated(dAtA, i, uint64(*m.Depth))
+	}
+	if len(m.Fetch) > 0 {
+		for _, s := range m.Fetch {
+			dAtA[i] = 0x22
+			i++
+			l = len(s)
+			for l >= 1<<7 {
+				dAtA[i] = uint8(uint64(l)&0x7f | 0x80)
+				l >>= 7
+				i++
+			}
+			dAtA[i] = uint8(l)
+			i++
+			i += copy(dAtA[i:], s)
+		}
+	}
+	if m.UsernameSecret != nil {
+		dAtA[i] = 0x2a
+		i++
+		i = encodeVarintGenerated(dAtA, i, uint64(m.UsernameSecret.Size()))
+		n18, err := m.UsernameSecret.MarshalTo(dAtA[i:])
+		if err != nil {
+			return 0, err
+		}
+		i += n18
+	}
+	if m.PasswordSecret != nil {
+		dAtA[i] = 0x32
+		i++
+		i = encodeVarintGenerated(dAtA, i, uint64(m.PasswordSecret.Size()))
+		n19, err := m.PasswordSecret.MarshalTo(dAtA[i:])
+		if err != nil {
+			return 0, err
+		}
+		i += n19
+	}
+	if m.SSHPrivateKeySecret != nil {
+		dAtA[i] = 0x3a
+		i++
+		i = encodeVarintGenerated(dAtA, i, uint64(m.SSHPrivateKeySecret.Size()))
+		n20, err := m.SSHPrivateKeySecret.MarshalTo(dAtA[i:])
+		if err != nil {
+			return 0, err
+		}
+		i += n20
+	}
+	dAtA[i] = 0x40
+	i++
 	if m.InsecureIgnoreHostKey {
 		dAtA[i] = 1
 	} else {
 		dAtA[i] = 0
 	}
-	i--
-	dAtA[i] = 0x40
-	if m.SSHPrivateKeySecret != nil {
-		{
-			size, err := m.SSHPrivateKeySecret.MarshalToSizedBuffer(dAtA[:i])
-			if err != nil {
-				return 0, err
-			}
-			i -= size
-			i = encodeVarintGenerated(dAtA, i, uint64(size))
-		}
-		i--
-		dAtA[i] = 0x3a
-	}
-	if m.PasswordSecret != nil {
-		{
-			size, err := m.PasswordSecret.MarshalToSizedBuffer(dAtA[:i])
-			if err != nil {
-				return 0, err
-			}
-			i -= size
-			i = encodeVarintGenerated(dAtA, i, uint64(size))
-		}
-		i--
-		dAtA[i] = 0x32
-	}
-	if m.UsernameSecret != nil {
-		{
-			size, err := m.UsernameSecret.MarshalToSizedBuffer(dAtA[:i])
-			if err != nil {
-				return 0, err
-			}
-			i -= size
-			i = encodeVarintGenerated(dAtA, i, uint64(size))
-		}
-		i--
-		dAtA[i] = 0x2a
-	}
-	if len(m.Fetch) > 0 {
-		for iNdEx := len(m.Fetch) - 1; iNdEx >= 0; iNdEx-- {
-			i -= len(m.Fetch[iNdEx])
-			copy(dAtA[i:], m.Fetch[iNdEx])
-			i = encodeVarintGenerated(dAtA, i, uint64(len(m.Fetch[iNdEx])))
-			i--
-			dAtA[i] = 0x22
-		}
-	}
-	if m.Depth != nil {
-		i = encodeVarintGenerated(dAtA, i, uint64(*m.Depth))
-		i--
-		dAtA[i] = 0x18
-	}
-	i -= len(m.Revision)
-	copy(dAtA[i:], m.Revision)
-	i = encodeVarintGenerated(dAtA, i, uint64(len(m.Revision)))
-	i--
-	dAtA[i] = 0x12
-	i -= len(m.Repo)
-	copy(dAtA[i:], m.Repo)
-	i = encodeVarintGenerated(dAtA, i, uint64(len(m.Repo)))
-	i--
-	dAtA[i] = 0xa
-	return len(dAtA) - i, nil
+	i++
+	return i, nil
 }
 
 func (m *HDFSArtifact) Marshal() (dAtA []byte, err error) {
 	size := m.Size()
 	dAtA = make([]byte, size)
-	n, err := m.MarshalToSizedBuffer(dAtA[:size])
+	n, err := m.MarshalTo(dAtA)
 	if err != nil {
 		return nil, err
 	}
@@ -2430,45 +2318,37 @@ func (m *HDFSArtifact) Marshal() (dAtA []byte, err error) {
 }
 
 func (m *HDFSArtifact) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
-}
-
-func (m *HDFSArtifact) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
+	var i int
 	_ = i
 	var l int
 	_ = l
-	i--
+	dAtA[i] = 0xa
+	i++
+	i = encodeVarintGenerated(dAtA, i, uint64(m.HDFSConfig.Size()))
+	n21, err := m.HDFSConfig.MarshalTo(dAtA[i:])
+	if err != nil {
+		return 0, err
+	}
+	i += n21
+	dAtA[i] = 0x12
+	i++
+	i = encodeVarintGenerated(dAtA, i, uint64(len(m.Path)))
+	i += copy(dAtA[i:], m.Path)
+	dAtA[i] = 0x18
+	i++
 	if m.Force {
 		dAtA[i] = 1
 	} else {
 		dAtA[i] = 0
 	}
-	i--
-	dAtA[i] = 0x18
-	i -= len(m.Path)
-	copy(dAtA[i:], m.Path)
-	i = encodeVarintGenerated(dAtA, i, uint64(len(m.Path)))
-	i--
-	dAtA[i] = 0x12
-	{
-		size, err := m.HDFSConfig.MarshalToSizedBuffer(dAtA[:i])
-		if err != nil {
-			return 0, err
-		}
-		i -= size
-		i = encodeVarintGenerated(dAtA, i, uint64(size))
-	}
-	i--
-	dAtA[i] = 0xa
-	return len(dAtA) - i, nil
+	i++
+	return i, nil
 }
 
 func (m *HDFSConfig) Marshal() (dAtA []byte, err error) {
 	size := m.Size()
 	dAtA = make([]byte, size)
-	n, err := m.MarshalToSizedBuffer(dAtA[:size])
+	n, err := m.MarshalTo(dAtA)
 	if err != nil {
 		return nil, err
 	}
@@ -2476,46 +2356,44 @@ func (m *HDFSConfig) Marshal() (dAtA []byte, err error) {
 }
 
 func (m *HDFSConfig) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
-}
-
-func (m *HDFSConfig) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
+	var i int
 	_ = i
 	var l int
 	_ = l
-	i -= len(m.HDFSUser)
-	copy(dAtA[i:], m.HDFSUser)
-	i = encodeVarintGenerated(dAtA, i, uint64(len(m.HDFSUser)))
-	i--
-	dAtA[i] = 0x1a
-	if len(m.Addresses) > 0 {
-		for iNdEx := len(m.Addresses) - 1; iNdEx >= 0; iNdEx-- {
-			i -= len(m.Addresses[iNdEx])
-			copy(dAtA[i:], m.Addresses[iNdEx])
-			i = encodeVarintGenerated(dAtA, i, uint64(len(m.Addresses[iNdEx])))
-			i--
-			dAtA[i] = 0x12
-		}
-	}
-	{
-		size, err := m.HDFSKrbConfig.MarshalToSizedBuffer(dAtA[:i])
-		if err != nil {
-			return 0, err
-		}
-		i -= size
-		i = encodeVarintGenerated(dAtA, i, uint64(size))
-	}
-	i--
 	dAtA[i] = 0xa
-	return len(dAtA) - i, nil
+	i++
+	i = encodeVarintGenerated(dAtA, i, uint64(m.HDFSKrbConfig.Size()))
+	n22, err := m.HDFSKrbConfig.MarshalTo(dAtA[i:])
+	if err != nil {
+		return 0, err
+	}
+	i += n22
+	if len(m.Addresses) > 0 {
+		for _, s := range m.Addresses {
+			dAtA[i] = 0x12
+			i++
+			l = len(s)
+			for l >= 1<<7 {
+				dAtA[i] = uint8(uint64(l)&0x7f | 0x80)
+				l >>= 7
+				i++
+			}
+			dAtA[i] = uint8(l)
+			i++
+			i += copy(dAtA[i:], s)
+		}
+	}
+	dAtA[i] = 0x1a
+	i++
+	i = encodeVarintGenerated(dAtA, i, uint64(len(m.HDFSUser)))
+	i += copy(dAtA[i:], m.HDFSUser)
+	return i, nil
 }
 
 func (m *HDFSKrbConfig) Marshal() (dAtA []byte, err error) {
 	size := m.Size()
 	dAtA = make([]byte, size)
-	n, err := m.MarshalToSizedBuffer(dAtA[:size])
+	n, err := m.MarshalTo(dAtA)
 	if err != nil {
 		return nil, err
 	}
@@ -2523,73 +2401,59 @@ func (m *HDFSKrbConfig) Marshal() (dAtA []byte, err error) {
 }
 
 func (m *HDFSKrbConfig) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
-}
-
-func (m *HDFSKrbConfig) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
+	var i int
 	_ = i
 	var l int
 	_ = l
-	i -= len(m.KrbServicePrincipalName)
-	copy(dAtA[i:], m.KrbServicePrincipalName)
-	i = encodeVarintGenerated(dAtA, i, uint64(len(m.KrbServicePrincipalName)))
-	i--
-	dAtA[i] = 0x32
-	if m.KrbConfigConfigMap != nil {
-		{
-			size, err := m.KrbConfigConfigMap.MarshalToSizedBuffer(dAtA[:i])
-			if err != nil {
-				return 0, err
-			}
-			i -= size
-			i = encodeVarintGenerated(dAtA, i, uint64(size))
-		}
-		i--
-		dAtA[i] = 0x2a
-	}
-	i -= len(m.KrbRealm)
-	copy(dAtA[i:], m.KrbRealm)
-	i = encodeVarintGenerated(dAtA, i, uint64(len(m.KrbRealm)))
-	i--
-	dAtA[i] = 0x22
-	i -= len(m.KrbUsername)
-	copy(dAtA[i:], m.KrbUsername)
-	i = encodeVarintGenerated(dAtA, i, uint64(len(m.KrbUsername)))
-	i--
-	dAtA[i] = 0x1a
-	if m.KrbKeytabSecret != nil {
-		{
-			size, err := m.KrbKeytabSecret.MarshalToSizedBuffer(dAtA[:i])
-			if err != nil {
-				return 0, err
-			}
-			i -= size
-			i = encodeVarintGenerated(dAtA, i, uint64(size))
-		}
-		i--
-		dAtA[i] = 0x12
-	}
 	if m.KrbCCacheSecret != nil {
-		{
-			size, err := m.KrbCCacheSecret.MarshalToSizedBuffer(dAtA[:i])
-			if err != nil {
-				return 0, err
-			}
-			i -= size
-			i = encodeVarintGenerated(dAtA, i, uint64(size))
-		}
-		i--
 		dAtA[i] = 0xa
+		i++
+		i = encodeVarintGenerated(dAtA, i, uint64(m.KrbCCacheSecret.Size()))
+		n23, err := m.KrbCCacheSecret.MarshalTo(dAtA[i:])
+		if err != nil {
+			return 0, err
+		}
+		i += n23
 	}
-	return len(dAtA) - i, nil
+	if m.KrbKeytabSecret != nil {
+		dAtA[i] = 0x12
+		i++
+		i = encodeVarintGenerated(dAtA, i, uint64(m.KrbKeytabSecret.Size()))
+		n24, err := m.KrbKeytabSecret.MarshalTo(dAtA[i:])
+		if err != nil {
+			return 0, err
+		}
+		i += n24
+	}
+	dAtA[i] = 0x1a
+	i++
+	i = encodeVarintGenerated(dAtA, i, uint64(len(m.KrbUsername)))
+	i += copy(dAtA[i:], m.KrbUsername)
+	dAtA[i] = 0x22
+	i++
+	i = encodeVarintGenerated(dAtA, i, uint64(len(m.KrbRealm)))
+	i += copy(dAtA[i:], m.KrbRealm)
+	if m.KrbConfigConfigMap != nil {
+		dAtA[i] = 0x2a
+		i++
+		i = encodeVarintGenerated(dAtA, i, uint64(m.KrbConfigConfigMap.Size()))
+		n25, err := m.KrbConfigConfigMap.MarshalTo(dAtA[i:])
+		if err != nil {
+			return 0, err
+		}
+		i += n25
+	}
+	dAtA[i] = 0x32
+	i++
+	i = encodeVarintGenerated(dAtA, i, uint64(len(m.KrbServicePrincipalName)))
+	i += copy(dAtA[i:], m.KrbServicePrincipalName)
+	return i, nil
 }
 
 func (m *HTTPArtifact) Marshal() (dAtA []byte, err error) {
 	size := m.Size()
 	dAtA = make([]byte, size)
-	n, err := m.MarshalToSizedBuffer(dAtA[:size])
+	n, err := m.MarshalTo(dAtA)
 	if err != nil {
 		return nil, err
 	}
@@ -2597,27 +2461,21 @@ func (m *HTTPArtifact) Marshal() (dAtA []byte, err error) {
 }
 
 func (m *HTTPArtifact) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
-}
-
-func (m *HTTPArtifact) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
+	var i int
 	_ = i
 	var l int
 	_ = l
-	i -= len(m.URL)
-	copy(dAtA[i:], m.URL)
-	i = encodeVarintGenerated(dAtA, i, uint64(len(m.URL)))
-	i--
 	dAtA[i] = 0xa
-	return len(dAtA) - i, nil
+	i++
+	i = encodeVarintGenerated(dAtA, i, uint64(len(m.URL)))
+	i += copy(dAtA[i:], m.URL)
+	return i, nil
 }
 
 func (m *Inputs) Marshal() (dAtA []byte, err error) {
 	size := m.Size()
 	dAtA = make([]byte, size)
-	n, err := m.MarshalToSizedBuffer(dAtA[:size])
+	n, err := m.MarshalTo(dAtA)
 	if err != nil {
 		return nil, err
 	}
@@ -2625,50 +2483,41 @@ func (m *Inputs) Marshal() (dAtA []byte, err error) {
 }
 
 func (m *Inputs) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
-}
-
-func (m *Inputs) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
+	var i int
 	_ = i
 	var l int
 	_ = l
-	if len(m.Artifacts) > 0 {
-		for iNdEx := len(m.Artifacts) - 1; iNdEx >= 0; iNdEx-- {
-			{
-				size, err := m.Artifacts[iNdEx].MarshalToSizedBuffer(dAtA[:i])
-				if err != nil {
-					return 0, err
-				}
-				i -= size
-				i = encodeVarintGenerated(dAtA, i, uint64(size))
-			}
-			i--
-			dAtA[i] = 0x12
-		}
-	}
 	if len(m.Parameters) > 0 {
-		for iNdEx := len(m.Parameters) - 1; iNdEx >= 0; iNdEx-- {
-			{
-				size, err := m.Parameters[iNdEx].MarshalToSizedBuffer(dAtA[:i])
-				if err != nil {
-					return 0, err
-				}
-				i -= size
-				i = encodeVarintGenerated(dAtA, i, uint64(size))
-			}
-			i--
+		for _, msg := range m.Parameters {
 			dAtA[i] = 0xa
+			i++
+			i = encodeVarintGenerated(dAtA, i, uint64(msg.Size()))
+			n, err := msg.MarshalTo(dAtA[i:])
+			if err != nil {
+				return 0, err
+			}
+			i += n
 		}
 	}
-	return len(dAtA) - i, nil
+	if len(m.Artifacts) > 0 {
+		for _, msg := range m.Artifacts {
+			dAtA[i] = 0x12
+			i++
+			i = encodeVarintGenerated(dAtA, i, uint64(msg.Size()))
+			n, err := msg.MarshalTo(dAtA[i:])
+			if err != nil {
+				return 0, err
+			}
+			i += n
+		}
+	}
+	return i, nil
 }
 
 func (m *Item) Marshal() (dAtA []byte, err error) {
 	size := m.Size()
 	dAtA = make([]byte, size)
-	n, err := m.MarshalToSizedBuffer(dAtA[:size])
+	n, err := m.MarshalTo(dAtA)
 	if err != nil {
 		return nil, err
 	}
@@ -2676,72 +2525,67 @@ func (m *Item) Marshal() (dAtA []byte, err error) {
 }
 
 func (m *Item) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
-}
-
-func (m *Item) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
+	var i int
 	_ = i
 	var l int
 	_ = l
+	dAtA[i] = 0x8
+	i++
+	i = encodeVarintGenerated(dAtA, i, uint64(m.Type))
+	dAtA[i] = 0x12
+	i++
+	i = encodeVarintGenerated(dAtA, i, uint64(len(m.NumVal)))
+	i += copy(dAtA[i:], m.NumVal)
+	dAtA[i] = 0x18
+	i++
+	if m.BoolVal {
+		dAtA[i] = 1
+	} else {
+		dAtA[i] = 0
+	}
+	i++
+	dAtA[i] = 0x22
+	i++
+	i = encodeVarintGenerated(dAtA, i, uint64(len(m.StrVal)))
+	i += copy(dAtA[i:], m.StrVal)
 	if len(m.MapVal) > 0 {
 		keysForMapVal := make([]string, 0, len(m.MapVal))
 		for k := range m.MapVal {
 			keysForMapVal = append(keysForMapVal, string(k))
 		}
 		github_com_gogo_protobuf_sortkeys.Strings(keysForMapVal)
-		for iNdEx := len(keysForMapVal) - 1; iNdEx >= 0; iNdEx-- {
-			v := m.MapVal[string(keysForMapVal[iNdEx])]
-			baseI := i
-			{
-				size, err := (&v).MarshalToSizedBuffer(dAtA[:i])
-				if err != nil {
-					return 0, err
-				}
-				i -= size
-				i = encodeVarintGenerated(dAtA, i, uint64(size))
-			}
-			i--
-			dAtA[i] = 0x12
-			i -= len(keysForMapVal[iNdEx])
-			copy(dAtA[i:], keysForMapVal[iNdEx])
-			i = encodeVarintGenerated(dAtA, i, uint64(len(keysForMapVal[iNdEx])))
-			i--
-			dAtA[i] = 0xa
-			i = encodeVarintGenerated(dAtA, i, uint64(baseI-i))
-			i--
+		for _, k := range keysForMapVal {
 			dAtA[i] = 0x2a
+			i++
+			v := m.MapVal[string(k)]
+			msgSize := 0
+			if (&v) != nil {
+				msgSize = (&v).Size()
+				msgSize += 1 + sovGenerated(uint64(msgSize))
+			}
+			mapSize := 1 + len(k) + sovGenerated(uint64(len(k))) + msgSize
+			i = encodeVarintGenerated(dAtA, i, uint64(mapSize))
+			dAtA[i] = 0xa
+			i++
+			i = encodeVarintGenerated(dAtA, i, uint64(len(k)))
+			i += copy(dAtA[i:], k)
+			dAtA[i] = 0x12
+			i++
+			i = encodeVarintGenerated(dAtA, i, uint64((&v).Size()))
+			n26, err := (&v).MarshalTo(dAtA[i:])
+			if err != nil {
+				return 0, err
+			}
+			i += n26
 		}
 	}
-	i -= len(m.StrVal)
-	copy(dAtA[i:], m.StrVal)
-	i = encodeVarintGenerated(dAtA, i, uint64(len(m.StrVal)))
-	i--
-	dAtA[i] = 0x22
-	i--
-	if m.BoolVal {
-		dAtA[i] = 1
-	} else {
-		dAtA[i] = 0
-	}
-	i--
-	dAtA[i] = 0x18
-	i -= len(m.NumVal)
-	copy(dAtA[i:], m.NumVal)
-	i = encodeVarintGenerated(dAtA, i, uint64(len(m.NumVal)))
-	i--
-	dAtA[i] = 0x12
-	i = encodeVarintGenerated(dAtA, i, uint64(m.Type))
-	i--
-	dAtA[i] = 0x8
-	return len(dAtA) - i, nil
+	return i, nil
 }
 
 func (m *ItemValue) Marshal() (dAtA []byte, err error) {
 	size := m.Size()
 	dAtA = make([]byte, size)
-	n, err := m.MarshalToSizedBuffer(dAtA[:size])
+	n, err := m.MarshalTo(dAtA)
 	if err != nil {
 		return nil, err
 	}
@@ -2749,43 +2593,36 @@ func (m *ItemValue) Marshal() (dAtA []byte, err error) {
 }
 
 func (m *ItemValue) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
-}
-
-func (m *ItemValue) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
+	var i int
 	_ = i
 	var l int
 	_ = l
-	i -= len(m.StrVal)
-	copy(dAtA[i:], m.StrVal)
-	i = encodeVarintGenerated(dAtA, i, uint64(len(m.StrVal)))
-	i--
-	dAtA[i] = 0x22
-	i--
+	dAtA[i] = 0x8
+	i++
+	i = encodeVarintGenerated(dAtA, i, uint64(m.Type))
+	dAtA[i] = 0x12
+	i++
+	i = encodeVarintGenerated(dAtA, i, uint64(len(m.NumVal)))
+	i += copy(dAtA[i:], m.NumVal)
+	dAtA[i] = 0x18
+	i++
 	if m.BoolVal {
 		dAtA[i] = 1
 	} else {
 		dAtA[i] = 0
 	}
-	i--
-	dAtA[i] = 0x18
-	i -= len(m.NumVal)
-	copy(dAtA[i:], m.NumVal)
-	i = encodeVarintGenerated(dAtA, i, uint64(len(m.NumVal)))
-	i--
-	dAtA[i] = 0x12
-	i = encodeVarintGenerated(dAtA, i, uint64(m.Type))
-	i--
-	dAtA[i] = 0x8
-	return len(dAtA) - i, nil
+	i++
+	dAtA[i] = 0x22
+	i++
+	i = encodeVarintGenerated(dAtA, i, uint64(len(m.StrVal)))
+	i += copy(dAtA[i:], m.StrVal)
+	return i, nil
 }
 
 func (m *Metadata) Marshal() (dAtA []byte, err error) {
 	size := m.Size()
 	dAtA = make([]byte, size)
-	n, err := m.MarshalToSizedBuffer(dAtA[:size])
+	n, err := m.MarshalTo(dAtA)
 	if err != nil {
 		return nil, err
 	}
@@ -2793,70 +2630,61 @@ func (m *Metadata) Marshal() (dAtA []byte, err error) {
 }
 
 func (m *Metadata) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
-}
-
-func (m *Metadata) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
+	var i int
 	_ = i
 	var l int
 	_ = l
-	if len(m.Labels) > 0 {
-		keysForLabels := make([]string, 0, len(m.Labels))
-		for k := range m.Labels {
-			keysForLabels = append(keysForLabels, string(k))
-		}
-		github_com_gogo_protobuf_sortkeys.Strings(keysForLabels)
-		for iNdEx := len(keysForLabels) - 1; iNdEx >= 0; iNdEx-- {
-			v := m.Labels[string(keysForLabels[iNdEx])]
-			baseI := i
-			i -= len(v)
-			copy(dAtA[i:], v)
-			i = encodeVarintGenerated(dAtA, i, uint64(len(v)))
-			i--
-			dAtA[i] = 0x12
-			i -= len(keysForLabels[iNdEx])
-			copy(dAtA[i:], keysForLabels[iNdEx])
-			i = encodeVarintGenerated(dAtA, i, uint64(len(keysForLabels[iNdEx])))
-			i--
-			dAtA[i] = 0xa
-			i = encodeVarintGenerated(dAtA, i, uint64(baseI-i))
-			i--
-			dAtA[i] = 0x12
-		}
-	}
 	if len(m.Annotations) > 0 {
 		keysForAnnotations := make([]string, 0, len(m.Annotations))
 		for k := range m.Annotations {
 			keysForAnnotations = append(keysForAnnotations, string(k))
 		}
 		github_com_gogo_protobuf_sortkeys.Strings(keysForAnnotations)
-		for iNdEx := len(keysForAnnotations) - 1; iNdEx >= 0; iNdEx-- {
-			v := m.Annotations[string(keysForAnnotations[iNdEx])]
-			baseI := i
-			i -= len(v)
-			copy(dAtA[i:], v)
-			i = encodeVarintGenerated(dAtA, i, uint64(len(v)))
-			i--
+		for _, k := range keysForAnnotations {
+			dAtA[i] = 0xa
+			i++
+			v := m.Annotations[string(k)]
+			mapSize := 1 + len(k) + sovGenerated(uint64(len(k))) + 1 + len(v) + sovGenerated(uint64(len(v)))
+			i = encodeVarintGenerated(dAtA, i, uint64(mapSize))
+			dAtA[i] = 0xa
+			i++
+			i = encodeVarintGenerated(dAtA, i, uint64(len(k)))
+			i += copy(dAtA[i:], k)
 			dAtA[i] = 0x12
-			i -= len(keysForAnnotations[iNdEx])
-			copy(dAtA[i:], keysForAnnotations[iNdEx])
-			i = encodeVarintGenerated(dAtA, i, uint64(len(keysForAnnotations[iNdEx])))
-			i--
-			dAtA[i] = 0xa
-			i = encodeVarintGenerated(dAtA, i, uint64(baseI-i))
-			i--
-			dAtA[i] = 0xa
+			i++
+			i = encodeVarintGenerated(dAtA, i, uint64(len(v)))
+			i += copy(dAtA[i:], v)
 		}
 	}
-	return len(dAtA) - i, nil
+	if len(m.Labels) > 0 {
+		keysForLabels := make([]string, 0, len(m.Labels))
+		for k := range m.Labels {
+			keysForLabels = append(keysForLabels, string(k))
+		}
+		github_com_gogo_protobuf_sortkeys.Strings(keysForLabels)
+		for _, k := range keysForLabels {
+			dAtA[i] = 0x12
+			i++
+			v := m.Labels[string(k)]
+			mapSize := 1 + len(k) + sovGenerated(uint64(len(k))) + 1 + len(v) + sovGenerated(uint64(len(v)))
+			i = encodeVarintGenerated(dAtA, i, uint64(mapSize))
+			dAtA[i] = 0xa
+			i++
+			i = encodeVarintGenerated(dAtA, i, uint64(len(k)))
+			i += copy(dAtA[i:], k)
+			dAtA[i] = 0x12
+			i++
+			i = encodeVarintGenerated(dAtA, i, uint64(len(v)))
+			i += copy(dAtA[i:], v)
+		}
+	}
+	return i, nil
 }
 
 func (m *NodeStatus) Marshal() (dAtA []byte, err error) {
 	size := m.Size()
 	dAtA = make([]byte, size)
-	n, err := m.MarshalToSizedBuffer(dAtA[:size])
+	n, err := m.MarshalTo(dAtA)
 	if err != nil {
 		return nil, err
 	}
@@ -2864,169 +2692,155 @@ func (m *NodeStatus) Marshal() (dAtA []byte, err error) {
 }
 
 func (m *NodeStatus) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
-}
-
-func (m *NodeStatus) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
+	var i int
 	_ = i
 	var l int
 	_ = l
-	i -= len(m.WorkflowTemplateName)
-	copy(dAtA[i:], m.WorkflowTemplateName)
-	i = encodeVarintGenerated(dAtA, i, uint64(len(m.WorkflowTemplateName)))
-	i--
-	dAtA[i] = 0x1
-	i--
-	dAtA[i] = 0x9a
-	i -= len(m.StoredTemplateID)
-	copy(dAtA[i:], m.StoredTemplateID)
-	i = encodeVarintGenerated(dAtA, i, uint64(len(m.StoredTemplateID)))
-	i--
-	dAtA[i] = 0x1
-	i--
-	dAtA[i] = 0x92
-	if len(m.OutboundNodes) > 0 {
-		for iNdEx := len(m.OutboundNodes) - 1; iNdEx >= 0; iNdEx-- {
-			i -= len(m.OutboundNodes[iNdEx])
-			copy(dAtA[i:], m.OutboundNodes[iNdEx])
-			i = encodeVarintGenerated(dAtA, i, uint64(len(m.OutboundNodes[iNdEx])))
-			i--
-			dAtA[i] = 0x1
-			i--
-			dAtA[i] = 0x8a
+	dAtA[i] = 0xa
+	i++
+	i = encodeVarintGenerated(dAtA, i, uint64(len(m.ID)))
+	i += copy(dAtA[i:], m.ID)
+	dAtA[i] = 0x12
+	i++
+	i = encodeVarintGenerated(dAtA, i, uint64(len(m.Name)))
+	i += copy(dAtA[i:], m.Name)
+	dAtA[i] = 0x1a
+	i++
+	i = encodeVarintGenerated(dAtA, i, uint64(len(m.DisplayName)))
+	i += copy(dAtA[i:], m.DisplayName)
+	dAtA[i] = 0x22
+	i++
+	i = encodeVarintGenerated(dAtA, i, uint64(len(m.Type)))
+	i += copy(dAtA[i:], m.Type)
+	dAtA[i] = 0x2a
+	i++
+	i = encodeVarintGenerated(dAtA, i, uint64(len(m.TemplateName)))
+	i += copy(dAtA[i:], m.TemplateName)
+	if m.TemplateRef != nil {
+		dAtA[i] = 0x32
+		i++
+		i = encodeVarintGenerated(dAtA, i, uint64(m.TemplateRef.Size()))
+		n27, err := m.TemplateRef.MarshalTo(dAtA[i:])
+		if err != nil {
+			return 0, err
 		}
+		i += n27
 	}
-	if len(m.Children) > 0 {
-		for iNdEx := len(m.Children) - 1; iNdEx >= 0; iNdEx-- {
-			i -= len(m.Children[iNdEx])
-			copy(dAtA[i:], m.Children[iNdEx])
-			i = encodeVarintGenerated(dAtA, i, uint64(len(m.Children[iNdEx])))
-			i--
-			dAtA[i] = 0x1
-			i--
-			dAtA[i] = 0x82
-		}
+	dAtA[i] = 0x3a
+	i++
+	i = encodeVarintGenerated(dAtA, i, uint64(len(m.Phase)))
+	i += copy(dAtA[i:], m.Phase)
+	dAtA[i] = 0x42
+	i++
+	i = encodeVarintGenerated(dAtA, i, uint64(len(m.BoundaryID)))
+	i += copy(dAtA[i:], m.BoundaryID)
+	dAtA[i] = 0x4a
+	i++
+	i = encodeVarintGenerated(dAtA, i, uint64(len(m.Message)))
+	i += copy(dAtA[i:], m.Message)
+	dAtA[i] = 0x52
+	i++
+	i = encodeVarintGenerated(dAtA, i, uint64(m.StartedAt.Size()))
+	n28, err := m.StartedAt.MarshalTo(dAtA[i:])
+	if err != nil {
+		return 0, err
 	}
-	if m.Outputs != nil {
-		{
-			size, err := m.Outputs.MarshalToSizedBuffer(dAtA[:i])
-			if err != nil {
-				return 0, err
-			}
-			i -= size
-			i = encodeVarintGenerated(dAtA, i, uint64(size))
-		}
-		i--
-		dAtA[i] = 0x7a
+	i += n28
+	dAtA[i] = 0x5a
+	i++
+	i = encodeVarintGenerated(dAtA, i, uint64(m.FinishedAt.Size()))
+	n29, err := m.FinishedAt.MarshalTo(dAtA[i:])
+	if err != nil {
+		return 0, err
 	}
-	if m.Inputs != nil {
-		{
-			size, err := m.Inputs.MarshalToSizedBuffer(dAtA[:i])
-			if err != nil {
-				return 0, err
-			}
-			i -= size
-			i = encodeVarintGenerated(dAtA, i, uint64(size))
-		}
-		i--
-		dAtA[i] = 0x72
-	}
+	i += n29
+	dAtA[i] = 0x62
+	i++
+	i = encodeVarintGenerated(dAtA, i, uint64(len(m.PodIP)))
+	i += copy(dAtA[i:], m.PodIP)
 	if m.Daemoned != nil {
-		i--
+		dAtA[i] = 0x68
+		i++
 		if *m.Daemoned {
 			dAtA[i] = 1
 		} else {
 			dAtA[i] = 0
 		}
-		i--
-		dAtA[i] = 0x68
+		i++
 	}
-	i -= len(m.PodIP)
-	copy(dAtA[i:], m.PodIP)
-	i = encodeVarintGenerated(dAtA, i, uint64(len(m.PodIP)))
-	i--
-	dAtA[i] = 0x62
-	{
-		size, err := m.FinishedAt.MarshalToSizedBuffer(dAtA[:i])
+	if m.Inputs != nil {
+		dAtA[i] = 0x72
+		i++
+		i = encodeVarintGenerated(dAtA, i, uint64(m.Inputs.Size()))
+		n30, err := m.Inputs.MarshalTo(dAtA[i:])
 		if err != nil {
 			return 0, err
 		}
-		i -= size
-		i = encodeVarintGenerated(dAtA, i, uint64(size))
+		i += n30
 	}
-	i--
-	dAtA[i] = 0x5a
-	{
-		size, err := m.StartedAt.MarshalToSizedBuffer(dAtA[:i])
+	if m.Outputs != nil {
+		dAtA[i] = 0x7a
+		i++
+		i = encodeVarintGenerated(dAtA, i, uint64(m.Outputs.Size()))
+		n31, err := m.Outputs.MarshalTo(dAtA[i:])
 		if err != nil {
 			return 0, err
 		}
-		i -= size
-		i = encodeVarintGenerated(dAtA, i, uint64(size))
+		i += n31
 	}
-	i--
-	dAtA[i] = 0x52
-	i -= len(m.Message)
-	copy(dAtA[i:], m.Message)
-	i = encodeVarintGenerated(dAtA, i, uint64(len(m.Message)))
-	i--
-	dAtA[i] = 0x4a
-	i -= len(m.BoundaryID)
-	copy(dAtA[i:], m.BoundaryID)
-	i = encodeVarintGenerated(dAtA, i, uint64(len(m.BoundaryID)))
-	i--
-	dAtA[i] = 0x42
-	i -= len(m.Phase)
-	copy(dAtA[i:], m.Phase)
-	i = encodeVarintGenerated(dAtA, i, uint64(len(m.Phase)))
-	i--
-	dAtA[i] = 0x3a
-	if m.TemplateRef != nil {
-		{
-			size, err := m.TemplateRef.MarshalToSizedBuffer(dAtA[:i])
-			if err != nil {
-				return 0, err
+	if len(m.Children) > 0 {
+		for _, s := range m.Children {
+			dAtA[i] = 0x82
+			i++
+			dAtA[i] = 0x1
+			i++
+			l = len(s)
+			for l >= 1<<7 {
+				dAtA[i] = uint8(uint64(l)&0x7f | 0x80)
+				l >>= 7
+				i++
 			}
-			i -= size
-			i = encodeVarintGenerated(dAtA, i, uint64(size))
+			dAtA[i] = uint8(l)
+			i++
+			i += copy(dAtA[i:], s)
 		}
-		i--
-		dAtA[i] = 0x32
 	}
-	i -= len(m.TemplateName)
-	copy(dAtA[i:], m.TemplateName)
-	i = encodeVarintGenerated(dAtA, i, uint64(len(m.TemplateName)))
-	i--
-	dAtA[i] = 0x2a
-	i -= len(m.Type)
-	copy(dAtA[i:], m.Type)
-	i = encodeVarintGenerated(dAtA, i, uint64(len(m.Type)))
-	i--
-	dAtA[i] = 0x22
-	i -= len(m.DisplayName)
-	copy(dAtA[i:], m.DisplayName)
-	i = encodeVarintGenerated(dAtA, i, uint64(len(m.DisplayName)))
-	i--
-	dAtA[i] = 0x1a
-	i -= len(m.Name)
-	copy(dAtA[i:], m.Name)
-	i = encodeVarintGenerated(dAtA, i, uint64(len(m.Name)))
-	i--
-	dAtA[i] = 0x12
-	i -= len(m.ID)
-	copy(dAtA[i:], m.ID)
-	i = encodeVarintGenerated(dAtA, i, uint64(len(m.ID)))
-	i--
-	dAtA[i] = 0xa
-	return len(dAtA) - i, nil
+	if len(m.OutboundNodes) > 0 {
+		for _, s := range m.OutboundNodes {
+			dAtA[i] = 0x8a
+			i++
+			dAtA[i] = 0x1
+			i++
+			l = len(s)
+			for l >= 1<<7 {
+				dAtA[i] = uint8(uint64(l)&0x7f | 0x80)
+				l >>= 7
+				i++
+			}
+			dAtA[i] = uint8(l)
+			i++
+			i += copy(dAtA[i:], s)
+		}
+	}
+	dAtA[i] = 0x92
+	i++
+	dAtA[i] = 0x1
+	i++
+	i = encodeVarintGenerated(dAtA, i, uint64(len(m.StoredTemplateID)))
+	i += copy(dAtA[i:], m.StoredTemplateID)
+	dAtA[i] = 0x9a
+	i++
+	dAtA[i] = 0x1
+	i++
+	i = encodeVarintGenerated(dAtA, i, uint64(len(m.WorkflowTemplateName)))
+	i += copy(dAtA[i:], m.WorkflowTemplateName)
+	return i, nil
 }
 
 func (m *NoneStrategy) Marshal() (dAtA []byte, err error) {
 	size := m.Size()
 	dAtA = make([]byte, size)
-	n, err := m.MarshalToSizedBuffer(dAtA[:size])
+	n, err := m.MarshalTo(dAtA)
 	if err != nil {
 		return nil, err
 	}
@@ -3034,22 +2848,17 @@ func (m *NoneStrategy) Marshal() (dAtA []byte, err error) {
 }
 
 func (m *NoneStrategy) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
-}
-
-func (m *NoneStrategy) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
+	var i int
 	_ = i
 	var l int
 	_ = l
-	return len(dAtA) - i, nil
+	return i, nil
 }
 
 func (m *Outputs) Marshal() (dAtA []byte, err error) {
 	size := m.Size()
 	dAtA = make([]byte, size)
-	n, err := m.MarshalToSizedBuffer(dAtA[:size])
+	n, err := m.MarshalTo(dAtA)
 	if err != nil {
 		return nil, err
 	}
@@ -3057,57 +2866,47 @@ func (m *Outputs) Marshal() (dAtA []byte, err error) {
 }
 
 func (m *Outputs) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
-}
-
-func (m *Outputs) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
+	var i int
 	_ = i
 	var l int
 	_ = l
-	if m.Result != nil {
-		i -= len(*m.Result)
-		copy(dAtA[i:], *m.Result)
-		i = encodeVarintGenerated(dAtA, i, uint64(len(*m.Result)))
-		i--
-		dAtA[i] = 0x1a
+	if len(m.Parameters) > 0 {
+		for _, msg := range m.Parameters {
+			dAtA[i] = 0xa
+			i++
+			i = encodeVarintGenerated(dAtA, i, uint64(msg.Size()))
+			n, err := msg.MarshalTo(dAtA[i:])
+			if err != nil {
+				return 0, err
+			}
+			i += n
+		}
 	}
 	if len(m.Artifacts) > 0 {
-		for iNdEx := len(m.Artifacts) - 1; iNdEx >= 0; iNdEx-- {
-			{
-				size, err := m.Artifacts[iNdEx].MarshalToSizedBuffer(dAtA[:i])
-				if err != nil {
-					return 0, err
-				}
-				i -= size
-				i = encodeVarintGenerated(dAtA, i, uint64(size))
-			}
-			i--
+		for _, msg := range m.Artifacts {
 			dAtA[i] = 0x12
-		}
-	}
-	if len(m.Parameters) > 0 {
-		for iNdEx := len(m.Parameters) - 1; iNdEx >= 0; iNdEx-- {
-			{
-				size, err := m.Parameters[iNdEx].MarshalToSizedBuffer(dAtA[:i])
-				if err != nil {
-					return 0, err
-				}
-				i -= size
-				i = encodeVarintGenerated(dAtA, i, uint64(size))
+			i++
+			i = encodeVarintGenerated(dAtA, i, uint64(msg.Size()))
+			n, err := msg.MarshalTo(dAtA[i:])
+			if err != nil {
+				return 0, err
 			}
-			i--
-			dAtA[i] = 0xa
+			i += n
 		}
 	}
-	return len(dAtA) - i, nil
+	if m.Result != nil {
+		dAtA[i] = 0x1a
+		i++
+		i = encodeVarintGenerated(dAtA, i, uint64(len(*m.Result)))
+		i += copy(dAtA[i:], *m.Result)
+	}
+	return i, nil
 }
 
 func (m *Parameter) Marshal() (dAtA []byte, err error) {
 	size := m.Size()
 	dAtA = make([]byte, size)
-	n, err := m.MarshalToSizedBuffer(dAtA[:size])
+	n, err := m.MarshalTo(dAtA)
 	if err != nil {
 		return nil, err
 	}
@@ -3115,58 +2914,47 @@ func (m *Parameter) Marshal() (dAtA []byte, err error) {
 }
 
 func (m *Parameter) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
-}
-
-func (m *Parameter) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
+	var i int
 	_ = i
 	var l int
 	_ = l
-	i -= len(m.GlobalName)
-	copy(dAtA[i:], m.GlobalName)
-	i = encodeVarintGenerated(dAtA, i, uint64(len(m.GlobalName)))
-	i--
-	dAtA[i] = 0x2a
-	if m.ValueFrom != nil {
-		{
-			size, err := m.ValueFrom.MarshalToSizedBuffer(dAtA[:i])
-			if err != nil {
-				return 0, err
-			}
-			i -= size
-			i = encodeVarintGenerated(dAtA, i, uint64(size))
-		}
-		i--
-		dAtA[i] = 0x22
+	dAtA[i] = 0xa
+	i++
+	i = encodeVarintGenerated(dAtA, i, uint64(len(m.Name)))
+	i += copy(dAtA[i:], m.Name)
+	if m.Default != nil {
+		dAtA[i] = 0x12
+		i++
+		i = encodeVarintGenerated(dAtA, i, uint64(len(*m.Default)))
+		i += copy(dAtA[i:], *m.Default)
 	}
 	if m.Value != nil {
-		i -= len(*m.Value)
-		copy(dAtA[i:], *m.Value)
-		i = encodeVarintGenerated(dAtA, i, uint64(len(*m.Value)))
-		i--
 		dAtA[i] = 0x1a
+		i++
+		i = encodeVarintGenerated(dAtA, i, uint64(len(*m.Value)))
+		i += copy(dAtA[i:], *m.Value)
 	}
-	if m.Default != nil {
-		i -= len(*m.Default)
-		copy(dAtA[i:], *m.Default)
-		i = encodeVarintGenerated(dAtA, i, uint64(len(*m.Default)))
-		i--
-		dAtA[i] = 0x12
+	if m.ValueFrom != nil {
+		dAtA[i] = 0x22
+		i++
+		i = encodeVarintGenerated(dAtA, i, uint64(m.ValueFrom.Size()))
+		n32, err := m.ValueFrom.MarshalTo(dAtA[i:])
+		if err != nil {
+			return 0, err
+		}
+		i += n32
 	}
-	i -= len(m.Name)
-	copy(dAtA[i:], m.Name)
-	i = encodeVarintGenerated(dAtA, i, uint64(len(m.Name)))
-	i--
-	dAtA[i] = 0xa
-	return len(dAtA) - i, nil
+	dAtA[i] = 0x2a
+	i++
+	i = encodeVarintGenerated(dAtA, i, uint64(len(m.GlobalName)))
+	i += copy(dAtA[i:], m.GlobalName)
+	return i, nil
 }
 
 func (m *PodGC) Marshal() (dAtA []byte, err error) {
 	size := m.Size()
 	dAtA = make([]byte, size)
-	n, err := m.MarshalToSizedBuffer(dAtA[:size])
+	n, err := m.MarshalTo(dAtA)
 	if err != nil {
 		return nil, err
 	}
@@ -3174,27 +2962,21 @@ func (m *PodGC) Marshal() (dAtA []byte, err error) {
 }
 
 func (m *PodGC) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
-}
-
-func (m *PodGC) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
+	var i int
 	_ = i
 	var l int
 	_ = l
-	i -= len(m.Strategy)
-	copy(dAtA[i:], m.Strategy)
-	i = encodeVarintGenerated(dAtA, i, uint64(len(m.Strategy)))
-	i--
 	dAtA[i] = 0xa
-	return len(dAtA) - i, nil
+	i++
+	i = encodeVarintGenerated(dAtA, i, uint64(len(m.Strategy)))
+	i += copy(dAtA[i:], m.Strategy)
+	return i, nil
 }
 
 func (m *RawArtifact) Marshal() (dAtA []byte, err error) {
 	size := m.Size()
 	dAtA = make([]byte, size)
-	n, err := m.MarshalToSizedBuffer(dAtA[:size])
+	n, err := m.MarshalTo(dAtA)
 	if err != nil {
 		return nil, err
 	}
@@ -3202,27 +2984,21 @@ func (m *RawArtifact) Marshal() (dAtA []byte, err error) {
 }
 
 func (m *RawArtifact) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
-}
-
-func (m *RawArtifact) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
+	var i int
 	_ = i
 	var l int
 	_ = l
-	i -= len(m.Data)
-	copy(dAtA[i:], m.Data)
-	i = encodeVarintGenerated(dAtA, i, uint64(len(m.Data)))
-	i--
 	dAtA[i] = 0xa
-	return len(dAtA) - i, nil
+	i++
+	i = encodeVarintGenerated(dAtA, i, uint64(len(m.Data)))
+	i += copy(dAtA[i:], m.Data)
+	return i, nil
 }
 
 func (m *ResourceTemplate) Marshal() (dAtA []byte, err error) {
 	size := m.Size()
 	dAtA = make([]byte, size)
-	n, err := m.MarshalToSizedBuffer(dAtA[:size])
+	n, err := m.MarshalTo(dAtA)
 	if err != nil {
 		return nil, err
 	}
@@ -3230,55 +3006,45 @@ func (m *ResourceTemplate) Marshal() (dAtA []byte, err error) {
 }
 
 func (m *ResourceTemplate) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
-}
-
-func (m *ResourceTemplate) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
+	var i int
 	_ = i
 	var l int
 	_ = l
-	i -= len(m.FailureCondition)
-	copy(dAtA[i:], m.FailureCondition)
-	i = encodeVarintGenerated(dAtA, i, uint64(len(m.FailureCondition)))
-	i--
-	dAtA[i] = 0x32
-	i -= len(m.SuccessCondition)
-	copy(dAtA[i:], m.SuccessCondition)
-	i = encodeVarintGenerated(dAtA, i, uint64(len(m.SuccessCondition)))
-	i--
-	dAtA[i] = 0x2a
-	i--
+	dAtA[i] = 0xa
+	i++
+	i = encodeVarintGenerated(dAtA, i, uint64(len(m.Action)))
+	i += copy(dAtA[i:], m.Action)
+	dAtA[i] = 0x12
+	i++
+	i = encodeVarintGenerated(dAtA, i, uint64(len(m.MergeStrategy)))
+	i += copy(dAtA[i:], m.MergeStrategy)
+	dAtA[i] = 0x1a
+	i++
+	i = encodeVarintGenerated(dAtA, i, uint64(len(m.Manifest)))
+	i += copy(dAtA[i:], m.Manifest)
+	dAtA[i] = 0x20
+	i++
 	if m.SetOwnerReference {
 		dAtA[i] = 1
 	} else {
 		dAtA[i] = 0
 	}
-	i--
-	dAtA[i] = 0x20
-	i -= len(m.Manifest)
-	copy(dAtA[i:], m.Manifest)
-	i = encodeVarintGenerated(dAtA, i, uint64(len(m.Manifest)))
-	i--
-	dAtA[i] = 0x1a
-	i -= len(m.MergeStrategy)
-	copy(dAtA[i:], m.MergeStrategy)
-	i = encodeVarintGenerated(dAtA, i, uint64(len(m.MergeStrategy)))
-	i--
-	dAtA[i] = 0x12
-	i -= len(m.Action)
-	copy(dAtA[i:], m.Action)
-	i = encodeVarintGenerated(dAtA, i, uint64(len(m.Action)))
-	i--
-	dAtA[i] = 0xa
-	return len(dAtA) - i, nil
+	i++
+	dAtA[i] = 0x2a
+	i++
+	i = encodeVarintGenerated(dAtA, i, uint64(len(m.SuccessCondition)))
+	i += copy(dAtA[i:], m.SuccessCondition)
+	dAtA[i] = 0x32
+	i++
+	i = encodeVarintGenerated(dAtA, i, uint64(len(m.FailureCondition)))
+	i += copy(dAtA[i:], m.FailureCondition)
+	return i, nil
 }
 
 func (m *RetryStrategy) Marshal() (dAtA []byte, err error) {
 	size := m.Size()
 	dAtA = make([]byte, size)
-	n, err := m.MarshalToSizedBuffer(dAtA[:size])
+	n, err := m.MarshalTo(dAtA)
 	if err != nil {
 		return nil, err
 	}
@@ -3286,27 +3052,22 @@ func (m *RetryStrategy) Marshal() (dAtA []byte, err error) {
 }
 
 func (m *RetryStrategy) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
-}
-
-func (m *RetryStrategy) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
+	var i int
 	_ = i
 	var l int
 	_ = l
 	if m.Limit != nil {
-		i = encodeVarintGenerated(dAtA, i, uint64(*m.Limit))
-		i--
 		dAtA[i] = 0x8
+		i++
+		i = encodeVarintGenerated(dAtA, i, uint64(*m.Limit))
 	}
-	return len(dAtA) - i, nil
+	return i, nil
 }
 
 func (m *S3Artifact) Marshal() (dAtA []byte, err error) {
 	size := m.Size()
 	dAtA = make([]byte, size)
-	n, err := m.MarshalToSizedBuffer(dAtA[:size])
+	n, err := m.MarshalTo(dAtA)
 	if err != nil {
 		return nil, err
 	}
@@ -3314,37 +3075,29 @@ func (m *S3Artifact) Marshal() (dAtA []byte, err error) {
 }
 
 func (m *S3Artifact) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
-}
-
-func (m *S3Artifact) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
+	var i int
 	_ = i
 	var l int
 	_ = l
-	i -= len(m.Key)
-	copy(dAtA[i:], m.Key)
-	i = encodeVarintGenerated(dAtA, i, uint64(len(m.Key)))
-	i--
-	dAtA[i] = 0x12
-	{
-		size, err := m.S3Bucket.MarshalToSizedBuffer(dAtA[:i])
-		if err != nil {
-			return 0, err
-		}
-		i -= size
-		i = encodeVarintGenerated(dAtA, i, uint64(size))
-	}
-	i--
 	dAtA[i] = 0xa
-	return len(dAtA) - i, nil
+	i++
+	i = encodeVarintGenerated(dAtA, i, uint64(m.S3Bucket.Size()))
+	n33, err := m.S3Bucket.MarshalTo(dAtA[i:])
+	if err != nil {
+		return 0, err
+	}
+	i += n33
+	dAtA[i] = 0x12
+	i++
+	i = encodeVarintGenerated(dAtA, i, uint64(len(m.Key)))
+	i += copy(dAtA[i:], m.Key)
+	return i, nil
 }
 
 func (m *S3Bucket) Marshal() (dAtA []byte, err error) {
 	size := m.Size()
 	dAtA = make([]byte, size)
-	n, err := m.MarshalToSizedBuffer(dAtA[:size])
+	n, err := m.MarshalTo(dAtA)
 	if err != nil {
 		return nil, err
 	}
@@ -3352,72 +3105,59 @@ func (m *S3Bucket) Marshal() (dAtA []byte, err error) {
 }
 
 func (m *S3Bucket) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
-}
-
-func (m *S3Bucket) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
+	var i int
 	_ = i
 	var l int
 	_ = l
-	i -= len(m.RoleARN)
-	copy(dAtA[i:], m.RoleARN)
-	i = encodeVarintGenerated(dAtA, i, uint64(len(m.RoleARN)))
-	i--
-	dAtA[i] = 0x3a
-	{
-		size, err := m.SecretKeySecret.MarshalToSizedBuffer(dAtA[:i])
-		if err != nil {
-			return 0, err
-		}
-		i -= size
-		i = encodeVarintGenerated(dAtA, i, uint64(size))
-	}
-	i--
-	dAtA[i] = 0x32
-	{
-		size, err := m.AccessKeySecret.MarshalToSizedBuffer(dAtA[:i])
-		if err != nil {
-			return 0, err
-		}
-		i -= size
-		i = encodeVarintGenerated(dAtA, i, uint64(size))
-	}
-	i--
-	dAtA[i] = 0x2a
+	dAtA[i] = 0xa
+	i++
+	i = encodeVarintGenerated(dAtA, i, uint64(len(m.Endpoint)))
+	i += copy(dAtA[i:], m.Endpoint)
+	dAtA[i] = 0x12
+	i++
+	i = encodeVarintGenerated(dAtA, i, uint64(len(m.Bucket)))
+	i += copy(dAtA[i:], m.Bucket)
+	dAtA[i] = 0x1a
+	i++
+	i = encodeVarintGenerated(dAtA, i, uint64(len(m.Region)))
+	i += copy(dAtA[i:], m.Region)
 	if m.Insecure != nil {
-		i--
+		dAtA[i] = 0x20
+		i++
 		if *m.Insecure {
 			dAtA[i] = 1
 		} else {
 			dAtA[i] = 0
 		}
-		i--
-		dAtA[i] = 0x20
+		i++
 	}
-	i -= len(m.Region)
-	copy(dAtA[i:], m.Region)
-	i = encodeVarintGenerated(dAtA, i, uint64(len(m.Region)))
-	i--
-	dAtA[i] = 0x1a
-	i -= len(m.Bucket)
-	copy(dAtA[i:], m.Bucket)
-	i = encodeVarintGenerated(dAtA, i, uint64(len(m.Bucket)))
-	i--
-	dAtA[i] = 0x12
-	i -= len(m.Endpoint)
-	copy(dAtA[i:], m.Endpoint)
-	i = encodeVarintGenerated(dAtA, i, uint64(len(m.Endpoint)))
-	i--
-	dAtA[i] = 0xa
-	return len(dAtA) - i, nil
+	dAtA[i] = 0x2a
+	i++
+	i = encodeVarintGenerated(dAtA, i, uint64(m.AccessKeySecret.Size()))
+	n34, err := m.AccessKeySecret.MarshalTo(dAtA[i:])
+	if err != nil {
+		return 0, err
+	}
+	i += n34
+	dAtA[i] = 0x32
+	i++
+	i = encodeVarintGenerated(dAtA, i, uint64(m.SecretKeySecret.Size()))
+	n35, err := m.SecretKeySecret.MarshalTo(dAtA[i:])
+	if err != nil {
+		return 0, err
+	}
+	i += n35
+	dAtA[i] = 0x3a
+	i++
+	i = encodeVarintGenerated(dAtA, i, uint64(len(m.RoleARN)))
+	i += copy(dAtA[i:], m.RoleARN)
+	return i, nil
 }
 
 func (m *ScriptTemplate) Marshal() (dAtA []byte, err error) {
 	size := m.Size()
 	dAtA = make([]byte, size)
-	n, err := m.MarshalToSizedBuffer(dAtA[:size])
+	n, err := m.MarshalTo(dAtA)
 	if err != nil {
 		return nil, err
 	}
@@ -3425,37 +3165,29 @@ func (m *ScriptTemplate) Marshal() (dAtA []byte, err error) {
 }
 
 func (m *ScriptTemplate) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
-}
-
-func (m *ScriptTemplate) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
+	var i int
 	_ = i
 	var l int
 	_ = l
-	i -= len(m.Source)
-	copy(dAtA[i:], m.Source)
-	i = encodeVarintGenerated(dAtA, i, uint64(len(m.Source)))
-	i--
-	dAtA[i] = 0x12
-	{
-		size, err := m.Container.MarshalToSizedBuffer(dAtA[:i])
-		if err != nil {
-			return 0, err
-		}
-		i -= size
-		i = encodeVarintGenerated(dAtA, i, uint64(size))
-	}
-	i--
 	dAtA[i] = 0xa
-	return len(dAtA) - i, nil
+	i++
+	i = encodeVarintGenerated(dAtA, i, uint64(m.Container.Size()))
+	n36, err := m.Container.MarshalTo(dAtA[i:])
+	if err != nil {
+		return 0, err
+	}
+	i += n36
+	dAtA[i] = 0x12
+	i++
+	i = encodeVarintGenerated(dAtA, i, uint64(len(m.Source)))
+	i += copy(dAtA[i:], m.Source)
+	return i, nil
 }
 
 func (m *Sequence) Marshal() (dAtA []byte, err error) {
 	size := m.Size()
 	dAtA = make([]byte, size)
-	n, err := m.MarshalToSizedBuffer(dAtA[:size])
+	n, err := m.MarshalTo(dAtA)
 	if err != nil {
 		return nil, err
 	}
@@ -3463,42 +3195,33 @@ func (m *Sequence) Marshal() (dAtA []byte, err error) {
 }
 
 func (m *Sequence) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
-}
-
-func (m *Sequence) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
+	var i int
 	_ = i
 	var l int
 	_ = l
-	i -= len(m.Format)
-	copy(dAtA[i:], m.Format)
-	i = encodeVarintGenerated(dAtA, i, uint64(len(m.Format)))
-	i--
-	dAtA[i] = 0x22
-	i -= len(m.End)
-	copy(dAtA[i:], m.End)
-	i = encodeVarintGenerated(dAtA, i, uint64(len(m.End)))
-	i--
-	dAtA[i] = 0x1a
-	i -= len(m.Start)
-	copy(dAtA[i:], m.Start)
-	i = encodeVarintGenerated(dAtA, i, uint64(len(m.Start)))
-	i--
-	dAtA[i] = 0x12
-	i -= len(m.Count)
-	copy(dAtA[i:], m.Count)
-	i = encodeVarintGenerated(dAtA, i, uint64(len(m.Count)))
-	i--
 	dAtA[i] = 0xa
-	return len(dAtA) - i, nil
+	i++
+	i = encodeVarintGenerated(dAtA, i, uint64(len(m.Count)))
+	i += copy(dAtA[i:], m.Count)
+	dAtA[i] = 0x12
+	i++
+	i = encodeVarintGenerated(dAtA, i, uint64(len(m.Start)))
+	i += copy(dAtA[i:], m.Start)
+	dAtA[i] = 0x1a
+	i++
+	i = encodeVarintGenerated(dAtA, i, uint64(len(m.End)))
+	i += copy(dAtA[i:], m.End)
+	dAtA[i] = 0x22
+	i++
+	i = encodeVarintGenerated(dAtA, i, uint64(len(m.Format)))
+	i += copy(dAtA[i:], m.Format)
+	return i, nil
 }
 
 func (m *SuspendTemplate) Marshal() (dAtA []byte, err error) {
 	size := m.Size()
 	dAtA = make([]byte, size)
-	n, err := m.MarshalToSizedBuffer(dAtA[:size])
+	n, err := m.MarshalTo(dAtA)
 	if err != nil {
 		return nil, err
 	}
@@ -3506,22 +3229,17 @@ func (m *SuspendTemplate) Marshal() (dAtA []byte, err error) {
 }
 
 func (m *SuspendTemplate) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
-}
-
-func (m *SuspendTemplate) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
+	var i int
 	_ = i
 	var l int
 	_ = l
-	return len(dAtA) - i, nil
+	return i, nil
 }
 
 func (m *TarStrategy) Marshal() (dAtA []byte, err error) {
 	size := m.Size()
 	dAtA = make([]byte, size)
-	n, err := m.MarshalToSizedBuffer(dAtA[:size])
+	n, err := m.MarshalTo(dAtA)
 	if err != nil {
 		return nil, err
 	}
@@ -3529,22 +3247,17 @@ func (m *TarStrategy) Marshal() (dAtA []byte, err error) {
 }
 
 func (m *TarStrategy) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
-}
-
-func (m *TarStrategy) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
+	var i int
 	_ = i
 	var l int
 	_ = l
-	return len(dAtA) - i, nil
+	return i, nil
 }
 
 func (m *Template) Marshal() (dAtA []byte, err error) {
 	size := m.Size()
 	dAtA = make([]byte, size)
-	n, err := m.MarshalToSizedBuffer(dAtA[:size])
+	n, err := m.MarshalTo(dAtA)
 	if err != nil {
 		return nil, err
 	}
@@ -3552,396 +3265,342 @@ func (m *Template) Marshal() (dAtA []byte, err error) {
 }
 
 func (m *Template) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
-}
-
-func (m *Template) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
+	var i int
 	_ = i
 	var l int
 	_ = l
-	if m.SecurityContext != nil {
-		{
-			size, err := m.SecurityContext.MarshalToSizedBuffer(dAtA[:i])
-			if err != nil {
-				return 0, err
-			}
-			i -= size
-			i = encodeVarintGenerated(dAtA, i, uint64(size))
-		}
-		i--
-		dAtA[i] = 0x2
-		i--
-		dAtA[i] = 0x82
+	dAtA[i] = 0xa
+	i++
+	i = encodeVarintGenerated(dAtA, i, uint64(len(m.Name)))
+	i += copy(dAtA[i:], m.Name)
+	dAtA[i] = 0x12
+	i++
+	i = encodeVarintGenerated(dAtA, i, uint64(len(m.Template)))
+	i += copy(dAtA[i:], m.Template)
+	dAtA[i] = 0x1a
+	i++
+	i = encodeVarintGenerated(dAtA, i, uint64(m.Arguments.Size()))
+	n37, err := m.Arguments.MarshalTo(dAtA[i:])
+	if err != nil {
+		return 0, err
 	}
-	if len(m.HostAliases) > 0 {
-		for iNdEx := len(m.HostAliases) - 1; iNdEx >= 0; iNdEx-- {
-			{
-				size, err := m.HostAliases[iNdEx].MarshalToSizedBuffer(dAtA[:i])
-				if err != nil {
-					return 0, err
-				}
-				i -= size
-				i = encodeVarintGenerated(dAtA, i, uint64(size))
-			}
-			i--
-			dAtA[i] = 0x1
-			i--
-			dAtA[i] = 0xfa
-		}
-	}
-	if m.Executor != nil {
-		{
-			size, err := m.Executor.MarshalToSizedBuffer(dAtA[:i])
-			if err != nil {
-				return 0, err
-			}
-			i -= size
-			i = encodeVarintGenerated(dAtA, i, uint64(size))
-		}
-		i--
-		dAtA[i] = 0x1
-		i--
-		dAtA[i] = 0xf2
-	}
-	if m.AutomountServiceAccountToken != nil {
-		i--
-		if *m.AutomountServiceAccountToken {
-			dAtA[i] = 1
-		} else {
-			dAtA[i] = 0
-		}
-		i--
-		dAtA[i] = 0x1
-		i--
-		dAtA[i] = 0xe8
-	}
-	i -= len(m.ServiceAccountName)
-	copy(dAtA[i:], m.ServiceAccountName)
-	i = encodeVarintGenerated(dAtA, i, uint64(len(m.ServiceAccountName)))
-	i--
-	dAtA[i] = 0x1
-	i--
-	dAtA[i] = 0xe2
-	if m.Priority != nil {
-		i = encodeVarintGenerated(dAtA, i, uint64(*m.Priority))
-		i--
-		dAtA[i] = 0x1
-		i--
-		dAtA[i] = 0xd8
-	}
-	i -= len(m.PriorityClassName)
-	copy(dAtA[i:], m.PriorityClassName)
-	i = encodeVarintGenerated(dAtA, i, uint64(len(m.PriorityClassName)))
-	i--
-	dAtA[i] = 0x1
-	i--
-	dAtA[i] = 0xd2
-	i -= len(m.SchedulerName)
-	copy(dAtA[i:], m.SchedulerName)
-	i = encodeVarintGenerated(dAtA, i, uint64(len(m.SchedulerName)))
-	i--
-	dAtA[i] = 0x1
-	i--
-	dAtA[i] = 0xca
-	if len(m.Tolerations) > 0 {
-		for iNdEx := len(m.Tolerations) - 1; iNdEx >= 0; iNdEx-- {
-			{
-				size, err := m.Tolerations[iNdEx].MarshalToSizedBuffer(dAtA[:i])
-				if err != nil {
-					return 0, err
-				}
-				i -= size
-				i = encodeVarintGenerated(dAtA, i, uint64(size))
-			}
-			i--
-			dAtA[i] = 0x1
-			i--
-			dAtA[i] = 0xc2
-		}
-	}
-	if m.Parallelism != nil {
-		i = encodeVarintGenerated(dAtA, i, uint64(*m.Parallelism))
-		i--
-		dAtA[i] = 0x1
-		i--
-		dAtA[i] = 0xb8
-	}
-	if m.RetryStrategy != nil {
-		{
-			size, err := m.RetryStrategy.MarshalToSizedBuffer(dAtA[:i])
-			if err != nil {
-				return 0, err
-			}
-			i -= size
-			i = encodeVarintGenerated(dAtA, i, uint64(size))
-		}
-		i--
-		dAtA[i] = 0x1
-		i--
-		dAtA[i] = 0xb2
-	}
-	if m.ActiveDeadlineSeconds != nil {
-		i = encodeVarintGenerated(dAtA, i, uint64(*m.ActiveDeadlineSeconds))
-		i--
-		dAtA[i] = 0x1
-		i--
-		dAtA[i] = 0xa8
-	}
-	if m.ArchiveLocation != nil {
-		{
-			size, err := m.ArchiveLocation.MarshalToSizedBuffer(dAtA[:i])
-			if err != nil {
-				return 0, err
-			}
-			i -= size
-			i = encodeVarintGenerated(dAtA, i, uint64(size))
-		}
-		i--
-		dAtA[i] = 0x1
-		i--
-		dAtA[i] = 0xa2
-	}
-	if len(m.Sidecars) > 0 {
-		for iNdEx := len(m.Sidecars) - 1; iNdEx >= 0; iNdEx-- {
-			{
-				size, err := m.Sidecars[iNdEx].MarshalToSizedBuffer(dAtA[:i])
-				if err != nil {
-					return 0, err
-				}
-				i -= size
-				i = encodeVarintGenerated(dAtA, i, uint64(size))
-			}
-			i--
-			dAtA[i] = 0x1
-			i--
-			dAtA[i] = 0x9a
-		}
-	}
-	if len(m.InitContainers) > 0 {
-		for iNdEx := len(m.InitContainers) - 1; iNdEx >= 0; iNdEx-- {
-			{
-				size, err := m.InitContainers[iNdEx].MarshalToSizedBuffer(dAtA[:i])
-				if err != nil {
-					return 0, err
-				}
-				i -= size
-				i = encodeVarintGenerated(dAtA, i, uint64(size))
-			}
-			i--
-			dAtA[i] = 0x1
-			i--
-			dAtA[i] = 0x92
-		}
-	}
-	if len(m.Volumes) > 0 {
-		for iNdEx := len(m.Volumes) - 1; iNdEx >= 0; iNdEx-- {
-			{
-				size, err := m.Volumes[iNdEx].MarshalToSizedBuffer(dAtA[:i])
-				if err != nil {
-					return 0, err
-				}
-				i -= size
-				i = encodeVarintGenerated(dAtA, i, uint64(size))
-			}
-			i--
-			dAtA[i] = 0x1
-			i--
-			dAtA[i] = 0x8a
-		}
-	}
-	if m.Suspend != nil {
-		{
-			size, err := m.Suspend.MarshalToSizedBuffer(dAtA[:i])
-			if err != nil {
-				return 0, err
-			}
-			i -= size
-			i = encodeVarintGenerated(dAtA, i, uint64(size))
-		}
-		i--
-		dAtA[i] = 0x1
-		i--
-		dAtA[i] = 0x82
-	}
-	if m.DAG != nil {
-		{
-			size, err := m.DAG.MarshalToSizedBuffer(dAtA[:i])
-			if err != nil {
-				return 0, err
-			}
-			i -= size
-			i = encodeVarintGenerated(dAtA, i, uint64(size))
-		}
-		i--
-		dAtA[i] = 0x7a
-	}
-	if m.Resource != nil {
-		{
-			size, err := m.Resource.MarshalToSizedBuffer(dAtA[:i])
-			if err != nil {
-				return 0, err
-			}
-			i -= size
-			i = encodeVarintGenerated(dAtA, i, uint64(size))
-		}
-		i--
-		dAtA[i] = 0x72
-	}
-	if m.Script != nil {
-		{
-			size, err := m.Script.MarshalToSizedBuffer(dAtA[:i])
-			if err != nil {
-				return 0, err
-			}
-			i -= size
-			i = encodeVarintGenerated(dAtA, i, uint64(size))
-		}
-		i--
-		dAtA[i] = 0x6a
-	}
-	if m.Container != nil {
-		{
-			size, err := m.Container.MarshalToSizedBuffer(dAtA[:i])
-			if err != nil {
-				return 0, err
-			}
-			i -= size
-			i = encodeVarintGenerated(dAtA, i, uint64(size))
-		}
-		i--
-		dAtA[i] = 0x62
-	}
-	if len(m.Steps) > 0 {
-		for iNdEx := len(m.Steps) - 1; iNdEx >= 0; iNdEx-- {
-			{
-				size, err := m.Steps[iNdEx].MarshalToSizedBuffer(dAtA[:i])
-				if err != nil {
-					return 0, err
-				}
-				i -= size
-				i = encodeVarintGenerated(dAtA, i, uint64(size))
-			}
-			i--
-			dAtA[i] = 0x5a
-		}
-	}
-	if m.Daemon != nil {
-		i--
-		if *m.Daemon {
-			dAtA[i] = 1
-		} else {
-			dAtA[i] = 0
-		}
-		i--
-		dAtA[i] = 0x50
-	}
-	{
-		size, err := m.Metadata.MarshalToSizedBuffer(dAtA[:i])
+	i += n37
+	if m.TemplateRef != nil {
+		dAtA[i] = 0x22
+		i++
+		i = encodeVarintGenerated(dAtA, i, uint64(m.TemplateRef.Size()))
+		n38, err := m.TemplateRef.MarshalTo(dAtA[i:])
 		if err != nil {
 			return 0, err
 		}
-		i -= size
-		i = encodeVarintGenerated(dAtA, i, uint64(size))
+		i += n38
 	}
-	i--
-	dAtA[i] = 0x4a
-	if m.Affinity != nil {
-		{
-			size, err := m.Affinity.MarshalToSizedBuffer(dAtA[:i])
-			if err != nil {
-				return 0, err
-			}
-			i -= size
-			i = encodeVarintGenerated(dAtA, i, uint64(size))
-		}
-		i--
-		dAtA[i] = 0x42
+	dAtA[i] = 0x2a
+	i++
+	i = encodeVarintGenerated(dAtA, i, uint64(m.Inputs.Size()))
+	n39, err := m.Inputs.MarshalTo(dAtA[i:])
+	if err != nil {
+		return 0, err
 	}
+	i += n39
+	dAtA[i] = 0x32
+	i++
+	i = encodeVarintGenerated(dAtA, i, uint64(m.Outputs.Size()))
+	n40, err := m.Outputs.MarshalTo(dAtA[i:])
+	if err != nil {
+		return 0, err
+	}
+	i += n40
 	if len(m.NodeSelector) > 0 {
 		keysForNodeSelector := make([]string, 0, len(m.NodeSelector))
 		for k := range m.NodeSelector {
 			keysForNodeSelector = append(keysForNodeSelector, string(k))
 		}
 		github_com_gogo_protobuf_sortkeys.Strings(keysForNodeSelector)
-		for iNdEx := len(keysForNodeSelector) - 1; iNdEx >= 0; iNdEx-- {
-			v := m.NodeSelector[string(keysForNodeSelector[iNdEx])]
-			baseI := i
-			i -= len(v)
-			copy(dAtA[i:], v)
-			i = encodeVarintGenerated(dAtA, i, uint64(len(v)))
-			i--
-			dAtA[i] = 0x12
-			i -= len(keysForNodeSelector[iNdEx])
-			copy(dAtA[i:], keysForNodeSelector[iNdEx])
-			i = encodeVarintGenerated(dAtA, i, uint64(len(keysForNodeSelector[iNdEx])))
-			i--
-			dAtA[i] = 0xa
-			i = encodeVarintGenerated(dAtA, i, uint64(baseI-i))
-			i--
+		for _, k := range keysForNodeSelector {
 			dAtA[i] = 0x3a
+			i++
+			v := m.NodeSelector[string(k)]
+			mapSize := 1 + len(k) + sovGenerated(uint64(len(k))) + 1 + len(v) + sovGenerated(uint64(len(v)))
+			i = encodeVarintGenerated(dAtA, i, uint64(mapSize))
+			dAtA[i] = 0xa
+			i++
+			i = encodeVarintGenerated(dAtA, i, uint64(len(k)))
+			i += copy(dAtA[i:], k)
+			dAtA[i] = 0x12
+			i++
+			i = encodeVarintGenerated(dAtA, i, uint64(len(v)))
+			i += copy(dAtA[i:], v)
 		}
 	}
-	{
-		size, err := m.Outputs.MarshalToSizedBuffer(dAtA[:i])
+	if m.Affinity != nil {
+		dAtA[i] = 0x42
+		i++
+		i = encodeVarintGenerated(dAtA, i, uint64(m.Affinity.Size()))
+		n41, err := m.Affinity.MarshalTo(dAtA[i:])
 		if err != nil {
 			return 0, err
 		}
-		i -= size
-		i = encodeVarintGenerated(dAtA, i, uint64(size))
+		i += n41
 	}
-	i--
-	dAtA[i] = 0x32
-	{
-		size, err := m.Inputs.MarshalToSizedBuffer(dAtA[:i])
-		if err != nil {
-			return 0, err
+	dAtA[i] = 0x4a
+	i++
+	i = encodeVarintGenerated(dAtA, i, uint64(m.Metadata.Size()))
+	n42, err := m.Metadata.MarshalTo(dAtA[i:])
+	if err != nil {
+		return 0, err
+	}
+	i += n42
+	if m.Daemon != nil {
+		dAtA[i] = 0x50
+		i++
+		if *m.Daemon {
+			dAtA[i] = 1
+		} else {
+			dAtA[i] = 0
 		}
-		i -= size
-		i = encodeVarintGenerated(dAtA, i, uint64(size))
+		i++
 	}
-	i--
-	dAtA[i] = 0x2a
-	if m.TemplateRef != nil {
-		{
-			size, err := m.TemplateRef.MarshalToSizedBuffer(dAtA[:i])
+	if len(m.Steps) > 0 {
+		for _, msg := range m.Steps {
+			dAtA[i] = 0x5a
+			i++
+			i = encodeVarintGenerated(dAtA, i, uint64(msg.Size()))
+			n, err := msg.MarshalTo(dAtA[i:])
 			if err != nil {
 				return 0, err
 			}
-			i -= size
-			i = encodeVarintGenerated(dAtA, i, uint64(size))
+			i += n
 		}
-		i--
-		dAtA[i] = 0x22
 	}
-	{
-		size, err := m.Arguments.MarshalToSizedBuffer(dAtA[:i])
+	if m.Container != nil {
+		dAtA[i] = 0x62
+		i++
+		i = encodeVarintGenerated(dAtA, i, uint64(m.Container.Size()))
+		n43, err := m.Container.MarshalTo(dAtA[i:])
 		if err != nil {
 			return 0, err
 		}
-		i -= size
-		i = encodeVarintGenerated(dAtA, i, uint64(size))
+		i += n43
 	}
-	i--
-	dAtA[i] = 0x1a
-	i -= len(m.Template)
-	copy(dAtA[i:], m.Template)
-	i = encodeVarintGenerated(dAtA, i, uint64(len(m.Template)))
-	i--
-	dAtA[i] = 0x12
-	i -= len(m.Name)
-	copy(dAtA[i:], m.Name)
-	i = encodeVarintGenerated(dAtA, i, uint64(len(m.Name)))
-	i--
-	dAtA[i] = 0xa
-	return len(dAtA) - i, nil
+	if m.Script != nil {
+		dAtA[i] = 0x6a
+		i++
+		i = encodeVarintGenerated(dAtA, i, uint64(m.Script.Size()))
+		n44, err := m.Script.MarshalTo(dAtA[i:])
+		if err != nil {
+			return 0, err
+		}
+		i += n44
+	}
+	if m.Resource != nil {
+		dAtA[i] = 0x72
+		i++
+		i = encodeVarintGenerated(dAtA, i, uint64(m.Resource.Size()))
+		n45, err := m.Resource.MarshalTo(dAtA[i:])
+		if err != nil {
+			return 0, err
+		}
+		i += n45
+	}
+	if m.DAG != nil {
+		dAtA[i] = 0x7a
+		i++
+		i = encodeVarintGenerated(dAtA, i, uint64(m.DAG.Size()))
+		n46, err := m.DAG.MarshalTo(dAtA[i:])
+		if err != nil {
+			return 0, err
+		}
+		i += n46
+	}
+	if m.Suspend != nil {
+		dAtA[i] = 0x82
+		i++
+		dAtA[i] = 0x1
+		i++
+		i = encodeVarintGenerated(dAtA, i, uint64(m.Suspend.Size()))
+		n47, err := m.Suspend.MarshalTo(dAtA[i:])
+		if err != nil {
+			return 0, err
+		}
+		i += n47
+	}
+	if len(m.Volumes) > 0 {
+		for _, msg := range m.Volumes {
+			dAtA[i] = 0x8a
+			i++
+			dAtA[i] = 0x1
+			i++
+			i = encodeVarintGenerated(dAtA, i, uint64(msg.Size()))
+			n, err := msg.MarshalTo(dAtA[i:])
+			if err != nil {
+				return 0, err
+			}
+			i += n
+		}
+	}
+	if len(m.InitContainers) > 0 {
+		for _, msg := range m.InitContainers {
+			dAtA[i] = 0x92
+			i++
+			dAtA[i] = 0x1
+			i++
+			i = encodeVarintGenerated(dAtA, i, uint64(msg.Size()))
+			n, err := msg.MarshalTo(dAtA[i:])
+			if err != nil {
+				return 0, err
+			}
+			i += n
+		}
+	}
+	if len(m.Sidecars) > 0 {
+		for _, msg := range m.Sidecars {
+			dAtA[i] = 0x9a
+			i++
+			dAtA[i] = 0x1
+			i++
+			i = encodeVarintGenerated(dAtA, i, uint64(msg.Size()))
+			n, err := msg.MarshalTo(dAtA[i:])
+			if err != nil {
+				return 0, err
+			}
+			i += n
+		}
+	}
+	if m.ArchiveLocation != nil {
+		dAtA[i] = 0xa2
+		i++
+		dAtA[i] = 0x1
+		i++
+		i = encodeVarintGenerated(dAtA, i, uint64(m.ArchiveLocation.Size()))
+		n48, err := m.ArchiveLocation.MarshalTo(dAtA[i:])
+		if err != nil {
+			return 0, err
+		}
+		i += n48
+	}
+	if m.ActiveDeadlineSeconds != nil {
+		dAtA[i] = 0xa8
+		i++
+		dAtA[i] = 0x1
+		i++
+		i = encodeVarintGenerated(dAtA, i, uint64(*m.ActiveDeadlineSeconds))
+	}
+	if m.RetryStrategy != nil {
+		dAtA[i] = 0xb2
+		i++
+		dAtA[i] = 0x1
+		i++
+		i = encodeVarintGenerated(dAtA, i, uint64(m.RetryStrategy.Size()))
+		n49, err := m.RetryStrategy.MarshalTo(dAtA[i:])
+		if err != nil {
+			return 0, err
+		}
+		i += n49
+	}
+	if m.Parallelism != nil {
+		dAtA[i] = 0xb8
+		i++
+		dAtA[i] = 0x1
+		i++
+		i = encodeVarintGenerated(dAtA, i, uint64(*m.Parallelism))
+	}
+	if len(m.Tolerations) > 0 {
+		for _, msg := range m.Tolerations {
+			dAtA[i] = 0xc2
+			i++
+			dAtA[i] = 0x1
+			i++
+			i = encodeVarintGenerated(dAtA, i, uint64(msg.Size()))
+			n, err := msg.MarshalTo(dAtA[i:])
+			if err != nil {
+				return 0, err
+			}
+			i += n
+		}
+	}
+	dAtA[i] = 0xca
+	i++
+	dAtA[i] = 0x1
+	i++
+	i = encodeVarintGenerated(dAtA, i, uint64(len(m.SchedulerName)))
+	i += copy(dAtA[i:], m.SchedulerName)
+	dAtA[i] = 0xd2
+	i++
+	dAtA[i] = 0x1
+	i++
+	i = encodeVarintGenerated(dAtA, i, uint64(len(m.PriorityClassName)))
+	i += copy(dAtA[i:], m.PriorityClassName)
+	if m.Priority != nil {
+		dAtA[i] = 0xd8
+		i++
+		dAtA[i] = 0x1
+		i++
+		i = encodeVarintGenerated(dAtA, i, uint64(*m.Priority))
+	}
+	dAtA[i] = 0xe2
+	i++
+	dAtA[i] = 0x1
+	i++
+	i = encodeVarintGenerated(dAtA, i, uint64(len(m.ServiceAccountName)))
+	i += copy(dAtA[i:], m.ServiceAccountName)
+	if m.AutomountServiceAccountToken != nil {
+		dAtA[i] = 0xe8
+		i++
+		dAtA[i] = 0x1
+		i++
+		if *m.AutomountServiceAccountToken {
+			dAtA[i] = 1
+		} else {
+			dAtA[i] = 0
+		}
+		i++
+	}
+	if m.Executor != nil {
+		dAtA[i] = 0xf2
+		i++
+		dAtA[i] = 0x1
+		i++
+		i = encodeVarintGenerated(dAtA, i, uint64(m.Executor.Size()))
+		n50, err := m.Executor.MarshalTo(dAtA[i:])
+		if err != nil {
+			return 0, err
+		}
+		i += n50
+	}
+	if len(m.HostAliases) > 0 {
+		for _, msg := range m.HostAliases {
+			dAtA[i] = 0xfa
+			i++
+			dAtA[i] = 0x1
+			i++
+			i = encodeVarintGenerated(dAtA, i, uint64(msg.Size()))
+			n, err := msg.MarshalTo(dAtA[i:])
+			if err != nil {
+				return 0, err
+			}
+			i += n
+		}
+	}
+	if m.SecurityContext != nil {
+		dAtA[i] = 0x82
+		i++
+		dAtA[i] = 0x2
+		i++
+		i = encodeVarintGenerated(dAtA, i, uint64(m.SecurityContext.Size()))
+		n51, err := m.SecurityContext.MarshalTo(dAtA[i:])
+		if err != nil {
+			return 0, err
+		}
+		i += n51
+	}
+	return i, nil
 }
 
 func (m *TemplateRef) Marshal() (dAtA []byte, err error) {
 	size := m.Size()
 	dAtA = make([]byte, size)
-	n, err := m.MarshalToSizedBuffer(dAtA[:size])
+	n, err := m.MarshalTo(dAtA)
 	if err != nil {
 		return nil, err
 	}
@@ -3949,40 +3608,33 @@ func (m *TemplateRef) Marshal() (dAtA []byte, err error) {
 }
 
 func (m *TemplateRef) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
-}
-
-func (m *TemplateRef) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
+	var i int
 	_ = i
 	var l int
 	_ = l
-	i--
+	dAtA[i] = 0xa
+	i++
+	i = encodeVarintGenerated(dAtA, i, uint64(len(m.Name)))
+	i += copy(dAtA[i:], m.Name)
+	dAtA[i] = 0x12
+	i++
+	i = encodeVarintGenerated(dAtA, i, uint64(len(m.Template)))
+	i += copy(dAtA[i:], m.Template)
+	dAtA[i] = 0x18
+	i++
 	if m.RuntimeResolution {
 		dAtA[i] = 1
 	} else {
 		dAtA[i] = 0
 	}
-	i--
-	dAtA[i] = 0x18
-	i -= len(m.Template)
-	copy(dAtA[i:], m.Template)
-	i = encodeVarintGenerated(dAtA, i, uint64(len(m.Template)))
-	i--
-	dAtA[i] = 0x12
-	i -= len(m.Name)
-	copy(dAtA[i:], m.Name)
-	i = encodeVarintGenerated(dAtA, i, uint64(len(m.Name)))
-	i--
-	dAtA[i] = 0xa
-	return len(dAtA) - i, nil
+	i++
+	return i, nil
 }
 
 func (m *UserContainer) Marshal() (dAtA []byte, err error) {
 	size := m.Size()
 	dAtA = make([]byte, size)
-	n, err := m.MarshalToSizedBuffer(dAtA[:size])
+	n, err := m.MarshalTo(dAtA)
 	if err != nil {
 		return nil, err
 	}
@@ -3990,42 +3642,35 @@ func (m *UserContainer) Marshal() (dAtA []byte, err error) {
 }
 
 func (m *UserContainer) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
-}
-
-func (m *UserContainer) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
+	var i int
 	_ = i
 	var l int
 	_ = l
+	dAtA[i] = 0xa
+	i++
+	i = encodeVarintGenerated(dAtA, i, uint64(m.Container.Size()))
+	n52, err := m.Container.MarshalTo(dAtA[i:])
+	if err != nil {
+		return 0, err
+	}
+	i += n52
 	if m.MirrorVolumeMounts != nil {
-		i--
+		dAtA[i] = 0x10
+		i++
 		if *m.MirrorVolumeMounts {
 			dAtA[i] = 1
 		} else {
 			dAtA[i] = 0
 		}
-		i--
-		dAtA[i] = 0x10
+		i++
 	}
-	{
-		size, err := m.Container.MarshalToSizedBuffer(dAtA[:i])
-		if err != nil {
-			return 0, err
-		}
-		i -= size
-		i = encodeVarintGenerated(dAtA, i, uint64(size))
-	}
-	i--
-	dAtA[i] = 0xa
-	return len(dAtA) - i, nil
+	return i, nil
 }
 
 func (m *ValueFrom) Marshal() (dAtA []byte, err error) {
 	size := m.Size()
 	dAtA = make([]byte, size)
-	n, err := m.MarshalToSizedBuffer(dAtA[:size])
+	n, err := m.MarshalTo(dAtA)
 	if err != nil {
 		return nil, err
 	}
@@ -4033,42 +3678,33 @@ func (m *ValueFrom) Marshal() (dAtA []byte, err error) {
 }
 
 func (m *ValueFrom) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
-}
-
-func (m *ValueFrom) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
+	var i int
 	_ = i
 	var l int
 	_ = l
-	i -= len(m.Parameter)
-	copy(dAtA[i:], m.Parameter)
-	i = encodeVarintGenerated(dAtA, i, uint64(len(m.Parameter)))
-	i--
-	dAtA[i] = 0x22
-	i -= len(m.JQFilter)
-	copy(dAtA[i:], m.JQFilter)
-	i = encodeVarintGenerated(dAtA, i, uint64(len(m.JQFilter)))
-	i--
-	dAtA[i] = 0x1a
-	i -= len(m.JSONPath)
-	copy(dAtA[i:], m.JSONPath)
-	i = encodeVarintGenerated(dAtA, i, uint64(len(m.JSONPath)))
-	i--
-	dAtA[i] = 0x12
-	i -= len(m.Path)
-	copy(dAtA[i:], m.Path)
-	i = encodeVarintGenerated(dAtA, i, uint64(len(m.Path)))
-	i--
 	dAtA[i] = 0xa
-	return len(dAtA) - i, nil
+	i++
+	i = encodeVarintGenerated(dAtA, i, uint64(len(m.Path)))
+	i += copy(dAtA[i:], m.Path)
+	dAtA[i] = 0x12
+	i++
+	i = encodeVarintGenerated(dAtA, i, uint64(len(m.JSONPath)))
+	i += copy(dAtA[i:], m.JSONPath)
+	dAtA[i] = 0x1a
+	i++
+	i = encodeVarintGenerated(dAtA, i, uint64(len(m.JQFilter)))
+	i += copy(dAtA[i:], m.JQFilter)
+	dAtA[i] = 0x22
+	i++
+	i = encodeVarintGenerated(dAtA, i, uint64(len(m.Parameter)))
+	i += copy(dAtA[i:], m.Parameter)
+	return i, nil
 }
 
 func (m *Workflow) Marshal() (dAtA []byte, err error) {
 	size := m.Size()
 	dAtA = make([]byte, size)
-	n, err := m.MarshalToSizedBuffer(dAtA[:size])
+	n, err := m.MarshalTo(dAtA)
 	if err != nil {
 		return nil, err
 	}
@@ -4076,52 +3712,41 @@ func (m *Workflow) Marshal() (dAtA []byte, err error) {
 }
 
 func (m *Workflow) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
-}
-
-func (m *Workflow) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
+	var i int
 	_ = i
 	var l int
 	_ = l
-	{
-		size, err := m.Status.MarshalToSizedBuffer(dAtA[:i])
-		if err != nil {
-			return 0, err
-		}
-		i -= size
-		i = encodeVarintGenerated(dAtA, i, uint64(size))
-	}
-	i--
-	dAtA[i] = 0x1a
-	{
-		size, err := m.Spec.MarshalToSizedBuffer(dAtA[:i])
-		if err != nil {
-			return 0, err
-		}
-		i -= size
-		i = encodeVarintGenerated(dAtA, i, uint64(size))
-	}
-	i--
-	dAtA[i] = 0x12
-	{
-		size, err := m.ObjectMeta.MarshalToSizedBuffer(dAtA[:i])
-		if err != nil {
-			return 0, err
-		}
-		i -= size
-		i = encodeVarintGenerated(dAtA, i, uint64(size))
-	}
-	i--
 	dAtA[i] = 0xa
-	return len(dAtA) - i, nil
+	i++
+	i = encodeVarintGenerated(dAtA, i, uint64(m.ObjectMeta.Size()))
+	n53, err := m.ObjectMeta.MarshalTo(dAtA[i:])
+	if err != nil {
+		return 0, err
+	}
+	i += n53
+	dAtA[i] = 0x12
+	i++
+	i = encodeVarintGenerated(dAtA, i, uint64(m.Spec.Size()))
+	n54, err := m.Spec.MarshalTo(dAtA[i:])
+	if err != nil {
+		return 0, err
+	}
+	i += n54
+	dAtA[i] = 0x1a
+	i++
+	i = encodeVarintGenerated(dAtA, i, uint64(m.Status.Size()))
+	n55, err := m.Status.MarshalTo(dAtA[i:])
+	if err != nil {
+		return 0, err
+	}
+	i += n55
+	return i, nil
 }
 
 func (m *WorkflowList) Marshal() (dAtA []byte, err error) {
 	size := m.Size()
 	dAtA = make([]byte, size)
-	n, err := m.MarshalToSizedBuffer(dAtA[:size])
+	n, err := m.MarshalTo(dAtA)
 	if err != nil {
 		return nil, err
 	}
@@ -4129,46 +3754,37 @@ func (m *WorkflowList) Marshal() (dAtA []byte, err error) {
 }
 
 func (m *WorkflowList) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
-}
-
-func (m *WorkflowList) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
+	var i int
 	_ = i
 	var l int
 	_ = l
-	if len(m.Items) > 0 {
-		for iNdEx := len(m.Items) - 1; iNdEx >= 0; iNdEx-- {
-			{
-				size, err := m.Items[iNdEx].MarshalToSizedBuffer(dAtA[:i])
-				if err != nil {
-					return 0, err
-				}
-				i -= size
-				i = encodeVarintGenerated(dAtA, i, uint64(size))
-			}
-			i--
-			dAtA[i] = 0x12
-		}
-	}
-	{
-		size, err := m.ListMeta.MarshalToSizedBuffer(dAtA[:i])
-		if err != nil {
-			return 0, err
-		}
-		i -= size
-		i = encodeVarintGenerated(dAtA, i, uint64(size))
-	}
-	i--
 	dAtA[i] = 0xa
-	return len(dAtA) - i, nil
+	i++
+	i = encodeVarintGenerated(dAtA, i, uint64(m.ListMeta.Size()))
+	n56, err := m.ListMeta.MarshalTo(dAtA[i:])
+	if err != nil {
+		return 0, err
+	}
+	i += n56
+	if len(m.Items) > 0 {
+		for _, msg := range m.Items {
+			dAtA[i] = 0x12
+			i++
+			i = encodeVarintGenerated(dAtA, i, uint64(msg.Size()))
+			n, err := msg.MarshalTo(dAtA[i:])
+			if err != nil {
+				return 0, err
+			}
+			i += n
+		}
+	}
+	return i, nil
 }
 
 func (m *WorkflowSpec) Marshal() (dAtA []byte, err error) {
 	size := m.Size()
 	dAtA = make([]byte, size)
-	n, err := m.MarshalToSizedBuffer(dAtA[:size])
+	n, err := m.MarshalTo(dAtA)
 	if err != nil {
 		return nil, err
 	}
@@ -4176,182 +3792,106 @@ func (m *WorkflowSpec) Marshal() (dAtA []byte, err error) {
 }
 
 func (m *WorkflowSpec) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
-}
-
-func (m *WorkflowSpec) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
+	var i int
 	_ = i
 	var l int
 	_ = l
-	if m.SecurityContext != nil {
-		{
-			size, err := m.SecurityContext.MarshalToSizedBuffer(dAtA[:i])
+	if len(m.Templates) > 0 {
+		for _, msg := range m.Templates {
+			dAtA[i] = 0xa
+			i++
+			i = encodeVarintGenerated(dAtA, i, uint64(msg.Size()))
+			n, err := msg.MarshalTo(dAtA[i:])
 			if err != nil {
 				return 0, err
 			}
-			i -= size
-			i = encodeVarintGenerated(dAtA, i, uint64(size))
-		}
-		i--
-		dAtA[i] = 0x1
-		i--
-		dAtA[i] = 0xe2
-	}
-	if len(m.HostAliases) > 0 {
-		for iNdEx := len(m.HostAliases) - 1; iNdEx >= 0; iNdEx-- {
-			{
-				size, err := m.HostAliases[iNdEx].MarshalToSizedBuffer(dAtA[:i])
-				if err != nil {
-					return 0, err
-				}
-				i -= size
-				i = encodeVarintGenerated(dAtA, i, uint64(size))
-			}
-			i--
-			dAtA[i] = 0x1
-			i--
-			dAtA[i] = 0xda
+			i += n
 		}
 	}
-	if m.PodPriority != nil {
-		i = encodeVarintGenerated(dAtA, i, uint64(*m.PodPriority))
-		i--
-		dAtA[i] = 0x1
-		i--
-		dAtA[i] = 0xd0
+	dAtA[i] = 0x12
+	i++
+	i = encodeVarintGenerated(dAtA, i, uint64(len(m.Entrypoint)))
+	i += copy(dAtA[i:], m.Entrypoint)
+	dAtA[i] = 0x1a
+	i++
+	i = encodeVarintGenerated(dAtA, i, uint64(m.Arguments.Size()))
+	n57, err := m.Arguments.MarshalTo(dAtA[i:])
+	if err != nil {
+		return 0, err
 	}
-	i -= len(m.PodPriorityClassName)
-	copy(dAtA[i:], m.PodPriorityClassName)
-	i = encodeVarintGenerated(dAtA, i, uint64(len(m.PodPriorityClassName)))
-	i--
-	dAtA[i] = 0x1
-	i--
-	dAtA[i] = 0xca
-	if m.PodGC != nil {
-		{
-			size, err := m.PodGC.MarshalToSizedBuffer(dAtA[:i])
-			if err != nil {
-				return 0, err
-			}
-			i -= size
-			i = encodeVarintGenerated(dAtA, i, uint64(size))
-		}
-		i--
-		dAtA[i] = 0x1
-		i--
-		dAtA[i] = 0xc2
-	}
-	i -= len(m.SchedulerName)
-	copy(dAtA[i:], m.SchedulerName)
-	i = encodeVarintGenerated(dAtA, i, uint64(len(m.SchedulerName)))
-	i--
-	dAtA[i] = 0x1
-	i--
-	dAtA[i] = 0xba
-	if m.Priority != nil {
-		i = encodeVarintGenerated(dAtA, i, uint64(*m.Priority))
-		i--
-		dAtA[i] = 0x1
-		i--
-		dAtA[i] = 0xb0
-	}
-	if m.ActiveDeadlineSeconds != nil {
-		i = encodeVarintGenerated(dAtA, i, uint64(*m.ActiveDeadlineSeconds))
-		i--
-		dAtA[i] = 0x1
-		i--
-		dAtA[i] = 0xa8
-	}
-	if m.TTLSecondsAfterFinished != nil {
-		i = encodeVarintGenerated(dAtA, i, uint64(*m.TTLSecondsAfterFinished))
-		i--
-		dAtA[i] = 0x1
-		i--
-		dAtA[i] = 0xa0
-	}
-	i -= len(m.OnExit)
-	copy(dAtA[i:], m.OnExit)
-	i = encodeVarintGenerated(dAtA, i, uint64(len(m.OnExit)))
-	i--
-	dAtA[i] = 0x1
-	i--
-	dAtA[i] = 0x9a
-	if m.DNSConfig != nil {
-		{
-			size, err := m.DNSConfig.MarshalToSizedBuffer(dAtA[:i])
-			if err != nil {
-				return 0, err
-			}
-			i -= size
-			i = encodeVarintGenerated(dAtA, i, uint64(size))
-		}
-		i--
-		dAtA[i] = 0x1
-		i--
-		dAtA[i] = 0x92
-	}
-	if m.DNSPolicy != nil {
-		i -= len(*m.DNSPolicy)
-		copy(dAtA[i:], *m.DNSPolicy)
-		i = encodeVarintGenerated(dAtA, i, uint64(len(*m.DNSPolicy)))
-		i--
-		dAtA[i] = 0x1
-		i--
-		dAtA[i] = 0x8a
-	}
-	if m.HostNetwork != nil {
-		i--
-		if *m.HostNetwork {
+	i += n57
+	dAtA[i] = 0x22
+	i++
+	i = encodeVarintGenerated(dAtA, i, uint64(len(m.ServiceAccountName)))
+	i += copy(dAtA[i:], m.ServiceAccountName)
+	if m.AutomountServiceAccountToken != nil {
+		dAtA[i] = 0x28
+		i++
+		if *m.AutomountServiceAccountToken {
 			dAtA[i] = 1
 		} else {
 			dAtA[i] = 0
 		}
-		i--
-		dAtA[i] = 0x1
-		i--
-		dAtA[i] = 0x80
+		i++
 	}
-	if len(m.ImagePullSecrets) > 0 {
-		for iNdEx := len(m.ImagePullSecrets) - 1; iNdEx >= 0; iNdEx-- {
-			{
-				size, err := m.ImagePullSecrets[iNdEx].MarshalToSizedBuffer(dAtA[:i])
-				if err != nil {
-					return 0, err
-				}
-				i -= size
-				i = encodeVarintGenerated(dAtA, i, uint64(size))
-			}
-			i--
-			dAtA[i] = 0x7a
+	if m.Executor != nil {
+		dAtA[i] = 0x32
+		i++
+		i = encodeVarintGenerated(dAtA, i, uint64(m.Executor.Size()))
+		n58, err := m.Executor.MarshalTo(dAtA[i:])
+		if err != nil {
+			return 0, err
 		}
+		i += n58
 	}
-	if len(m.Tolerations) > 0 {
-		for iNdEx := len(m.Tolerations) - 1; iNdEx >= 0; iNdEx-- {
-			{
-				size, err := m.Tolerations[iNdEx].MarshalToSizedBuffer(dAtA[:i])
-				if err != nil {
-					return 0, err
-				}
-				i -= size
-				i = encodeVarintGenerated(dAtA, i, uint64(size))
-			}
-			i--
-			dAtA[i] = 0x72
-		}
-	}
-	if m.Affinity != nil {
-		{
-			size, err := m.Affinity.MarshalToSizedBuffer(dAtA[:i])
+	if len(m.Volumes) > 0 {
+		for _, msg := range m.Volumes {
+			dAtA[i] = 0x3a
+			i++
+			i = encodeVarintGenerated(dAtA, i, uint64(msg.Size()))
+			n, err := msg.MarshalTo(dAtA[i:])
 			if err != nil {
 				return 0, err
 			}
-			i -= size
-			i = encodeVarintGenerated(dAtA, i, uint64(size))
+			i += n
 		}
-		i--
-		dAtA[i] = 0x6a
+	}
+	if len(m.VolumeClaimTemplates) > 0 {
+		for _, msg := range m.VolumeClaimTemplates {
+			dAtA[i] = 0x42
+			i++
+			i = encodeVarintGenerated(dAtA, i, uint64(msg.Size()))
+			n, err := msg.MarshalTo(dAtA[i:])
+			if err != nil {
+				return 0, err
+			}
+			i += n
+		}
+	}
+	if m.Parallelism != nil {
+		dAtA[i] = 0x48
+		i++
+		i = encodeVarintGenerated(dAtA, i, uint64(*m.Parallelism))
+	}
+	if m.ArtifactRepositoryRef != nil {
+		dAtA[i] = 0x52
+		i++
+		i = encodeVarintGenerated(dAtA, i, uint64(m.ArtifactRepositoryRef.Size()))
+		n59, err := m.ArtifactRepositoryRef.MarshalTo(dAtA[i:])
+		if err != nil {
+			return 0, err
+		}
+		i += n59
+	}
+	if m.Suspend != nil {
+		dAtA[i] = 0x58
+		i++
+		if *m.Suspend {
+			dAtA[i] = 1
+		} else {
+			dAtA[i] = 0
+		}
+		i++
 	}
 	if len(m.NodeSelector) > 0 {
 		keysForNodeSelector := make([]string, 0, len(m.NodeSelector))
@@ -4359,142 +3899,179 @@ func (m *WorkflowSpec) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 			keysForNodeSelector = append(keysForNodeSelector, string(k))
 		}
 		github_com_gogo_protobuf_sortkeys.Strings(keysForNodeSelector)
-		for iNdEx := len(keysForNodeSelector) - 1; iNdEx >= 0; iNdEx-- {
-			v := m.NodeSelector[string(keysForNodeSelector[iNdEx])]
-			baseI := i
-			i -= len(v)
-			copy(dAtA[i:], v)
-			i = encodeVarintGenerated(dAtA, i, uint64(len(v)))
-			i--
-			dAtA[i] = 0x12
-			i -= len(keysForNodeSelector[iNdEx])
-			copy(dAtA[i:], keysForNodeSelector[iNdEx])
-			i = encodeVarintGenerated(dAtA, i, uint64(len(keysForNodeSelector[iNdEx])))
-			i--
-			dAtA[i] = 0xa
-			i = encodeVarintGenerated(dAtA, i, uint64(baseI-i))
-			i--
+		for _, k := range keysForNodeSelector {
 			dAtA[i] = 0x62
+			i++
+			v := m.NodeSelector[string(k)]
+			mapSize := 1 + len(k) + sovGenerated(uint64(len(k))) + 1 + len(v) + sovGenerated(uint64(len(v)))
+			i = encodeVarintGenerated(dAtA, i, uint64(mapSize))
+			dAtA[i] = 0xa
+			i++
+			i = encodeVarintGenerated(dAtA, i, uint64(len(k)))
+			i += copy(dAtA[i:], k)
+			dAtA[i] = 0x12
+			i++
+			i = encodeVarintGenerated(dAtA, i, uint64(len(v)))
+			i += copy(dAtA[i:], v)
 		}
 	}
-	if m.Suspend != nil {
-		i--
-		if *m.Suspend {
-			dAtA[i] = 1
-		} else {
-			dAtA[i] = 0
-		}
-		i--
-		dAtA[i] = 0x58
-	}
-	if m.ArtifactRepositoryRef != nil {
-		{
-			size, err := m.ArtifactRepositoryRef.MarshalToSizedBuffer(dAtA[:i])
-			if err != nil {
-				return 0, err
-			}
-			i -= size
-			i = encodeVarintGenerated(dAtA, i, uint64(size))
-		}
-		i--
-		dAtA[i] = 0x52
-	}
-	if m.Parallelism != nil {
-		i = encodeVarintGenerated(dAtA, i, uint64(*m.Parallelism))
-		i--
-		dAtA[i] = 0x48
-	}
-	if len(m.VolumeClaimTemplates) > 0 {
-		for iNdEx := len(m.VolumeClaimTemplates) - 1; iNdEx >= 0; iNdEx-- {
-			{
-				size, err := m.VolumeClaimTemplates[iNdEx].MarshalToSizedBuffer(dAtA[:i])
-				if err != nil {
-					return 0, err
-				}
-				i -= size
-				i = encodeVarintGenerated(dAtA, i, uint64(size))
-			}
-			i--
-			dAtA[i] = 0x42
-		}
-	}
-	if len(m.Volumes) > 0 {
-		for iNdEx := len(m.Volumes) - 1; iNdEx >= 0; iNdEx-- {
-			{
-				size, err := m.Volumes[iNdEx].MarshalToSizedBuffer(dAtA[:i])
-				if err != nil {
-					return 0, err
-				}
-				i -= size
-				i = encodeVarintGenerated(dAtA, i, uint64(size))
-			}
-			i--
-			dAtA[i] = 0x3a
-		}
-	}
-	if m.Executor != nil {
-		{
-			size, err := m.Executor.MarshalToSizedBuffer(dAtA[:i])
-			if err != nil {
-				return 0, err
-			}
-			i -= size
-			i = encodeVarintGenerated(dAtA, i, uint64(size))
-		}
-		i--
-		dAtA[i] = 0x32
-	}
-	if m.AutomountServiceAccountToken != nil {
-		i--
-		if *m.AutomountServiceAccountToken {
-			dAtA[i] = 1
-		} else {
-			dAtA[i] = 0
-		}
-		i--
-		dAtA[i] = 0x28
-	}
-	i -= len(m.ServiceAccountName)
-	copy(dAtA[i:], m.ServiceAccountName)
-	i = encodeVarintGenerated(dAtA, i, uint64(len(m.ServiceAccountName)))
-	i--
-	dAtA[i] = 0x22
-	{
-		size, err := m.Arguments.MarshalToSizedBuffer(dAtA[:i])
+	if m.Affinity != nil {
+		dAtA[i] = 0x6a
+		i++
+		i = encodeVarintGenerated(dAtA, i, uint64(m.Affinity.Size()))
+		n60, err := m.Affinity.MarshalTo(dAtA[i:])
 		if err != nil {
 			return 0, err
 		}
-		i -= size
-		i = encodeVarintGenerated(dAtA, i, uint64(size))
+		i += n60
 	}
-	i--
-	dAtA[i] = 0x1a
-	i -= len(m.Entrypoint)
-	copy(dAtA[i:], m.Entrypoint)
-	i = encodeVarintGenerated(dAtA, i, uint64(len(m.Entrypoint)))
-	i--
-	dAtA[i] = 0x12
-	if len(m.Templates) > 0 {
-		for iNdEx := len(m.Templates) - 1; iNdEx >= 0; iNdEx-- {
-			{
-				size, err := m.Templates[iNdEx].MarshalToSizedBuffer(dAtA[:i])
-				if err != nil {
-					return 0, err
-				}
-				i -= size
-				i = encodeVarintGenerated(dAtA, i, uint64(size))
+	if len(m.Tolerations) > 0 {
+		for _, msg := range m.Tolerations {
+			dAtA[i] = 0x72
+			i++
+			i = encodeVarintGenerated(dAtA, i, uint64(msg.Size()))
+			n, err := msg.MarshalTo(dAtA[i:])
+			if err != nil {
+				return 0, err
 			}
-			i--
-			dAtA[i] = 0xa
+			i += n
 		}
 	}
-	return len(dAtA) - i, nil
+	if len(m.ImagePullSecrets) > 0 {
+		for _, msg := range m.ImagePullSecrets {
+			dAtA[i] = 0x7a
+			i++
+			i = encodeVarintGenerated(dAtA, i, uint64(msg.Size()))
+			n, err := msg.MarshalTo(dAtA[i:])
+			if err != nil {
+				return 0, err
+			}
+			i += n
+		}
+	}
+	if m.HostNetwork != nil {
+		dAtA[i] = 0x80
+		i++
+		dAtA[i] = 0x1
+		i++
+		if *m.HostNetwork {
+			dAtA[i] = 1
+		} else {
+			dAtA[i] = 0
+		}
+		i++
+	}
+	if m.DNSPolicy != nil {
+		dAtA[i] = 0x8a
+		i++
+		dAtA[i] = 0x1
+		i++
+		i = encodeVarintGenerated(dAtA, i, uint64(len(*m.DNSPolicy)))
+		i += copy(dAtA[i:], *m.DNSPolicy)
+	}
+	if m.DNSConfig != nil {
+		dAtA[i] = 0x92
+		i++
+		dAtA[i] = 0x1
+		i++
+		i = encodeVarintGenerated(dAtA, i, uint64(m.DNSConfig.Size()))
+		n61, err := m.DNSConfig.MarshalTo(dAtA[i:])
+		if err != nil {
+			return 0, err
+		}
+		i += n61
+	}
+	dAtA[i] = 0x9a
+	i++
+	dAtA[i] = 0x1
+	i++
+	i = encodeVarintGenerated(dAtA, i, uint64(len(m.OnExit)))
+	i += copy(dAtA[i:], m.OnExit)
+	if m.TTLSecondsAfterFinished != nil {
+		dAtA[i] = 0xa0
+		i++
+		dAtA[i] = 0x1
+		i++
+		i = encodeVarintGenerated(dAtA, i, uint64(*m.TTLSecondsAfterFinished))
+	}
+	if m.ActiveDeadlineSeconds != nil {
+		dAtA[i] = 0xa8
+		i++
+		dAtA[i] = 0x1
+		i++
+		i = encodeVarintGenerated(dAtA, i, uint64(*m.ActiveDeadlineSeconds))
+	}
+	if m.Priority != nil {
+		dAtA[i] = 0xb0
+		i++
+		dAtA[i] = 0x1
+		i++
+		i = encodeVarintGenerated(dAtA, i, uint64(*m.Priority))
+	}
+	dAtA[i] = 0xba
+	i++
+	dAtA[i] = 0x1
+	i++
+	i = encodeVarintGenerated(dAtA, i, uint64(len(m.SchedulerName)))
+	i += copy(dAtA[i:], m.SchedulerName)
+	if m.PodGC != nil {
+		dAtA[i] = 0xc2
+		i++
+		dAtA[i] = 0x1
+		i++
+		i = encodeVarintGenerated(dAtA, i, uint64(m.PodGC.Size()))
+		n62, err := m.PodGC.MarshalTo(dAtA[i:])
+		if err != nil {
+			return 0, err
+		}
+		i += n62
+	}
+	dAtA[i] = 0xca
+	i++
+	dAtA[i] = 0x1
+	i++
+	i = encodeVarintGenerated(dAtA, i, uint64(len(m.PodPriorityClassName)))
+	i += copy(dAtA[i:], m.PodPriorityClassName)
+	if m.PodPriority != nil {
+		dAtA[i] = 0xd0
+		i++
+		dAtA[i] = 0x1
+		i++
+		i = encodeVarintGenerated(dAtA, i, uint64(*m.PodPriority))
+	}
+	if len(m.HostAliases) > 0 {
+		for _, msg := range m.HostAliases {
+			dAtA[i] = 0xda
+			i++
+			dAtA[i] = 0x1
+			i++
+			i = encodeVarintGenerated(dAtA, i, uint64(msg.Size()))
+			n, err := msg.MarshalTo(dAtA[i:])
+			if err != nil {
+				return 0, err
+			}
+			i += n
+		}
+	}
+	if m.SecurityContext != nil {
+		dAtA[i] = 0xe2
+		i++
+		dAtA[i] = 0x1
+		i++
+		i = encodeVarintGenerated(dAtA, i, uint64(m.SecurityContext.Size()))
+		n63, err := m.SecurityContext.MarshalTo(dAtA[i:])
+		if err != nil {
+			return 0, err
+		}
+		i += n63
+	}
+	return i, nil
 }
 
 func (m *WorkflowStatus) Marshal() (dAtA []byte, err error) {
 	size := m.Size()
 	dAtA = make([]byte, size)
-	n, err := m.MarshalToSizedBuffer(dAtA[:size])
+	n, err := m.MarshalTo(dAtA)
 	if err != nil {
 		return nil, err
 	}
@@ -4502,141 +4079,129 @@ func (m *WorkflowStatus) Marshal() (dAtA []byte, err error) {
 }
 
 func (m *WorkflowStatus) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
-}
-
-func (m *WorkflowStatus) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
+	var i int
 	_ = i
 	var l int
 	_ = l
-	if len(m.StoredTemplates) > 0 {
-		keysForStoredTemplates := make([]string, 0, len(m.StoredTemplates))
-		for k := range m.StoredTemplates {
-			keysForStoredTemplates = append(keysForStoredTemplates, string(k))
-		}
-		github_com_gogo_protobuf_sortkeys.Strings(keysForStoredTemplates)
-		for iNdEx := len(keysForStoredTemplates) - 1; iNdEx >= 0; iNdEx-- {
-			v := m.StoredTemplates[string(keysForStoredTemplates[iNdEx])]
-			baseI := i
-			{
-				size, err := (&v).MarshalToSizedBuffer(dAtA[:i])
-				if err != nil {
-					return 0, err
-				}
-				i -= size
-				i = encodeVarintGenerated(dAtA, i, uint64(size))
-			}
-			i--
-			dAtA[i] = 0x12
-			i -= len(keysForStoredTemplates[iNdEx])
-			copy(dAtA[i:], keysForStoredTemplates[iNdEx])
-			i = encodeVarintGenerated(dAtA, i, uint64(len(keysForStoredTemplates[iNdEx])))
-			i--
-			dAtA[i] = 0xa
-			i = encodeVarintGenerated(dAtA, i, uint64(baseI-i))
-			i--
-			dAtA[i] = 0x4a
-		}
+	dAtA[i] = 0xa
+	i++
+	i = encodeVarintGenerated(dAtA, i, uint64(len(m.Phase)))
+	i += copy(dAtA[i:], m.Phase)
+	dAtA[i] = 0x12
+	i++
+	i = encodeVarintGenerated(dAtA, i, uint64(m.StartedAt.Size()))
+	n64, err := m.StartedAt.MarshalTo(dAtA[i:])
+	if err != nil {
+		return 0, err
 	}
-	if m.Outputs != nil {
-		{
-			size, err := m.Outputs.MarshalToSizedBuffer(dAtA[:i])
-			if err != nil {
-				return 0, err
-			}
-			i -= size
-			i = encodeVarintGenerated(dAtA, i, uint64(size))
-		}
-		i--
-		dAtA[i] = 0x42
+	i += n64
+	dAtA[i] = 0x1a
+	i++
+	i = encodeVarintGenerated(dAtA, i, uint64(m.FinishedAt.Size()))
+	n65, err := m.FinishedAt.MarshalTo(dAtA[i:])
+	if err != nil {
+		return 0, err
 	}
-	if len(m.PersistentVolumeClaims) > 0 {
-		for iNdEx := len(m.PersistentVolumeClaims) - 1; iNdEx >= 0; iNdEx-- {
-			{
-				size, err := m.PersistentVolumeClaims[iNdEx].MarshalToSizedBuffer(dAtA[:i])
-				if err != nil {
-					return 0, err
-				}
-				i -= size
-				i = encodeVarintGenerated(dAtA, i, uint64(size))
-			}
-			i--
-			dAtA[i] = 0x3a
-		}
-	}
+	i += n65
+	dAtA[i] = 0x22
+	i++
+	i = encodeVarintGenerated(dAtA, i, uint64(len(m.Message)))
+	i += copy(dAtA[i:], m.Message)
+	dAtA[i] = 0x2a
+	i++
+	i = encodeVarintGenerated(dAtA, i, uint64(len(m.CompressedNodes)))
+	i += copy(dAtA[i:], m.CompressedNodes)
 	if len(m.Nodes) > 0 {
 		keysForNodes := make([]string, 0, len(m.Nodes))
 		for k := range m.Nodes {
 			keysForNodes = append(keysForNodes, string(k))
 		}
 		github_com_gogo_protobuf_sortkeys.Strings(keysForNodes)
-		for iNdEx := len(keysForNodes) - 1; iNdEx >= 0; iNdEx-- {
-			v := m.Nodes[string(keysForNodes[iNdEx])]
-			baseI := i
-			{
-				size, err := (&v).MarshalToSizedBuffer(dAtA[:i])
-				if err != nil {
-					return 0, err
-				}
-				i -= size
-				i = encodeVarintGenerated(dAtA, i, uint64(size))
-			}
-			i--
-			dAtA[i] = 0x12
-			i -= len(keysForNodes[iNdEx])
-			copy(dAtA[i:], keysForNodes[iNdEx])
-			i = encodeVarintGenerated(dAtA, i, uint64(len(keysForNodes[iNdEx])))
-			i--
-			dAtA[i] = 0xa
-			i = encodeVarintGenerated(dAtA, i, uint64(baseI-i))
-			i--
+		for _, k := range keysForNodes {
 			dAtA[i] = 0x32
+			i++
+			v := m.Nodes[string(k)]
+			msgSize := 0
+			if (&v) != nil {
+				msgSize = (&v).Size()
+				msgSize += 1 + sovGenerated(uint64(msgSize))
+			}
+			mapSize := 1 + len(k) + sovGenerated(uint64(len(k))) + msgSize
+			i = encodeVarintGenerated(dAtA, i, uint64(mapSize))
+			dAtA[i] = 0xa
+			i++
+			i = encodeVarintGenerated(dAtA, i, uint64(len(k)))
+			i += copy(dAtA[i:], k)
+			dAtA[i] = 0x12
+			i++
+			i = encodeVarintGenerated(dAtA, i, uint64((&v).Size()))
+			n66, err := (&v).MarshalTo(dAtA[i:])
+			if err != nil {
+				return 0, err
+			}
+			i += n66
 		}
 	}
-	i -= len(m.CompressedNodes)
-	copy(dAtA[i:], m.CompressedNodes)
-	i = encodeVarintGenerated(dAtA, i, uint64(len(m.CompressedNodes)))
-	i--
-	dAtA[i] = 0x2a
-	i -= len(m.Message)
-	copy(dAtA[i:], m.Message)
-	i = encodeVarintGenerated(dAtA, i, uint64(len(m.Message)))
-	i--
-	dAtA[i] = 0x22
-	{
-		size, err := m.FinishedAt.MarshalToSizedBuffer(dAtA[:i])
+	if len(m.PersistentVolumeClaims) > 0 {
+		for _, msg := range m.PersistentVolumeClaims {
+			dAtA[i] = 0x3a
+			i++
+			i = encodeVarintGenerated(dAtA, i, uint64(msg.Size()))
+			n, err := msg.MarshalTo(dAtA[i:])
+			if err != nil {
+				return 0, err
+			}
+			i += n
+		}
+	}
+	if m.Outputs != nil {
+		dAtA[i] = 0x42
+		i++
+		i = encodeVarintGenerated(dAtA, i, uint64(m.Outputs.Size()))
+		n67, err := m.Outputs.MarshalTo(dAtA[i:])
 		if err != nil {
 			return 0, err
 		}
-		i -= size
-		i = encodeVarintGenerated(dAtA, i, uint64(size))
+		i += n67
 	}
-	i--
-	dAtA[i] = 0x1a
-	{
-		size, err := m.StartedAt.MarshalToSizedBuffer(dAtA[:i])
-		if err != nil {
-			return 0, err
+	if len(m.StoredTemplates) > 0 {
+		keysForStoredTemplates := make([]string, 0, len(m.StoredTemplates))
+		for k := range m.StoredTemplates {
+			keysForStoredTemplates = append(keysForStoredTemplates, string(k))
 		}
-		i -= size
-		i = encodeVarintGenerated(dAtA, i, uint64(size))
+		github_com_gogo_protobuf_sortkeys.Strings(keysForStoredTemplates)
+		for _, k := range keysForStoredTemplates {
+			dAtA[i] = 0x4a
+			i++
+			v := m.StoredTemplates[string(k)]
+			msgSize := 0
+			if (&v) != nil {
+				msgSize = (&v).Size()
+				msgSize += 1 + sovGenerated(uint64(msgSize))
+			}
+			mapSize := 1 + len(k) + sovGenerated(uint64(len(k))) + msgSize
+			i = encodeVarintGenerated(dAtA, i, uint64(mapSize))
+			dAtA[i] = 0xa
+			i++
+			i = encodeVarintGenerated(dAtA, i, uint64(len(k)))
+			i += copy(dAtA[i:], k)
+			dAtA[i] = 0x12
+			i++
+			i = encodeVarintGenerated(dAtA, i, uint64((&v).Size()))
+			n68, err := (&v).MarshalTo(dAtA[i:])
+			if err != nil {
+				return 0, err
+			}
+			i += n68
+		}
 	}
-	i--
-	dAtA[i] = 0x12
-	i -= len(m.Phase)
-	copy(dAtA[i:], m.Phase)
-	i = encodeVarintGenerated(dAtA, i, uint64(len(m.Phase)))
-	i--
-	dAtA[i] = 0xa
-	return len(dAtA) - i, nil
+	return i, nil
 }
 
 func (m *WorkflowStep) Marshal() (dAtA []byte, err error) {
 	size := m.Size()
 	dAtA = make([]byte, size)
-	n, err := m.MarshalToSizedBuffer(dAtA[:size])
+	n, err := m.MarshalTo(dAtA)
 	if err != nil {
 		return nil, err
 	}
@@ -4644,102 +4209,83 @@ func (m *WorkflowStep) Marshal() (dAtA []byte, err error) {
 }
 
 func (m *WorkflowStep) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
-}
-
-func (m *WorkflowStep) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
+	var i int
 	_ = i
 	var l int
 	_ = l
-	if m.ContinueOn != nil {
-		{
-			size, err := m.ContinueOn.MarshalToSizedBuffer(dAtA[:i])
-			if err != nil {
-				return 0, err
-			}
-			i -= size
-			i = encodeVarintGenerated(dAtA, i, uint64(size))
-		}
-		i--
-		dAtA[i] = 0x4a
+	dAtA[i] = 0xa
+	i++
+	i = encodeVarintGenerated(dAtA, i, uint64(len(m.Name)))
+	i += copy(dAtA[i:], m.Name)
+	dAtA[i] = 0x12
+	i++
+	i = encodeVarintGenerated(dAtA, i, uint64(len(m.Template)))
+	i += copy(dAtA[i:], m.Template)
+	dAtA[i] = 0x1a
+	i++
+	i = encodeVarintGenerated(dAtA, i, uint64(m.Arguments.Size()))
+	n69, err := m.Arguments.MarshalTo(dAtA[i:])
+	if err != nil {
+		return 0, err
 	}
-	i -= len(m.When)
-	copy(dAtA[i:], m.When)
-	i = encodeVarintGenerated(dAtA, i, uint64(len(m.When)))
-	i--
-	dAtA[i] = 0x42
-	if m.WithSequence != nil {
-		{
-			size, err := m.WithSequence.MarshalToSizedBuffer(dAtA[:i])
-			if err != nil {
-				return 0, err
-			}
-			i -= size
-			i = encodeVarintGenerated(dAtA, i, uint64(size))
-		}
-		i--
-		dAtA[i] = 0x3a
-	}
-	i -= len(m.WithParam)
-	copy(dAtA[i:], m.WithParam)
-	i = encodeVarintGenerated(dAtA, i, uint64(len(m.WithParam)))
-	i--
-	dAtA[i] = 0x32
-	if len(m.WithItems) > 0 {
-		for iNdEx := len(m.WithItems) - 1; iNdEx >= 0; iNdEx-- {
-			{
-				size, err := m.WithItems[iNdEx].MarshalToSizedBuffer(dAtA[:i])
-				if err != nil {
-					return 0, err
-				}
-				i -= size
-				i = encodeVarintGenerated(dAtA, i, uint64(size))
-			}
-			i--
-			dAtA[i] = 0x2a
-		}
-	}
+	i += n69
 	if m.TemplateRef != nil {
-		{
-			size, err := m.TemplateRef.MarshalToSizedBuffer(dAtA[:i])
-			if err != nil {
-				return 0, err
-			}
-			i -= size
-			i = encodeVarintGenerated(dAtA, i, uint64(size))
-		}
-		i--
 		dAtA[i] = 0x22
-	}
-	{
-		size, err := m.Arguments.MarshalToSizedBuffer(dAtA[:i])
+		i++
+		i = encodeVarintGenerated(dAtA, i, uint64(m.TemplateRef.Size()))
+		n70, err := m.TemplateRef.MarshalTo(dAtA[i:])
 		if err != nil {
 			return 0, err
 		}
-		i -= size
-		i = encodeVarintGenerated(dAtA, i, uint64(size))
+		i += n70
 	}
-	i--
-	dAtA[i] = 0x1a
-	i -= len(m.Template)
-	copy(dAtA[i:], m.Template)
-	i = encodeVarintGenerated(dAtA, i, uint64(len(m.Template)))
-	i--
-	dAtA[i] = 0x12
-	i -= len(m.Name)
-	copy(dAtA[i:], m.Name)
-	i = encodeVarintGenerated(dAtA, i, uint64(len(m.Name)))
-	i--
-	dAtA[i] = 0xa
-	return len(dAtA) - i, nil
+	if len(m.WithItems) > 0 {
+		for _, msg := range m.WithItems {
+			dAtA[i] = 0x2a
+			i++
+			i = encodeVarintGenerated(dAtA, i, uint64(msg.Size()))
+			n, err := msg.MarshalTo(dAtA[i:])
+			if err != nil {
+				return 0, err
+			}
+			i += n
+		}
+	}
+	dAtA[i] = 0x32
+	i++
+	i = encodeVarintGenerated(dAtA, i, uint64(len(m.WithParam)))
+	i += copy(dAtA[i:], m.WithParam)
+	if m.WithSequence != nil {
+		dAtA[i] = 0x3a
+		i++
+		i = encodeVarintGenerated(dAtA, i, uint64(m.WithSequence.Size()))
+		n71, err := m.WithSequence.MarshalTo(dAtA[i:])
+		if err != nil {
+			return 0, err
+		}
+		i += n71
+	}
+	dAtA[i] = 0x42
+	i++
+	i = encodeVarintGenerated(dAtA, i, uint64(len(m.When)))
+	i += copy(dAtA[i:], m.When)
+	if m.ContinueOn != nil {
+		dAtA[i] = 0x4a
+		i++
+		i = encodeVarintGenerated(dAtA, i, uint64(m.ContinueOn.Size()))
+		n72, err := m.ContinueOn.MarshalTo(dAtA[i:])
+		if err != nil {
+			return 0, err
+		}
+		i += n72
+	}
+	return i, nil
 }
 
 func (m *WorkflowSteps) Marshal() (dAtA []byte, err error) {
 	size := m.Size()
 	dAtA = make([]byte, size)
-	n, err := m.MarshalToSizedBuffer(dAtA[:size])
+	n, err := m.MarshalTo(dAtA)
 	if err != nil {
 		return nil, err
 	}
@@ -4747,36 +4293,29 @@ func (m *WorkflowSteps) Marshal() (dAtA []byte, err error) {
 }
 
 func (m *WorkflowSteps) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
-}
-
-func (m *WorkflowSteps) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
+	var i int
 	_ = i
 	var l int
 	_ = l
 	if len(m.Steps) > 0 {
-		for iNdEx := len(m.Steps) - 1; iNdEx >= 0; iNdEx-- {
-			{
-				size, err := m.Steps[iNdEx].MarshalToSizedBuffer(dAtA[:i])
-				if err != nil {
-					return 0, err
-				}
-				i -= size
-				i = encodeVarintGenerated(dAtA, i, uint64(size))
-			}
-			i--
+		for _, msg := range m.Steps {
 			dAtA[i] = 0xa
+			i++
+			i = encodeVarintGenerated(dAtA, i, uint64(msg.Size()))
+			n, err := msg.MarshalTo(dAtA[i:])
+			if err != nil {
+				return 0, err
+			}
+			i += n
 		}
 	}
-	return len(dAtA) - i, nil
+	return i, nil
 }
 
 func (m *WorkflowTemplate) Marshal() (dAtA []byte, err error) {
 	size := m.Size()
 	dAtA = make([]byte, size)
-	n, err := m.MarshalToSizedBuffer(dAtA[:size])
+	n, err := m.MarshalTo(dAtA)
 	if err != nil {
 		return nil, err
 	}
@@ -4784,42 +4323,33 @@ func (m *WorkflowTemplate) Marshal() (dAtA []byte, err error) {
 }
 
 func (m *WorkflowTemplate) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
-}
-
-func (m *WorkflowTemplate) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
+	var i int
 	_ = i
 	var l int
 	_ = l
-	{
-		size, err := m.Spec.MarshalToSizedBuffer(dAtA[:i])
-		if err != nil {
-			return 0, err
-		}
-		i -= size
-		i = encodeVarintGenerated(dAtA, i, uint64(size))
-	}
-	i--
-	dAtA[i] = 0x12
-	{
-		size, err := m.ObjectMeta.MarshalToSizedBuffer(dAtA[:i])
-		if err != nil {
-			return 0, err
-		}
-		i -= size
-		i = encodeVarintGenerated(dAtA, i, uint64(size))
-	}
-	i--
 	dAtA[i] = 0xa
-	return len(dAtA) - i, nil
+	i++
+	i = encodeVarintGenerated(dAtA, i, uint64(m.ObjectMeta.Size()))
+	n73, err := m.ObjectMeta.MarshalTo(dAtA[i:])
+	if err != nil {
+		return 0, err
+	}
+	i += n73
+	dAtA[i] = 0x12
+	i++
+	i = encodeVarintGenerated(dAtA, i, uint64(m.Spec.Size()))
+	n74, err := m.Spec.MarshalTo(dAtA[i:])
+	if err != nil {
+		return 0, err
+	}
+	i += n74
+	return i, nil
 }
 
 func (m *WorkflowTemplateList) Marshal() (dAtA []byte, err error) {
 	size := m.Size()
 	dAtA = make([]byte, size)
-	n, err := m.MarshalToSizedBuffer(dAtA[:size])
+	n, err := m.MarshalTo(dAtA)
 	if err != nil {
 		return nil, err
 	}
@@ -4827,46 +4357,37 @@ func (m *WorkflowTemplateList) Marshal() (dAtA []byte, err error) {
 }
 
 func (m *WorkflowTemplateList) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
-}
-
-func (m *WorkflowTemplateList) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
+	var i int
 	_ = i
 	var l int
 	_ = l
-	if len(m.Items) > 0 {
-		for iNdEx := len(m.Items) - 1; iNdEx >= 0; iNdEx-- {
-			{
-				size, err := m.Items[iNdEx].MarshalToSizedBuffer(dAtA[:i])
-				if err != nil {
-					return 0, err
-				}
-				i -= size
-				i = encodeVarintGenerated(dAtA, i, uint64(size))
-			}
-			i--
-			dAtA[i] = 0x12
-		}
-	}
-	{
-		size, err := m.ListMeta.MarshalToSizedBuffer(dAtA[:i])
-		if err != nil {
-			return 0, err
-		}
-		i -= size
-		i = encodeVarintGenerated(dAtA, i, uint64(size))
-	}
-	i--
 	dAtA[i] = 0xa
-	return len(dAtA) - i, nil
+	i++
+	i = encodeVarintGenerated(dAtA, i, uint64(m.ListMeta.Size()))
+	n75, err := m.ListMeta.MarshalTo(dAtA[i:])
+	if err != nil {
+		return 0, err
+	}
+	i += n75
+	if len(m.Items) > 0 {
+		for _, msg := range m.Items {
+			dAtA[i] = 0x12
+			i++
+			i = encodeVarintGenerated(dAtA, i, uint64(msg.Size()))
+			n, err := msg.MarshalTo(dAtA[i:])
+			if err != nil {
+				return 0, err
+			}
+			i += n
+		}
+	}
+	return i, nil
 }
 
 func (m *WorkflowTemplateSpec) Marshal() (dAtA []byte, err error) {
 	size := m.Size()
 	dAtA = make([]byte, size)
-	n, err := m.MarshalToSizedBuffer(dAtA[:size])
+	n, err := m.MarshalTo(dAtA)
 	if err != nil {
 		return nil, err
 	}
@@ -4874,52 +4395,41 @@ func (m *WorkflowTemplateSpec) Marshal() (dAtA []byte, err error) {
 }
 
 func (m *WorkflowTemplateSpec) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
-}
-
-func (m *WorkflowTemplateSpec) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
+	var i int
 	_ = i
 	var l int
 	_ = l
-	{
-		size, err := m.Arguments.MarshalToSizedBuffer(dAtA[:i])
-		if err != nil {
-			return 0, err
-		}
-		i -= size
-		i = encodeVarintGenerated(dAtA, i, uint64(size))
-	}
-	i--
-	dAtA[i] = 0x12
 	if len(m.Templates) > 0 {
-		for iNdEx := len(m.Templates) - 1; iNdEx >= 0; iNdEx-- {
-			{
-				size, err := m.Templates[iNdEx].MarshalToSizedBuffer(dAtA[:i])
-				if err != nil {
-					return 0, err
-				}
-				i -= size
-				i = encodeVarintGenerated(dAtA, i, uint64(size))
-			}
-			i--
+		for _, msg := range m.Templates {
 			dAtA[i] = 0xa
+			i++
+			i = encodeVarintGenerated(dAtA, i, uint64(msg.Size()))
+			n, err := msg.MarshalTo(dAtA[i:])
+			if err != nil {
+				return 0, err
+			}
+			i += n
 		}
 	}
-	return len(dAtA) - i, nil
+	dAtA[i] = 0x12
+	i++
+	i = encodeVarintGenerated(dAtA, i, uint64(m.Arguments.Size()))
+	n76, err := m.Arguments.MarshalTo(dAtA[i:])
+	if err != nil {
+		return 0, err
+	}
+	i += n76
+	return i, nil
 }
 
 func encodeVarintGenerated(dAtA []byte, offset int, v uint64) int {
-	offset -= sovGenerated(v)
-	base := offset
 	for v >= 1<<7 {
 		dAtA[offset] = uint8(v&0x7f | 0x80)
 		v >>= 7
 		offset++
 	}
 	dAtA[offset] = uint8(v)
-	return base
+	return offset + 1
 }
 func (m *ArchiveStrategy) Size() (n int) {
 	if m == nil {
@@ -6072,7 +5582,14 @@ func (m *WorkflowTemplateSpec) Size() (n int) {
 }
 
 func sovGenerated(x uint64) (n int) {
-	return (math_bits.Len64(x|1) + 6) / 7
+	for {
+		n++
+		x >>= 7
+		if x == 0 {
+			break
+		}
+	}
+	return n
 }
 func sozGenerated(x uint64) (n int) {
 	return sovGenerated(uint64((x << 1) ^ uint64((int64(x) >> 63))))
@@ -6082,8 +5599,8 @@ func (this *ArchiveStrategy) String() string {
 		return "nil"
 	}
 	s := strings.Join([]string{`&ArchiveStrategy{`,
-		`Tar:` + strings.Replace(this.Tar.String(), "TarStrategy", "TarStrategy", 1) + `,`,
-		`None:` + strings.Replace(this.None.String(), "NoneStrategy", "NoneStrategy", 1) + `,`,
+		`Tar:` + strings.Replace(fmt.Sprintf("%v", this.Tar), "TarStrategy", "TarStrategy", 1) + `,`,
+		`None:` + strings.Replace(fmt.Sprintf("%v", this.None), "NoneStrategy", "NoneStrategy", 1) + `,`,
 		`}`,
 	}, "")
 	return s
@@ -6092,19 +5609,9 @@ func (this *Arguments) String() string {
 	if this == nil {
 		return "nil"
 	}
-	repeatedStringForParameters := "[]Parameter{"
-	for _, f := range this.Parameters {
-		repeatedStringForParameters += strings.Replace(strings.Replace(f.String(), "Parameter", "Parameter", 1), `&`, ``, 1) + ","
-	}
-	repeatedStringForParameters += "}"
-	repeatedStringForArtifacts := "[]Artifact{"
-	for _, f := range this.Artifacts {
-		repeatedStringForArtifacts += strings.Replace(strings.Replace(f.String(), "Artifact", "Artifact", 1), `&`, ``, 1) + ","
-	}
-	repeatedStringForArtifacts += "}"
 	s := strings.Join([]string{`&Arguments{`,
-		`Parameters:` + repeatedStringForParameters + `,`,
-		`Artifacts:` + repeatedStringForArtifacts + `,`,
+		`Parameters:` + strings.Replace(strings.Replace(fmt.Sprintf("%v", this.Parameters), "Parameter", "Parameter", 1), `&`, ``, 1) + `,`,
+		`Artifacts:` + strings.Replace(strings.Replace(fmt.Sprintf("%v", this.Artifacts), "Artifact", "Artifact", 1), `&`, ``, 1) + `,`,
 		`}`,
 	}, "")
 	return s
@@ -6120,7 +5627,7 @@ func (this *Artifact) String() string {
 		`From:` + fmt.Sprintf("%v", this.From) + `,`,
 		`ArtifactLocation:` + strings.Replace(strings.Replace(this.ArtifactLocation.String(), "ArtifactLocation", "ArtifactLocation", 1), `&`, ``, 1) + `,`,
 		`GlobalName:` + fmt.Sprintf("%v", this.GlobalName) + `,`,
-		`Archive:` + strings.Replace(this.Archive.String(), "ArchiveStrategy", "ArchiveStrategy", 1) + `,`,
+		`Archive:` + strings.Replace(fmt.Sprintf("%v", this.Archive), "ArchiveStrategy", "ArchiveStrategy", 1) + `,`,
 		`Optional:` + fmt.Sprintf("%v", this.Optional) + `,`,
 		`}`,
 	}, "")
@@ -6132,12 +5639,12 @@ func (this *ArtifactLocation) String() string {
 	}
 	s := strings.Join([]string{`&ArtifactLocation{`,
 		`ArchiveLogs:` + valueToStringGenerated(this.ArchiveLogs) + `,`,
-		`S3:` + strings.Replace(this.S3.String(), "S3Artifact", "S3Artifact", 1) + `,`,
-		`Git:` + strings.Replace(this.Git.String(), "GitArtifact", "GitArtifact", 1) + `,`,
-		`HTTP:` + strings.Replace(this.HTTP.String(), "HTTPArtifact", "HTTPArtifact", 1) + `,`,
-		`Artifactory:` + strings.Replace(this.Artifactory.String(), "ArtifactoryArtifact", "ArtifactoryArtifact", 1) + `,`,
-		`HDFS:` + strings.Replace(this.HDFS.String(), "HDFSArtifact", "HDFSArtifact", 1) + `,`,
-		`Raw:` + strings.Replace(this.Raw.String(), "RawArtifact", "RawArtifact", 1) + `,`,
+		`S3:` + strings.Replace(fmt.Sprintf("%v", this.S3), "S3Artifact", "S3Artifact", 1) + `,`,
+		`Git:` + strings.Replace(fmt.Sprintf("%v", this.Git), "GitArtifact", "GitArtifact", 1) + `,`,
+		`HTTP:` + strings.Replace(fmt.Sprintf("%v", this.HTTP), "HTTPArtifact", "HTTPArtifact", 1) + `,`,
+		`Artifactory:` + strings.Replace(fmt.Sprintf("%v", this.Artifactory), "ArtifactoryArtifact", "ArtifactoryArtifact", 1) + `,`,
+		`HDFS:` + strings.Replace(fmt.Sprintf("%v", this.HDFS), "HDFSArtifact", "HDFSArtifact", 1) + `,`,
+		`Raw:` + strings.Replace(fmt.Sprintf("%v", this.Raw), "RawArtifact", "RawArtifact", 1) + `,`,
 		`}`,
 	}, "")
 	return s
@@ -6190,22 +5697,17 @@ func (this *DAGTask) String() string {
 	if this == nil {
 		return "nil"
 	}
-	repeatedStringForWithItems := "[]Item{"
-	for _, f := range this.WithItems {
-		repeatedStringForWithItems += fmt.Sprintf("%v", f) + ","
-	}
-	repeatedStringForWithItems += "}"
 	s := strings.Join([]string{`&DAGTask{`,
 		`Name:` + fmt.Sprintf("%v", this.Name) + `,`,
 		`Template:` + fmt.Sprintf("%v", this.Template) + `,`,
 		`Arguments:` + strings.Replace(strings.Replace(this.Arguments.String(), "Arguments", "Arguments", 1), `&`, ``, 1) + `,`,
-		`TemplateRef:` + strings.Replace(this.TemplateRef.String(), "TemplateRef", "TemplateRef", 1) + `,`,
+		`TemplateRef:` + strings.Replace(fmt.Sprintf("%v", this.TemplateRef), "TemplateRef", "TemplateRef", 1) + `,`,
 		`Dependencies:` + fmt.Sprintf("%v", this.Dependencies) + `,`,
-		`WithItems:` + repeatedStringForWithItems + `,`,
+		`WithItems:` + strings.Replace(strings.Replace(fmt.Sprintf("%v", this.WithItems), "Item", "Item", 1), `&`, ``, 1) + `,`,
 		`WithParam:` + fmt.Sprintf("%v", this.WithParam) + `,`,
-		`WithSequence:` + strings.Replace(this.WithSequence.String(), "Sequence", "Sequence", 1) + `,`,
+		`WithSequence:` + strings.Replace(fmt.Sprintf("%v", this.WithSequence), "Sequence", "Sequence", 1) + `,`,
 		`When:` + fmt.Sprintf("%v", this.When) + `,`,
-		`ContinueOn:` + strings.Replace(this.ContinueOn.String(), "ContinueOn", "ContinueOn", 1) + `,`,
+		`ContinueOn:` + strings.Replace(fmt.Sprintf("%v", this.ContinueOn), "ContinueOn", "ContinueOn", 1) + `,`,
 		`}`,
 	}, "")
 	return s
@@ -6214,14 +5716,9 @@ func (this *DAGTemplate) String() string {
 	if this == nil {
 		return "nil"
 	}
-	repeatedStringForTasks := "[]DAGTask{"
-	for _, f := range this.Tasks {
-		repeatedStringForTasks += strings.Replace(strings.Replace(f.String(), "DAGTask", "DAGTask", 1), `&`, ``, 1) + ","
-	}
-	repeatedStringForTasks += "}"
 	s := strings.Join([]string{`&DAGTemplate{`,
 		`Target:` + fmt.Sprintf("%v", this.Target) + `,`,
-		`Tasks:` + repeatedStringForTasks + `,`,
+		`Tasks:` + strings.Replace(strings.Replace(fmt.Sprintf("%v", this.Tasks), "DAGTask", "DAGTask", 1), `&`, ``, 1) + `,`,
 		`FailFast:` + valueToStringGenerated(this.FailFast) + `,`,
 		`}`,
 	}, "")
@@ -6307,19 +5804,9 @@ func (this *Inputs) String() string {
 	if this == nil {
 		return "nil"
 	}
-	repeatedStringForParameters := "[]Parameter{"
-	for _, f := range this.Parameters {
-		repeatedStringForParameters += strings.Replace(strings.Replace(f.String(), "Parameter", "Parameter", 1), `&`, ``, 1) + ","
-	}
-	repeatedStringForParameters += "}"
-	repeatedStringForArtifacts := "[]Artifact{"
-	for _, f := range this.Artifacts {
-		repeatedStringForArtifacts += strings.Replace(strings.Replace(f.String(), "Artifact", "Artifact", 1), `&`, ``, 1) + ","
-	}
-	repeatedStringForArtifacts += "}"
 	s := strings.Join([]string{`&Inputs{`,
-		`Parameters:` + repeatedStringForParameters + `,`,
-		`Artifacts:` + repeatedStringForArtifacts + `,`,
+		`Parameters:` + strings.Replace(strings.Replace(fmt.Sprintf("%v", this.Parameters), "Parameter", "Parameter", 1), `&`, ``, 1) + `,`,
+		`Artifacts:` + strings.Replace(strings.Replace(fmt.Sprintf("%v", this.Artifacts), "Artifact", "Artifact", 1), `&`, ``, 1) + `,`,
 		`}`,
 	}, "")
 	return s
@@ -6365,16 +5852,16 @@ func (this *NodeStatus) String() string {
 		`DisplayName:` + fmt.Sprintf("%v", this.DisplayName) + `,`,
 		`Type:` + fmt.Sprintf("%v", this.Type) + `,`,
 		`TemplateName:` + fmt.Sprintf("%v", this.TemplateName) + `,`,
-		`TemplateRef:` + strings.Replace(this.TemplateRef.String(), "TemplateRef", "TemplateRef", 1) + `,`,
+		`TemplateRef:` + strings.Replace(fmt.Sprintf("%v", this.TemplateRef), "TemplateRef", "TemplateRef", 1) + `,`,
 		`Phase:` + fmt.Sprintf("%v", this.Phase) + `,`,
 		`BoundaryID:` + fmt.Sprintf("%v", this.BoundaryID) + `,`,
 		`Message:` + fmt.Sprintf("%v", this.Message) + `,`,
-		`StartedAt:` + strings.Replace(strings.Replace(fmt.Sprintf("%v", this.StartedAt), "Time", "v11.Time", 1), `&`, ``, 1) + `,`,
-		`FinishedAt:` + strings.Replace(strings.Replace(fmt.Sprintf("%v", this.FinishedAt), "Time", "v11.Time", 1), `&`, ``, 1) + `,`,
+		`StartedAt:` + strings.Replace(strings.Replace(this.StartedAt.String(), "Time", "v11.Time", 1), `&`, ``, 1) + `,`,
+		`FinishedAt:` + strings.Replace(strings.Replace(this.FinishedAt.String(), "Time", "v11.Time", 1), `&`, ``, 1) + `,`,
 		`PodIP:` + fmt.Sprintf("%v", this.PodIP) + `,`,
 		`Daemoned:` + valueToStringGenerated(this.Daemoned) + `,`,
-		`Inputs:` + strings.Replace(this.Inputs.String(), "Inputs", "Inputs", 1) + `,`,
-		`Outputs:` + strings.Replace(this.Outputs.String(), "Outputs", "Outputs", 1) + `,`,
+		`Inputs:` + strings.Replace(fmt.Sprintf("%v", this.Inputs), "Inputs", "Inputs", 1) + `,`,
+		`Outputs:` + strings.Replace(fmt.Sprintf("%v", this.Outputs), "Outputs", "Outputs", 1) + `,`,
 		`Children:` + fmt.Sprintf("%v", this.Children) + `,`,
 		`OutboundNodes:` + fmt.Sprintf("%v", this.OutboundNodes) + `,`,
 		`StoredTemplateID:` + fmt.Sprintf("%v", this.StoredTemplateID) + `,`,
@@ -6396,19 +5883,9 @@ func (this *Outputs) String() string {
 	if this == nil {
 		return "nil"
 	}
-	repeatedStringForParameters := "[]Parameter{"
-	for _, f := range this.Parameters {
-		repeatedStringForParameters += strings.Replace(strings.Replace(f.String(), "Parameter", "Parameter", 1), `&`, ``, 1) + ","
-	}
-	repeatedStringForParameters += "}"
-	repeatedStringForArtifacts := "[]Artifact{"
-	for _, f := range this.Artifacts {
-		repeatedStringForArtifacts += strings.Replace(strings.Replace(f.String(), "Artifact", "Artifact", 1), `&`, ``, 1) + ","
-	}
-	repeatedStringForArtifacts += "}"
 	s := strings.Join([]string{`&Outputs{`,
-		`Parameters:` + repeatedStringForParameters + `,`,
-		`Artifacts:` + repeatedStringForArtifacts + `,`,
+		`Parameters:` + strings.Replace(strings.Replace(fmt.Sprintf("%v", this.Parameters), "Parameter", "Parameter", 1), `&`, ``, 1) + `,`,
+		`Artifacts:` + strings.Replace(strings.Replace(fmt.Sprintf("%v", this.Artifacts), "Artifact", "Artifact", 1), `&`, ``, 1) + `,`,
 		`Result:` + valueToStringGenerated(this.Result) + `,`,
 		`}`,
 	}, "")
@@ -6422,7 +5899,7 @@ func (this *Parameter) String() string {
 		`Name:` + fmt.Sprintf("%v", this.Name) + `,`,
 		`Default:` + valueToStringGenerated(this.Default) + `,`,
 		`Value:` + valueToStringGenerated(this.Value) + `,`,
-		`ValueFrom:` + strings.Replace(this.ValueFrom.String(), "ValueFrom", "ValueFrom", 1) + `,`,
+		`ValueFrom:` + strings.Replace(fmt.Sprintf("%v", this.ValueFrom), "ValueFrom", "ValueFrom", 1) + `,`,
 		`GlobalName:` + fmt.Sprintf("%v", this.GlobalName) + `,`,
 		`}`,
 	}, "")
@@ -6493,8 +5970,8 @@ func (this *S3Bucket) String() string {
 		`Bucket:` + fmt.Sprintf("%v", this.Bucket) + `,`,
 		`Region:` + fmt.Sprintf("%v", this.Region) + `,`,
 		`Insecure:` + valueToStringGenerated(this.Insecure) + `,`,
-		`AccessKeySecret:` + strings.Replace(strings.Replace(fmt.Sprintf("%v", this.AccessKeySecret), "SecretKeySelector", "v1.SecretKeySelector", 1), `&`, ``, 1) + `,`,
-		`SecretKeySecret:` + strings.Replace(strings.Replace(fmt.Sprintf("%v", this.SecretKeySecret), "SecretKeySelector", "v1.SecretKeySelector", 1), `&`, ``, 1) + `,`,
+		`AccessKeySecret:` + strings.Replace(strings.Replace(this.AccessKeySecret.String(), "SecretKeySelector", "v1.SecretKeySelector", 1), `&`, ``, 1) + `,`,
+		`SecretKeySecret:` + strings.Replace(strings.Replace(this.SecretKeySecret.String(), "SecretKeySelector", "v1.SecretKeySelector", 1), `&`, ``, 1) + `,`,
 		`RoleARN:` + fmt.Sprintf("%v", this.RoleARN) + `,`,
 		`}`,
 	}, "")
@@ -6505,7 +5982,7 @@ func (this *ScriptTemplate) String() string {
 		return "nil"
 	}
 	s := strings.Join([]string{`&ScriptTemplate{`,
-		`Container:` + strings.Replace(strings.Replace(fmt.Sprintf("%v", this.Container), "Container", "v1.Container", 1), `&`, ``, 1) + `,`,
+		`Container:` + strings.Replace(strings.Replace(this.Container.String(), "Container", "v1.Container", 1), `&`, ``, 1) + `,`,
 		`Source:` + fmt.Sprintf("%v", this.Source) + `,`,
 		`}`,
 	}, "")
@@ -6546,36 +6023,6 @@ func (this *Template) String() string {
 	if this == nil {
 		return "nil"
 	}
-	repeatedStringForSteps := "[]WorkflowSteps{"
-	for _, f := range this.Steps {
-		repeatedStringForSteps += strings.Replace(strings.Replace(f.String(), "WorkflowSteps", "WorkflowSteps", 1), `&`, ``, 1) + ","
-	}
-	repeatedStringForSteps += "}"
-	repeatedStringForVolumes := "[]Volume{"
-	for _, f := range this.Volumes {
-		repeatedStringForVolumes += fmt.Sprintf("%v", f) + ","
-	}
-	repeatedStringForVolumes += "}"
-	repeatedStringForInitContainers := "[]UserContainer{"
-	for _, f := range this.InitContainers {
-		repeatedStringForInitContainers += strings.Replace(strings.Replace(f.String(), "UserContainer", "UserContainer", 1), `&`, ``, 1) + ","
-	}
-	repeatedStringForInitContainers += "}"
-	repeatedStringForSidecars := "[]UserContainer{"
-	for _, f := range this.Sidecars {
-		repeatedStringForSidecars += strings.Replace(strings.Replace(f.String(), "UserContainer", "UserContainer", 1), `&`, ``, 1) + ","
-	}
-	repeatedStringForSidecars += "}"
-	repeatedStringForTolerations := "[]Toleration{"
-	for _, f := range this.Tolerations {
-		repeatedStringForTolerations += fmt.Sprintf("%v", f) + ","
-	}
-	repeatedStringForTolerations += "}"
-	repeatedStringForHostAliases := "[]HostAlias{"
-	for _, f := range this.HostAliases {
-		repeatedStringForHostAliases += fmt.Sprintf("%v", f) + ","
-	}
-	repeatedStringForHostAliases += "}"
 	keysForNodeSelector := make([]string, 0, len(this.NodeSelector))
 	for k := range this.NodeSelector {
 		keysForNodeSelector = append(keysForNodeSelector, k)
@@ -6590,34 +6037,34 @@ func (this *Template) String() string {
 		`Name:` + fmt.Sprintf("%v", this.Name) + `,`,
 		`Template:` + fmt.Sprintf("%v", this.Template) + `,`,
 		`Arguments:` + strings.Replace(strings.Replace(this.Arguments.String(), "Arguments", "Arguments", 1), `&`, ``, 1) + `,`,
-		`TemplateRef:` + strings.Replace(this.TemplateRef.String(), "TemplateRef", "TemplateRef", 1) + `,`,
+		`TemplateRef:` + strings.Replace(fmt.Sprintf("%v", this.TemplateRef), "TemplateRef", "TemplateRef", 1) + `,`,
 		`Inputs:` + strings.Replace(strings.Replace(this.Inputs.String(), "Inputs", "Inputs", 1), `&`, ``, 1) + `,`,
 		`Outputs:` + strings.Replace(strings.Replace(this.Outputs.String(), "Outputs", "Outputs", 1), `&`, ``, 1) + `,`,
 		`NodeSelector:` + mapStringForNodeSelector + `,`,
 		`Affinity:` + strings.Replace(fmt.Sprintf("%v", this.Affinity), "Affinity", "v1.Affinity", 1) + `,`,
 		`Metadata:` + strings.Replace(strings.Replace(this.Metadata.String(), "Metadata", "Metadata", 1), `&`, ``, 1) + `,`,
 		`Daemon:` + valueToStringGenerated(this.Daemon) + `,`,
-		`Steps:` + repeatedStringForSteps + `,`,
+		`Steps:` + strings.Replace(strings.Replace(fmt.Sprintf("%v", this.Steps), "WorkflowSteps", "WorkflowSteps", 1), `&`, ``, 1) + `,`,
 		`Container:` + strings.Replace(fmt.Sprintf("%v", this.Container), "Container", "v1.Container", 1) + `,`,
-		`Script:` + strings.Replace(this.Script.String(), "ScriptTemplate", "ScriptTemplate", 1) + `,`,
-		`Resource:` + strings.Replace(this.Resource.String(), "ResourceTemplate", "ResourceTemplate", 1) + `,`,
-		`DAG:` + strings.Replace(this.DAG.String(), "DAGTemplate", "DAGTemplate", 1) + `,`,
-		`Suspend:` + strings.Replace(this.Suspend.String(), "SuspendTemplate", "SuspendTemplate", 1) + `,`,
-		`Volumes:` + repeatedStringForVolumes + `,`,
-		`InitContainers:` + repeatedStringForInitContainers + `,`,
-		`Sidecars:` + repeatedStringForSidecars + `,`,
-		`ArchiveLocation:` + strings.Replace(this.ArchiveLocation.String(), "ArtifactLocation", "ArtifactLocation", 1) + `,`,
+		`Script:` + strings.Replace(fmt.Sprintf("%v", this.Script), "ScriptTemplate", "ScriptTemplate", 1) + `,`,
+		`Resource:` + strings.Replace(fmt.Sprintf("%v", this.Resource), "ResourceTemplate", "ResourceTemplate", 1) + `,`,
+		`DAG:` + strings.Replace(fmt.Sprintf("%v", this.DAG), "DAGTemplate", "DAGTemplate", 1) + `,`,
+		`Suspend:` + strings.Replace(fmt.Sprintf("%v", this.Suspend), "SuspendTemplate", "SuspendTemplate", 1) + `,`,
+		`Volumes:` + strings.Replace(strings.Replace(fmt.Sprintf("%v", this.Volumes), "Volume", "v1.Volume", 1), `&`, ``, 1) + `,`,
+		`InitContainers:` + strings.Replace(strings.Replace(fmt.Sprintf("%v", this.InitContainers), "UserContainer", "UserContainer", 1), `&`, ``, 1) + `,`,
+		`Sidecars:` + strings.Replace(strings.Replace(fmt.Sprintf("%v", this.Sidecars), "UserContainer", "UserContainer", 1), `&`, ``, 1) + `,`,
+		`ArchiveLocation:` + strings.Replace(fmt.Sprintf("%v", this.ArchiveLocation), "ArtifactLocation", "ArtifactLocation", 1) + `,`,
 		`ActiveDeadlineSeconds:` + valueToStringGenerated(this.ActiveDeadlineSeconds) + `,`,
-		`RetryStrategy:` + strings.Replace(this.RetryStrategy.String(), "RetryStrategy", "RetryStrategy", 1) + `,`,
+		`RetryStrategy:` + strings.Replace(fmt.Sprintf("%v", this.RetryStrategy), "RetryStrategy", "RetryStrategy", 1) + `,`,
 		`Parallelism:` + valueToStringGenerated(this.Parallelism) + `,`,
-		`Tolerations:` + repeatedStringForTolerations + `,`,
+		`Tolerations:` + strings.Replace(strings.Replace(fmt.Sprintf("%v", this.Tolerations), "Toleration", "v1.Toleration", 1), `&`, ``, 1) + `,`,
 		`SchedulerName:` + fmt.Sprintf("%v", this.SchedulerName) + `,`,
 		`PriorityClassName:` + fmt.Sprintf("%v", this.PriorityClassName) + `,`,
 		`Priority:` + valueToStringGenerated(this.Priority) + `,`,
 		`ServiceAccountName:` + fmt.Sprintf("%v", this.ServiceAccountName) + `,`,
 		`AutomountServiceAccountToken:` + valueToStringGenerated(this.AutomountServiceAccountToken) + `,`,
-		`Executor:` + strings.Replace(this.Executor.String(), "ExecutorConfig", "ExecutorConfig", 1) + `,`,
-		`HostAliases:` + repeatedStringForHostAliases + `,`,
+		`Executor:` + strings.Replace(fmt.Sprintf("%v", this.Executor), "ExecutorConfig", "ExecutorConfig", 1) + `,`,
+		`HostAliases:` + strings.Replace(strings.Replace(fmt.Sprintf("%v", this.HostAliases), "HostAlias", "v1.HostAlias", 1), `&`, ``, 1) + `,`,
 		`SecurityContext:` + strings.Replace(fmt.Sprintf("%v", this.SecurityContext), "PodSecurityContext", "v1.PodSecurityContext", 1) + `,`,
 		`}`,
 	}, "")
@@ -6640,7 +6087,7 @@ func (this *UserContainer) String() string {
 		return "nil"
 	}
 	s := strings.Join([]string{`&UserContainer{`,
-		`Container:` + strings.Replace(strings.Replace(fmt.Sprintf("%v", this.Container), "Container", "v1.Container", 1), `&`, ``, 1) + `,`,
+		`Container:` + strings.Replace(strings.Replace(this.Container.String(), "Container", "v1.Container", 1), `&`, ``, 1) + `,`,
 		`MirrorVolumeMounts:` + valueToStringGenerated(this.MirrorVolumeMounts) + `,`,
 		`}`,
 	}, "")
@@ -6664,7 +6111,7 @@ func (this *Workflow) String() string {
 		return "nil"
 	}
 	s := strings.Join([]string{`&Workflow{`,
-		`ObjectMeta:` + strings.Replace(strings.Replace(fmt.Sprintf("%v", this.ObjectMeta), "ObjectMeta", "v11.ObjectMeta", 1), `&`, ``, 1) + `,`,
+		`ObjectMeta:` + strings.Replace(strings.Replace(this.ObjectMeta.String(), "ObjectMeta", "v11.ObjectMeta", 1), `&`, ``, 1) + `,`,
 		`Spec:` + strings.Replace(strings.Replace(this.Spec.String(), "WorkflowSpec", "WorkflowSpec", 1), `&`, ``, 1) + `,`,
 		`Status:` + strings.Replace(strings.Replace(this.Status.String(), "WorkflowStatus", "WorkflowStatus", 1), `&`, ``, 1) + `,`,
 		`}`,
@@ -6675,14 +6122,9 @@ func (this *WorkflowList) String() string {
 	if this == nil {
 		return "nil"
 	}
-	repeatedStringForItems := "[]Workflow{"
-	for _, f := range this.Items {
-		repeatedStringForItems += strings.Replace(strings.Replace(f.String(), "Workflow", "Workflow", 1), `&`, ``, 1) + ","
-	}
-	repeatedStringForItems += "}"
 	s := strings.Join([]string{`&WorkflowList{`,
-		`ListMeta:` + strings.Replace(strings.Replace(fmt.Sprintf("%v", this.ListMeta), "ListMeta", "v11.ListMeta", 1), `&`, ``, 1) + `,`,
-		`Items:` + repeatedStringForItems + `,`,
+		`ListMeta:` + strings.Replace(strings.Replace(this.ListMeta.String(), "ListMeta", "v11.ListMeta", 1), `&`, ``, 1) + `,`,
+		`Items:` + strings.Replace(strings.Replace(fmt.Sprintf("%v", this.Items), "Workflow", "Workflow", 1), `&`, ``, 1) + `,`,
 		`}`,
 	}, "")
 	return s
@@ -6691,36 +6133,6 @@ func (this *WorkflowSpec) String() string {
 	if this == nil {
 		return "nil"
 	}
-	repeatedStringForTemplates := "[]Template{"
-	for _, f := range this.Templates {
-		repeatedStringForTemplates += strings.Replace(strings.Replace(f.String(), "Template", "Template", 1), `&`, ``, 1) + ","
-	}
-	repeatedStringForTemplates += "}"
-	repeatedStringForVolumes := "[]Volume{"
-	for _, f := range this.Volumes {
-		repeatedStringForVolumes += fmt.Sprintf("%v", f) + ","
-	}
-	repeatedStringForVolumes += "}"
-	repeatedStringForVolumeClaimTemplates := "[]PersistentVolumeClaim{"
-	for _, f := range this.VolumeClaimTemplates {
-		repeatedStringForVolumeClaimTemplates += fmt.Sprintf("%v", f) + ","
-	}
-	repeatedStringForVolumeClaimTemplates += "}"
-	repeatedStringForTolerations := "[]Toleration{"
-	for _, f := range this.Tolerations {
-		repeatedStringForTolerations += fmt.Sprintf("%v", f) + ","
-	}
-	repeatedStringForTolerations += "}"
-	repeatedStringForImagePullSecrets := "[]LocalObjectReference{"
-	for _, f := range this.ImagePullSecrets {
-		repeatedStringForImagePullSecrets += fmt.Sprintf("%v", f) + ","
-	}
-	repeatedStringForImagePullSecrets += "}"
-	repeatedStringForHostAliases := "[]HostAlias{"
-	for _, f := range this.HostAliases {
-		repeatedStringForHostAliases += fmt.Sprintf("%v", f) + ","
-	}
-	repeatedStringForHostAliases += "}"
 	keysForNodeSelector := make([]string, 0, len(this.NodeSelector))
 	for k := range this.NodeSelector {
 		keysForNodeSelector = append(keysForNodeSelector, k)
@@ -6732,21 +6144,21 @@ func (this *WorkflowSpec) String() string {
 	}
 	mapStringForNodeSelector += "}"
 	s := strings.Join([]string{`&WorkflowSpec{`,
-		`Templates:` + repeatedStringForTemplates + `,`,
+		`Templates:` + strings.Replace(strings.Replace(fmt.Sprintf("%v", this.Templates), "Template", "Template", 1), `&`, ``, 1) + `,`,
 		`Entrypoint:` + fmt.Sprintf("%v", this.Entrypoint) + `,`,
 		`Arguments:` + strings.Replace(strings.Replace(this.Arguments.String(), "Arguments", "Arguments", 1), `&`, ``, 1) + `,`,
 		`ServiceAccountName:` + fmt.Sprintf("%v", this.ServiceAccountName) + `,`,
 		`AutomountServiceAccountToken:` + valueToStringGenerated(this.AutomountServiceAccountToken) + `,`,
-		`Executor:` + strings.Replace(this.Executor.String(), "ExecutorConfig", "ExecutorConfig", 1) + `,`,
-		`Volumes:` + repeatedStringForVolumes + `,`,
-		`VolumeClaimTemplates:` + repeatedStringForVolumeClaimTemplates + `,`,
+		`Executor:` + strings.Replace(fmt.Sprintf("%v", this.Executor), "ExecutorConfig", "ExecutorConfig", 1) + `,`,
+		`Volumes:` + strings.Replace(strings.Replace(fmt.Sprintf("%v", this.Volumes), "Volume", "v1.Volume", 1), `&`, ``, 1) + `,`,
+		`VolumeClaimTemplates:` + strings.Replace(strings.Replace(fmt.Sprintf("%v", this.VolumeClaimTemplates), "PersistentVolumeClaim", "v1.PersistentVolumeClaim", 1), `&`, ``, 1) + `,`,
 		`Parallelism:` + valueToStringGenerated(this.Parallelism) + `,`,
-		`ArtifactRepositoryRef:` + strings.Replace(this.ArtifactRepositoryRef.String(), "ArtifactRepositoryRef", "ArtifactRepositoryRef", 1) + `,`,
+		`ArtifactRepositoryRef:` + strings.Replace(fmt.Sprintf("%v", this.ArtifactRepositoryRef), "ArtifactRepositoryRef", "ArtifactRepositoryRef", 1) + `,`,
 		`Suspend:` + valueToStringGenerated(this.Suspend) + `,`,
 		`NodeSelector:` + mapStringForNodeSelector + `,`,
 		`Affinity:` + strings.Replace(fmt.Sprintf("%v", this.Affinity), "Affinity", "v1.Affinity", 1) + `,`,
-		`Tolerations:` + repeatedStringForTolerations + `,`,
-		`ImagePullSecrets:` + repeatedStringForImagePullSecrets + `,`,
+		`Tolerations:` + strings.Replace(strings.Replace(fmt.Sprintf("%v", this.Tolerations), "Toleration", "v1.Toleration", 1), `&`, ``, 1) + `,`,
+		`ImagePullSecrets:` + strings.Replace(strings.Replace(fmt.Sprintf("%v", this.ImagePullSecrets), "LocalObjectReference", "v1.LocalObjectReference", 1), `&`, ``, 1) + `,`,
 		`HostNetwork:` + valueToStringGenerated(this.HostNetwork) + `,`,
 		`DNSPolicy:` + valueToStringGenerated(this.DNSPolicy) + `,`,
 		`DNSConfig:` + strings.Replace(fmt.Sprintf("%v", this.DNSConfig), "PodDNSConfig", "v1.PodDNSConfig", 1) + `,`,
@@ -6755,10 +6167,10 @@ func (this *WorkflowSpec) String() string {
 		`ActiveDeadlineSeconds:` + valueToStringGenerated(this.ActiveDeadlineSeconds) + `,`,
 		`Priority:` + valueToStringGenerated(this.Priority) + `,`,
 		`SchedulerName:` + fmt.Sprintf("%v", this.SchedulerName) + `,`,
-		`PodGC:` + strings.Replace(this.PodGC.String(), "PodGC", "PodGC", 1) + `,`,
+		`PodGC:` + strings.Replace(fmt.Sprintf("%v", this.PodGC), "PodGC", "PodGC", 1) + `,`,
 		`PodPriorityClassName:` + fmt.Sprintf("%v", this.PodPriorityClassName) + `,`,
 		`PodPriority:` + valueToStringGenerated(this.PodPriority) + `,`,
-		`HostAliases:` + repeatedStringForHostAliases + `,`,
+		`HostAliases:` + strings.Replace(strings.Replace(fmt.Sprintf("%v", this.HostAliases), "HostAlias", "v1.HostAlias", 1), `&`, ``, 1) + `,`,
 		`SecurityContext:` + strings.Replace(fmt.Sprintf("%v", this.SecurityContext), "PodSecurityContext", "v1.PodSecurityContext", 1) + `,`,
 		`}`,
 	}, "")
@@ -6768,11 +6180,6 @@ func (this *WorkflowStatus) String() string {
 	if this == nil {
 		return "nil"
 	}
-	repeatedStringForPersistentVolumeClaims := "[]Volume{"
-	for _, f := range this.PersistentVolumeClaims {
-		repeatedStringForPersistentVolumeClaims += fmt.Sprintf("%v", f) + ","
-	}
-	repeatedStringForPersistentVolumeClaims += "}"
 	keysForNodes := make([]string, 0, len(this.Nodes))
 	for k := range this.Nodes {
 		keysForNodes = append(keysForNodes, k)
@@ -6795,13 +6202,13 @@ func (this *WorkflowStatus) String() string {
 	mapStringForStoredTemplates += "}"
 	s := strings.Join([]string{`&WorkflowStatus{`,
 		`Phase:` + fmt.Sprintf("%v", this.Phase) + `,`,
-		`StartedAt:` + strings.Replace(strings.Replace(fmt.Sprintf("%v", this.StartedAt), "Time", "v11.Time", 1), `&`, ``, 1) + `,`,
-		`FinishedAt:` + strings.Replace(strings.Replace(fmt.Sprintf("%v", this.FinishedAt), "Time", "v11.Time", 1), `&`, ``, 1) + `,`,
+		`StartedAt:` + strings.Replace(strings.Replace(this.StartedAt.String(), "Time", "v11.Time", 1), `&`, ``, 1) + `,`,
+		`FinishedAt:` + strings.Replace(strings.Replace(this.FinishedAt.String(), "Time", "v11.Time", 1), `&`, ``, 1) + `,`,
 		`Message:` + fmt.Sprintf("%v", this.Message) + `,`,
 		`CompressedNodes:` + fmt.Sprintf("%v", this.CompressedNodes) + `,`,
 		`Nodes:` + mapStringForNodes + `,`,
-		`PersistentVolumeClaims:` + repeatedStringForPersistentVolumeClaims + `,`,
-		`Outputs:` + strings.Replace(this.Outputs.String(), "Outputs", "Outputs", 1) + `,`,
+		`PersistentVolumeClaims:` + strings.Replace(strings.Replace(fmt.Sprintf("%v", this.PersistentVolumeClaims), "Volume", "v1.Volume", 1), `&`, ``, 1) + `,`,
+		`Outputs:` + strings.Replace(fmt.Sprintf("%v", this.Outputs), "Outputs", "Outputs", 1) + `,`,
 		`StoredTemplates:` + mapStringForStoredTemplates + `,`,
 		`}`,
 	}, "")
@@ -6811,21 +6218,16 @@ func (this *WorkflowStep) String() string {
 	if this == nil {
 		return "nil"
 	}
-	repeatedStringForWithItems := "[]Item{"
-	for _, f := range this.WithItems {
-		repeatedStringForWithItems += fmt.Sprintf("%v", f) + ","
-	}
-	repeatedStringForWithItems += "}"
 	s := strings.Join([]string{`&WorkflowStep{`,
 		`Name:` + fmt.Sprintf("%v", this.Name) + `,`,
 		`Template:` + fmt.Sprintf("%v", this.Template) + `,`,
 		`Arguments:` + strings.Replace(strings.Replace(this.Arguments.String(), "Arguments", "Arguments", 1), `&`, ``, 1) + `,`,
-		`TemplateRef:` + strings.Replace(this.TemplateRef.String(), "TemplateRef", "TemplateRef", 1) + `,`,
-		`WithItems:` + repeatedStringForWithItems + `,`,
+		`TemplateRef:` + strings.Replace(fmt.Sprintf("%v", this.TemplateRef), "TemplateRef", "TemplateRef", 1) + `,`,
+		`WithItems:` + strings.Replace(strings.Replace(fmt.Sprintf("%v", this.WithItems), "Item", "Item", 1), `&`, ``, 1) + `,`,
 		`WithParam:` + fmt.Sprintf("%v", this.WithParam) + `,`,
-		`WithSequence:` + strings.Replace(this.WithSequence.String(), "Sequence", "Sequence", 1) + `,`,
+		`WithSequence:` + strings.Replace(fmt.Sprintf("%v", this.WithSequence), "Sequence", "Sequence", 1) + `,`,
 		`When:` + fmt.Sprintf("%v", this.When) + `,`,
-		`ContinueOn:` + strings.Replace(this.ContinueOn.String(), "ContinueOn", "ContinueOn", 1) + `,`,
+		`ContinueOn:` + strings.Replace(fmt.Sprintf("%v", this.ContinueOn), "ContinueOn", "ContinueOn", 1) + `,`,
 		`}`,
 	}, "")
 	return s
@@ -6834,13 +6236,8 @@ func (this *WorkflowSteps) String() string {
 	if this == nil {
 		return "nil"
 	}
-	repeatedStringForSteps := "[]WorkflowStep{"
-	for _, f := range this.Steps {
-		repeatedStringForSteps += strings.Replace(strings.Replace(f.String(), "WorkflowStep", "WorkflowStep", 1), `&`, ``, 1) + ","
-	}
-	repeatedStringForSteps += "}"
 	s := strings.Join([]string{`&WorkflowSteps{`,
-		`Steps:` + repeatedStringForSteps + `,`,
+		`Steps:` + strings.Replace(strings.Replace(fmt.Sprintf("%v", this.Steps), "WorkflowStep", "WorkflowStep", 1), `&`, ``, 1) + `,`,
 		`}`,
 	}, "")
 	return s
@@ -6850,7 +6247,7 @@ func (this *WorkflowTemplate) String() string {
 		return "nil"
 	}
 	s := strings.Join([]string{`&WorkflowTemplate{`,
-		`ObjectMeta:` + strings.Replace(strings.Replace(fmt.Sprintf("%v", this.ObjectMeta), "ObjectMeta", "v11.ObjectMeta", 1), `&`, ``, 1) + `,`,
+		`ObjectMeta:` + strings.Replace(strings.Replace(this.ObjectMeta.String(), "ObjectMeta", "v11.ObjectMeta", 1), `&`, ``, 1) + `,`,
 		`Spec:` + strings.Replace(strings.Replace(this.Spec.String(), "WorkflowTemplateSpec", "WorkflowTemplateSpec", 1), `&`, ``, 1) + `,`,
 		`}`,
 	}, "")
@@ -6860,14 +6257,9 @@ func (this *WorkflowTemplateList) String() string {
 	if this == nil {
 		return "nil"
 	}
-	repeatedStringForItems := "[]WorkflowTemplate{"
-	for _, f := range this.Items {
-		repeatedStringForItems += strings.Replace(strings.Replace(f.String(), "WorkflowTemplate", "WorkflowTemplate", 1), `&`, ``, 1) + ","
-	}
-	repeatedStringForItems += "}"
 	s := strings.Join([]string{`&WorkflowTemplateList{`,
-		`ListMeta:` + strings.Replace(strings.Replace(fmt.Sprintf("%v", this.ListMeta), "ListMeta", "v11.ListMeta", 1), `&`, ``, 1) + `,`,
-		`Items:` + repeatedStringForItems + `,`,
+		`ListMeta:` + strings.Replace(strings.Replace(this.ListMeta.String(), "ListMeta", "v11.ListMeta", 1), `&`, ``, 1) + `,`,
+		`Items:` + strings.Replace(strings.Replace(fmt.Sprintf("%v", this.Items), "WorkflowTemplate", "WorkflowTemplate", 1), `&`, ``, 1) + `,`,
 		`}`,
 	}, "")
 	return s
@@ -6876,13 +6268,8 @@ func (this *WorkflowTemplateSpec) String() string {
 	if this == nil {
 		return "nil"
 	}
-	repeatedStringForTemplates := "[]Template{"
-	for _, f := range this.Templates {
-		repeatedStringForTemplates += strings.Replace(strings.Replace(f.String(), "Template", "Template", 1), `&`, ``, 1) + ","
-	}
-	repeatedStringForTemplates += "}"
 	s := strings.Join([]string{`&WorkflowTemplateSpec{`,
-		`Templates:` + repeatedStringForTemplates + `,`,
+		`Templates:` + strings.Replace(strings.Replace(fmt.Sprintf("%v", this.Templates), "Template", "Template", 1), `&`, ``, 1) + `,`,
 		`Arguments:` + strings.Replace(strings.Replace(this.Arguments.String(), "Arguments", "Arguments", 1), `&`, ``, 1) + `,`,
 		`}`,
 	}, "")
