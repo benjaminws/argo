@@ -440,7 +440,7 @@ type Artifact struct {
 	Mode *int32 `json:"mode,omitempty" protobuf:"varint,3,opt,name=mode"`
 
 	// From allows an artifact to reference an artifact from a previous step
-	From string `json:"from,omitempty" protobuf:"bytes,4,opt,name=from"`
+	From string `json:"from,omitempty" protobuf:"bytes,4,opt,name=fromStep"`
 
 	// ArtifactLocation contains the location of the artifact
 	ArtifactLocation `json:",inline" protobuf:"bytes,5,opt,name=artifactLocation"`
