@@ -302,7 +302,7 @@
         "depth": {
           "description": "Depth specifies clones/fetches should be shallow and include the given number of commits from the branch tip",
           "type": "integer",
-          "format": "int32"
+          "format": "int64"
         },
         "fetch": {
           "description": "Fetch specifies a number of refs that should be fetched before checkout",
@@ -503,8 +503,59 @@
     },
     "io.argoproj.workflow.v1alpha1.Item": {
       "description": "Item expands a single workflow step into multiple parallel steps The value of Item can be a map, string, bool, or number",
-      "type": "string",
-      "format": "item"
+      "type": "object",
+      "required": [
+        "Type",
+        "NumVal",
+        "BoolVal",
+        "StrVal",
+        "MapVal"
+      ],
+      "properties": {
+        "BoolVal": {
+          "type": "boolean"
+        },
+        "MapVal": {
+          "type": "object",
+          "additionalProperties": {
+            "$ref": "#/definitions/io.argoproj.workflow.v1alpha1.ItemValue"
+          }
+        },
+        "NumVal": {
+          "type": "string"
+        },
+        "StrVal": {
+          "type": "string"
+        },
+        "Type": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    },
+    "io.argoproj.workflow.v1alpha1.ItemValue": {
+      "type": "object",
+      "required": [
+        "Type",
+        "NumVal",
+        "BoolVal",
+        "StrVal"
+      ],
+      "properties": {
+        "BoolVal": {
+          "type": "boolean"
+        },
+        "NumVal": {
+          "type": "string"
+        },
+        "StrVal": {
+          "type": "string"
+        },
+        "Type": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
     },
     "io.argoproj.workflow.v1alpha1.Metadata": {
       "description": "Pod metdata",
@@ -1129,10 +1180,7 @@
           "description": "Steps define a series of sequential/parallel workflow steps",
           "type": "array",
           "items": {
-            "type": "array",
-            "items": {
-              "$ref": "#/definitions/io.argoproj.workflow.v1alpha1.WorkflowStep"
-            }
+            "$ref": "#/definitions/io.argoproj.workflow.v1alpha1.WorkflowSteps"
           }
         },
         "suspend": {
@@ -1646,6 +1694,21 @@
         "withSequence": {
           "description": "WithSequence expands a step into a numeric sequence",
           "$ref": "#/definitions/io.argoproj.workflow.v1alpha1.Sequence"
+        }
+      }
+    },
+    "io.argoproj.workflow.v1alpha1.WorkflowSteps": {
+      "description": "WorkflowSteps is a group of WorkflowSteps in a template",
+      "type": "object",
+      "required": [
+        "Steps"
+      ],
+      "properties": {
+        "Steps": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/io.argoproj.workflow.v1alpha1.WorkflowStep"
+          }
         }
       }
     },
